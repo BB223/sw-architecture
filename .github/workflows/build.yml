@@ -20,6 +20,7 @@ jobs:
           bundler-cache: true
       - name: Asciidoctor Setup
         uses: reitzig/actions-asciidoctor@v2.0.2
+      - run: gem install asciidoctor-pdf
       - run: ./bin/build.sh -v ./arc42-template.adoc
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
