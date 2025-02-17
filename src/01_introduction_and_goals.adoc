@@ -1,33 +1,181 @@
-ifndef::imagesdir[:imagesdir: ../images]
-
-[[section-introduction-and-goals]]
 ==	Einführung und Ziele
 
-ifdef::arc42help[]
+Diese Dokumentation beschreibt die Architektur der OpenSource App ToneMate. +
+Ziel der App ist es dem Nutzer verschiedenste, relevante Dienste an einem Ort zur verfügunug zu stellen.
 
-endif::arc42help[]
+Der Aktuelle Markt an solchen Apps besteht meistens aus Anwendungen, welche Kostenpflichtig oder nur von geringer Qualität sind. +
+Zudem sind solche Anwendungen oft mit unnötigen Features bestückt. +
 
-=== Aufgabenstellung
+Dennoch ist der Markt groß. Es gibt es Anwendungen die sich auf wenige Funktionalitäten beschränken. +
+In dem Fall jedoch hat man ein großes Sammelsorium an Apps auf seinem Smartphone. +
 
-ifdef::arc42help[]
+ToneMate will diese beiden Probleme angehen und beheben. +
+Eine kostenlose, OpenSource App ohne Abomodell oder Kostenfallen. +
+Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wichtigsten Funktionalitäten, zusammengefasst sind.
 
-endif::arc42help[]
+=== Funktionale Anforderungen
+
+[%autowidth]
+|===
+|ID |Anforderung |Beschreibung |Priorität
+
+|TM-01
+|Speicherort
+|Sämtliche Daten des Nutzers sollen auf dem Gerät gespeichert werden auf welchem auch die App installiert ist.
+|Hoch
+
+|TM-02
+|Offline Nutzung
+|Die App ist vollumfänglich Offline nutzbar. +
+ Eine Verbindung zum Internet ist an keiner Stelle von nöten.
+|Hoch 
+
+|TM-03
+|Navigation
+|Es soll möglich sein einfach und intuitiv zwischen Menüs wechseln zu können.
+|Hoch
+
+|TM-04
+|Levelorientiertes Gehörtraining
+|Der Fortschritt der verschiedenen Trainings wird in Leveln gespeichert. +
+ Level bestehen aus eingeschränkten Antwortmöglichkeiten, basiered auf Level. +
+ Zudem basieren sie auf ein interaktives Karteikartensystem. +
+ Bspw. erklingt ein Intervall (2 verschiedene Töne gleichzietig) und der Nutzer muss angeben um welches Intervall es sich handelt. +
+ Anschließend bekommt er ein visuelles und akustisches Feedback. +
+ Wenn x% des Level richtig beantwortet wurde schaltet man Zugang zu daraufolgene Level frei. +
+ Am Ende eines Levels werden zudem Fehlerquote von Levelrelevanten Fragen angezeigt.
+|Hoch
+
+|TM-05
+|Freies Training
+|Zusätzlich zu dem Levelorientiertem Gehörtraining soll der Nutzer die Möglichkeit besitzen Frei zu trainieren (Freies Training). +
+ Dabei sind Levelspezifische Einschränkungen aufgehoben, also alle Antwortmöglichkeiten und unendlich mögliche Wiederholung (nicht X mal Antworten, dann ist das Level vorbei). +
+ Feedback zu gegebenen Antworten bleibt auch hier erhalten.
+|Hoch
+
+|TM-06
+|Training: Intervalle
+|Dem Nutzer wird basierend auf Level ein Intervall vorgespielt, welches er beliebig oft wiederholen kann. +
+ Der Nutzer muss anschließend sagen, um welches Intervall es sich handelt.  (Bspw. ü4) +
+ Dabei kann er nur aus einer Auswahl an Intervallen wählen, welche für dieses Level von relevanz sind.
+|Hoch
+
+|TM-07
+|Training: Dreiklang klassifizierung
+|Dem Nutzer wird basierend auf Level ein Dreiklang vorgespielt, welches er beliebnig oft wiederholen kann. +
+ Der Nutzer muss anschließend sagen, um welchen Dreiklangtyp es sich handelt. (Bspw. Dur7) +
+ Dabei kann er nur aus einer Auswahl an Dreiklängen wählen, welche für dieses Level von relevanz sind.
+|Hoch
+
+|TM-08
+|Training: Relative Pitch
+|Dem Nutzer wird basierend auf Level ein Ton vorgespielt, welchen er beliebig oft wiederholen kann. +
+ Der Nutzer muss anschließend sagen, um welchen Ton es sich handelt. (Bspw. g) +
+ Dabei kann er nur aus eier Auswahl an Tönen wählen, welche für dieses Level von relevanz sind.
+ Zur Ermittlung des Tones wird am Anfang des Levels der Ton C gespielt, an welchem sich der Nutzer orientieren kann. +
+|Hoch
+
+|TM-09
+|Training: Rythmik
+|Dem Nutzer wird\werden basierend auf Level (ein) Takt(e) gezeigt. +
+ Der Nutzer muss anschließend auf ein Feld den Rythmus tippen. +
+ Zudem wird ein BPM vorgegeben an welchem sich der Nutzer orientieren soll. +
+ Diesen kann er sichbeliebig oft vorspielen lassen, wenn gewünscht auch während des antworten. +
+ Bei dem BPM gibt es einen angenehmen Toleranzbereich bei der Antort überprüfung.
+|Hoch
+
+|TM-10
+|Metronom
+|Es gibt ein Metronom mit den Möglichkeiten BPM, Taktangabe, Notenwert und Lautstärke und Betonung des erklingenden Tones einzustellen.
+|Hoch
+
+|TM-11
+|Kalender
+|In einem Kalender sollen persönliche Lernzeiten und Lerziele eintragen werden können. +
+ Lernziele sollen sich hierbei nicht ausschließlich auf die Trainings von ToneMate fokussieren, sondern eher ein Freitext. (Somit auch Bspw. Passagen eines Stückes üben)
+|Hoch
+
+|TM-12
+|Kalender: Kommentare
+|Im Kalender soll es möglich sein Terminen Kommentare hinzuzufügen.
+|Mittel
+
+|TM-13
+|Kalender: Integration
+|Der Kalender von ToneMate soll den Nativen Kalender des Smartphones (oder optionaler Kalender Apps) bestmöglich integriert haben, sodass sich Termine synchronisieren.
+|Hoch
+
+|TM-14
+|Stimmgerät
+|Über die Lautsprecher und Mikrophone des Smartphones sollen Nutzer ihr Instrument stimmen können. +
+ Zusätzlich werden Informationen wie aktuelle Cent Zahlen, visuelle Abweichung des nächsten Tons angezeigt.
+|Hoch
+
+|TM-15
+|Partituren-Sammlung
+|Es können Partituren in Form von MusicXML Datein in der App abgeschpeichert und abrufen werden.
+|Hoch
+
+|TM-16
+|Partituren-Sammlung: Gruppierung
+|Partituren können in eigen erstellten Gruppen gruppiert und gesammelt werden.
+|Hoch
+
+|TM-17
+|Einstellungen
+|In den Einstellungen sollen verschiedenste Dinge konfigurierbar sein.
+|Hoch 
+
+|TM-18
+|Einstellungen: Anpassbares Instrument
+|Aus einer Liste an Instrumenten, welche für Trainigs genutzt werden soll gewählt werden können. +
+ Das Metronom ist hiermit nicht mit einbegriffen.
+|Mittel
+
+|TM-19
+|Einstellungen: Sprache
+|Die Verwendete Sprache von ToneMate soll aus einer Liste an Sprachen ausgewählt werden können. +
+ Die Sprache ändert sich sofort in der gesammten App. +
+ Die Default Sprache ist Englisch.
+|Mittel
+
+|TM-20
+|Einstellungen: Farbschema
+|Aus einer Liste an Farbschema kann das zu verwendende Schema gewählt werden, welche sich sofort über die gesamte App auswirken und möglichst ansprechend aussehen.
+|Niedrig
+|===
 
 === Qualitätsziele
 
-ifdef::arc42help[]
+[%autowidth]
+|===
+|ID |Qualitätsziel |Beschreibung |Priorität
 
-endif::arc42help[]
+|QZ-01
+|Benutzerfreundlichkeit
+|Die App soll intuitiv nutzbar sein und ansprechend aussehen. +
+ Der Nutzer soll innerhalb von 3 Klicks zu den wichtigsten Features kommen.
+|Hoch
+
+|QZ-02
+|Wartbarkeit & Erweiterbarkeit
+|Die App soll möglichst Modular und Wartbar aufgebaut sein, um neue Features in Zukunft mit minimalem Aufwand hinzufügen zu können. +
+ Zudem soll es einfach sein sich im Code zurecht zu finden, da die App OpenSource ist und möglicherweise verschiedenste Personen eigene Modifikationen vornehmen möchten.
+|Hoch
+
+|QZ-03
+|Zuverlässigkeit
+|Die App soll stabil und fehlerfrei funktionieren, sodass Nutzer sicher darauf vertrauen können, dass Trainingsdaten korrekt erfasst werden. +
+ Dadurch soll das Risiko minimiert werden, falsche Inhalte zu lernen oder Übungstermine zu verpassen.
+|Hoch 
+|===
 
 === Stakeholder
 
-ifdef::arc42help[]
-
-endif::arc42help[]
-
-[cols="1,1,2" options="header"]
 |===
-|Rolle |Kontakt |Erwartungshaltung
-| _<Rolle-1>_ | _<Kontakt-1>_ | _<Erwartung-1>_
-| _<Rolle-2>_ | _<Kontakt-2>_ | _<Erwartung-2>_ 
+|Name |Rolle |Kontakt
+
+|Ben Burmeister
+|Business Kontakt
+|tbd 
 |===

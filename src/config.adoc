@@ -1,5 +1,3 @@
-// asciidoc settings for DE (German)
-// ==================================
 // toc-title definition MUST follow document title without blank line!
 :toc-title: Inhaltsverzeichnis
 

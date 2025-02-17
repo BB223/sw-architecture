@@ -1,17 +1,8 @@
-// header file for arc42-template,
-// including all help texts
-//
-// ====================================
-
-
-// configure DE settings for asciidoc
 include::src/config.adoc[]
 
-= image:arc42-logo.png[arc42] Template
 :revnumber: 8.2 DE
 :revdate: Januar 2023
 :revremark: (basiert auf AsciiDoc Version)
-// toc-title definition MUST follow document title without blank line!
 :toc-title: Inhaltsverzeichnis
 
 //additional style for arc42 help callouts
@@ -28,16 +19,6 @@ ifdef::backend-html5[]
 </style>
 ++++
 endif::backend-html5[]
-
-
-include::src/about-arc42.adoc[]
-
-// horizontal line
-***
-
-ifdef::arc42help[]
-
-endif::arc42help[]
 
 // numbering from here on
 :numbered:

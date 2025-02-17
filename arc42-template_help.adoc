@@ -1,13 +1,5 @@
-// header file for arc42-template,
-// including all help texts
-//
-// ====================================
-
-
-// configure DE settings for asciidoc
 include::src/config.adoc[]
 
-= image:arc42-logo.png[arc42] Template
 :revnumber: 8.2 DE
 :revdate: Januar 2023
 :revremark: (basiert auf AsciiDoc Version)
