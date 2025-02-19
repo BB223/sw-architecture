@@ -64,7 +64,7 @@ done
 [[ -z "$INPUT_FILE" ]] && usage
 
 # Ensure dependencies are installed
-check_dependencies
+# check_dependencies
 
 # Resolve absolute path
 ABS_PATH="$(realpath "$INPUT_FILE")"
@@ -86,8 +86,8 @@ info "Processing file: $ABS_PATH"
 
 # Convert to DOCX using Asciidoctor and Pandoc
 info "Generating DOCX..."
-debug "Executing: asciidoctor -r asciidoctor-diagram --backend docbook --out-file - \"$ABS_PATH\" | pandoc --from docbook --to docx --output \"$DOCX_OUTPUT\""
-asciidoctor -r asciidoctor-diagram --backend docbook --out-file - "$ABS_PATH" | pandoc --from docbook --to docx --output "$DOCX_OUTPUT"
+debug "Executing: bundle exec asciidoctor -r asciidoctor-diagram --backend docbook --out-file - \"$ABS_PATH\" | pandoc --from docbook --to docx --output \"$DOCX_OUTPUT\""
+bundle exec asciidoctor -r asciidoctor-diagram --backend docbook --out-file - "$ABS_PATH" | pandoc --from docbook --to docx --output "$DOCX_OUTPUT"
 
 # Validate DOCX creation
 [[ -f "$DOCX_OUTPUT" ]] || error_exit "DOCX file not created."
@@ -96,8 +96,8 @@ info "DOCX file created: $DOCX_OUTPUT"
 
 # Convert to PDF using Asciidoctor
 info "Generating PDF..."
-debug "Executing: asciidoctor-pdf -r asciidoctor-diagram \"$ABS_PATH\" --out-file \"$PDF_OUTPUT\""
-asciidoctor-pdf -r asciidoctor-diagram "$ABS_PATH" --out-file "$PDF_OUTPUT"
+debug "Executing: bundle exec asciidoctor-pdf -r asciidoctor-diagram \"$ABS_PATH\" --out-file \"$PDF_OUTPUT\""
+bundle exec asciidoctor-pdf -r asciidoctor-diagram "$ABS_PATH" --out-file "$PDF_OUTPUT"
 
 # Validate PDF creation
 [[ -f "$PDF_OUTPUT" ]] || error_exit "PDF file not created."

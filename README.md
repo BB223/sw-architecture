@@ -10,33 +10,34 @@ The build script in creates docx and pdf output inside ```./build```
 
 <summary>Manual creating outputs</summary>
 
-## Asciidoc to docx
-
-### Prerequisites
+## Prerequisites
 
 - pandoc
-- asciidoctor
-- asciidoctor-diagram
+- ruby
+- rubygems
+- bundler (gem install bundler)
+
+```bash
+bundle config set --local path '.bundle'
+bundle install
+```
+
+## Asciidoc to docx
 
 ### Command
 
 ```bash
 INPUT_ADOC=arc42-template.adoc
-asciidoctor -r asciidoctor-diagram --backend docbook --out-file - $INPUT_ADOC| \
+bundle exec asciidoctor -r asciidoctor-diagram --backend docbook --out-file - $INPUT_ADOC| \
 pandoc --from docbook --to docx --output $INPUT_ADOC.docx
 ```
 
 ## Asciidoc to pdf
 
-### Prerequisites
-
-- asciidoctor-pdf
-- asciidoctor-diagram
-
 ### Command
 
 ```bash
-asciidoctor-pdf -r asciidoctor-diagram arc42-template.adoc
+bundle exec asciidoctor-pdf -r asciidoctor-diagram arc42-template.adoc
 ```
 
 </details>
