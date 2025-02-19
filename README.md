@@ -16,12 +16,14 @@ The build script in creates docx and pdf output inside ```./build```
 
 - pandoc
 - asciidoctor
+- asciidoctor-pdf
+- asciidoctor-diagram
 
 ### Command
 
 ```bash
 INPUT_ADOC=arc42-template.adoc
-asciidoctor --backend docbook --out-file - $INPUT_ADOC| \
+asciidoctor -r asciidoctor-diagram --backend docbook --out-file - $INPUT_ADOC| \
 pandoc --from docbook --to docx --output $INPUT_ADOC.docx
 ```
 
@@ -34,7 +36,7 @@ pandoc --from docbook --to docx --output $INPUT_ADOC.docx
 ### Command
 
 ```bash
-asciidoctor-pdf arc42-template.adoc
+asciidoctor-pdf -r asciidoctor-diagram arc42-template.adoc
 ```
 
 </details>
