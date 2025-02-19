@@ -16,7 +16,6 @@ The build script in creates docx and pdf output inside ```./build```
 
 - pandoc
 - asciidoctor
-- asciidoctor-pdf
 - asciidoctor-diagram
 
 ### Command
@@ -32,6 +31,7 @@ pandoc --from docbook --to docx --output $INPUT_ADOC.docx
 ### Prerequisites
 
 - asciidoctor-pdf
+- asciidoctor-diagram
 
 ### Command
 
