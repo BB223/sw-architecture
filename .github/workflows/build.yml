@@ -16,7 +16,7 @@ jobs:
       - name: Setup Ruby, JRuby and TruffleRuby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.4.1'
+          ruby-version: '3.3'
           bundler-cache: true
       - run: npm install -g @mermaid-js/mermaid-cli
       - run: ./bin/build.sh -v ./arc42-template.adoc
