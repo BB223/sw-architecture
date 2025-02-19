@@ -78,6 +78,10 @@ BASENAME="${FILENAME%.*}"
 mkdir -p "$BUILD_DIR"
 info "Output directory: $BUILD_DIR"
 
+# Clear build directory
+debug "Deleting files: $(ls -1 ${BUILD_DIR} | xargs)"
+rm $([[ "$VERBOSE" -eq 1 ]] && echo "-v") -r ${BUILD_DIR}/*
+
 # Define output paths
 DOCX_OUTPUT="$BUILD_DIR/${BASENAME}.docx"
 PDF_OUTPUT="$BUILD_DIR/${BASENAME}.pdf"
