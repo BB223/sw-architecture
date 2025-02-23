@@ -20,7 +20,7 @@ jobs:
           bundler-cache: true
       - run: sudo apt install plantuml
       - run: npm install -g @mermaid-js/mermaid-cli
-      - run: mmdc --version
+      - run: node --version
       - run: make build
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4
