@@ -13,7 +13,7 @@ GEM
       rexml
     asciidoctor-diagram-batik (1.17)
     asciidoctor-diagram-ditaamini (1.0.3)
-    asciidoctor-diagram-plantuml (1.2024.8)
+    asciidoctor-diagram-plantuml (1.2025.1)
       asciidoctor-diagram-batik (~> 1.17)
     asciidoctor-pdf (2.3.19)
       asciidoctor (~> 2.0)
@@ -68,6 +68,7 @@ PLATFORMS
 DEPENDENCIES
   asciidoctor (~> 2.0, >= 2.0.23)
   asciidoctor-diagram (~> 2.3, >= 2.3.1)
+  asciidoctor-diagram-plantuml (~> 1.2025, >= 1.2025.1)
   asciidoctor-pdf (~> 2.3, >= 2.3.19)
 
 BUNDLED WITH

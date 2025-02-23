@@ -4,6 +4,7 @@ include::src/config.adoc[]
 :revdate: Januar 2023
 :revremark: (basiert auf AsciiDoc Version)
 :toc-title: Inhaltsverzeichnis
+:plantumljar: ./bin/plantuml.jar
 
 //additional style for arc42 help callouts
 ifdef::backend-html5[]

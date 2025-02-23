@@ -1,4 +1,4 @@
 build/
 .asciidoctor/
 .bundle/
-images/*mermaid*
+images/diag*
