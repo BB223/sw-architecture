@@ -13,19 +13,103 @@ ifdef::arc42help[]
 
 endif::arc42help[]
 
-_**<Übersichtsdiagramm>**_
+[mermaid]
+....
+---
+useMaxWidth: true
+---
+architecture-beta
+    service app[ToneMate]
+    service calender_ext[Nativer Kalender]
+    service file_ext[Dateisystem]
 
-Begründung:: _<Erläuternder Text>_
+    junction external
 
-Enthaltene Bausteine:: _<Beschreibung der enthaltenen Bausteine (Blackboxen)>_
+    app:B -- T:external
+    external:L -- R:calender_ext
+    external:R -- L:file_ext
+....
 
-Wichtige Schnittstellen:: _<Beschreibung wichtiger Schnittstellen>_
+Begründung::
+ToneMate ist eine allein stehende App, die keine Abhängigkeit zu anderen Systemem aufweist.
+
+Enthaltene Bausteine::
+
+[%autowidth]
+|===
+|Baustein |Schnittstellen
+
+|ToneMate
+|Keine
+|===
+
+Wichtige Schnittstellen::
+Es existieren keine externen Schnittstellen.
 
 ifdef::arc42help[]
 
 endif::arc42help[]
 
-==== <Name Blackbox 1>
+==== ToneMate
+
+[mermaid]
+....
+---
+useMaxWidth: true
+---
+architecture-beta
+    group app[ToneMate]
+    service presentation[Praesentation] in app
+    service levels[Levels] in app
+    service settings[Einstellungen] in app
+
+    service file_ext[Dateisystem]
+
+    junction file_ext_junc
+
+    settings:R -- L:file_ext_junc
+    levels:L -- R:file_ext_junc
+    file_ext_junc:B -- T:file_ext
+
+    settings:T -- B:presentation
+    levels:T -- B:presentation
+
+    service calender_int[Interner Kalender] in app
+    service calender_ext[Nativer Kalender]
+    calender_int:B -- T:calender_ext
+    calender_int:T -- B:presentation
+....
+
+[plantuml]
+----
+@startuml
+!include <C4/C4_Container>
+!include <C4/C4_Deployment>
+
+' Define the ToneMate boundary with internal services
+System_Boundary(s1, "ToneMate") {
+  Container(presentation, "Praesentation", "Service", "Presentation layer")
+  Container(levels, "Levels", "Service", "Levels service")
+  Container(settings, "Einstellungen", "Service", "Settings service")
+  Container(calender_int, "Interner Kalender", "Service", "Internal calendar")
+}
+
+' Define external services
+Container(file_ext, "Dateisystem", "Service", "File system")
+Container(calender_ext, "Nativer Kalender", "Service", "Native calendar")
+
+' Define relationships reflecting the mermaid edge directions
+Rel(settings, file_ext, "R → L", "Port mapping")
+Rel(levels, file_ext, "L → R", "Port mapping")
+
+Rel(settings, presentation, "T → B", "Interaction")
+Rel(levels, presentation, "T → B", "Interaction")
+
+Rel(calender_int, calender_ext, "B → T", "Sync")
+Rel(calender_int, presentation, "T → B", "Trigger")
+
+@enduml
+----
 
 ifdef::arc42help[]
 
@@ -42,14 +126,6 @@ _<(Optional) Ablageort/Datei(en)>_
 _<(Optional) Erfüllte Anforderungen>_
 
 _<(optional) Offene Punkte/Probleme/Risiken>_
-
-==== <Name Blackbox 2>
-
-_<Blackbox-Template>_
-
-==== <Name Blackbox n>
-
-_<Blackbox-Template>_
 
 
 ==== <Name Schnittstelle 1>
