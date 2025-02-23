@@ -6,8 +6,9 @@
 - [ruby][2]
 - rubygems (installed with ruby)
 - bundler (`gem install bundler` if not installed with ruby)
-- java >= 1.8
-- [graphviz][3]
+- PlantUML
+    - java >= 1.8
+    - [graphviz][3]
 - [mermaid-cli][4]
 
 
