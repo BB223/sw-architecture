@@ -81,7 +81,7 @@ architecture-beta
 ....
 
 [plantuml]
-----
+....
 @startuml
 !include <C4/C4_Container>
 !include <C4/C4_Deployment>
@@ -109,7 +109,7 @@ Rel(calender_int, calender_ext, "B → T", "Sync")
 Rel(calender_int, presentation, "T → B", "Trigger")
 
 @enduml
-----
+....
 
 ifdef::arc42help[]
 
