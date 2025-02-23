@@ -78,11 +78,11 @@ Example:
 @startuml
 ' Include C4-PlantUML definitions (use local copies or remote URLs)
 ' You only need those that are referenced inside the diagram itself
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Dynamic.puml
-!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Deployment.puml
+!include <C4/C4_Context>
+!include <C4/C4_Container>
+!include <C4/C4_Component>
+!include <C4/C4_Dynamic>
+!include <C4/C4_Deployment>
 
 ' Define your C4 diagram elements
 Person(admin, "Administrator", "Manages the system")
@@ -94,7 +94,10 @@ Rel(admin, system, "Uses")
 ....
 ```
 
+Refer to [PlantUML stdlib][5] for more Libraries
+
 [1]: https://pandoc.org/installing.html
 [2]: https://www.ruby-lang.org/en/documentation/installation/
 [3]: https://graphviz.org/download/
 [4]: https://github.com/mermaid-js/mermaid-cli?tab=readme-ov-file#installation
+[5]: https://plantuml.com/stdlib
