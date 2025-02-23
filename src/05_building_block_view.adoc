@@ -15,9 +15,6 @@ endif::arc42help[]
 
 [mermaid]
 ....
----
-useMaxWidth: true
----
 architecture-beta
     service app[ToneMate]
     service calender_ext[Nativer Kalender]
@@ -54,9 +51,6 @@ endif::arc42help[]
 
 [mermaid]
 ....
----
-useMaxWidth: true
----
 architecture-beta
     group app[ToneMate]
     service presentation[Praesentation] in app
