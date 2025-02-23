@@ -50,7 +50,7 @@ bundle exec asciidoctor-pdf -r asciidoctor-diagram arc42-template.adoc
 
 Example:
 ```asciidoc
-[mermaid, format="svg"]
+[mermaid]
 ....
 ---
 useMaxWidth: true
@@ -73,7 +73,7 @@ sequenceDiagram
 
 Example:
 ```asciidoc
-[plantuml, format="svg"]
+[plantuml]
 ....
 @startuml
 ' Include C4-PlantUML definitions (use local copies or remote URLs)
