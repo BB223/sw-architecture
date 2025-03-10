@@ -15,9 +15,6 @@ endif::arc42help[]
 
 [mermaid]
 ....
----
-useMaxWidth: true
----
 architecture-beta
     service app[ToneMate]
     service calender_ext[Nativer Kalender]
@@ -54,9 +51,6 @@ endif::arc42help[]
 
 [mermaid]
 ....
----
-useMaxWidth: true
----
 architecture-beta
     group app[ToneMate]
     service presentation[Praesentation] in app
@@ -81,7 +75,7 @@ architecture-beta
 ....
 
 [plantuml]
-----
+....
 @startuml
 !include <C4/C4_Container>
 !include <C4/C4_Deployment>
@@ -109,7 +103,7 @@ Rel(calender_int, calender_ext, "B → T", "Sync")
 Rel(calender_int, presentation, "T → B", "Trigger")
 
 @enduml
-----
+....
 
 ifdef::arc42help[]
 
