@@ -13,22 +13,45 @@ ifdef::arc42help[]
 
 endif::arc42help[]
 
-[mermaid]
+// [mermaid]
+// ....
+// architecture-beta
+//     service app[ToneMate]
+//     service calender_ext[Nativer Kalender]
+//     service file_ext[Dateisystem]
+
+//     junction external
+
+//     app:B -- T:external
+//     external:L -- R:calender_ext
+//     external:R -- L:file_ext
+// ....
+
+[plantuml]
 ....
-architecture-beta
-    service app[ToneMate]
-    service calender_ext[Nativer Kalender]
-    service file_ext[Dateisystem]
+@startuml
+!include <C4/C4_Context>
+!include <C4/C4_Container>
 
-    junction external
+Person(student, "Student")
+Person_Ext(personal, "Hochschul Personal")
 
-    app:B -- T:external
-    external:L -- R:calender_ext
-    external:R -- L:file_ext
+System(toneMate, "ToneMate", $type="React Native")
+System_Ext(oauth, "Microsoft Identity Platform")
+System_Ext(uni, "Universitäts-System")
+
+Rel_D(toneMate, uni, "benutzt", "REST")
+Rel_L(uni, oauth, "benutzt")
+Rel_D(toneMate, oauth, "nutzt login von")
+
+Rel_R(student, toneMate, "benutzt")
+Rel_L(personal, uni, "benutzt")
+
+@enduml
 ....
 
 Begründung::
-ToneMate ist eine allein stehende App, die keine Abhängigkeit zu anderen Systemem aufweist.
+ToneMate als Lern-App verwendet eine Anbindung an das Universitäts-System um den Vortschritt zu speichen. Das Personal der Universität kann ebenfalls auf den Vortschritt der Studenten zugreifen. Damit sich die Studenten über die über Microsoft bereitgestellten Universitäts-Accounts nutzten zu können, wird Microsoft als OAuth Provider eingesetzt.
 
 Enthaltene Bausteine::
 
@@ -37,96 +60,10 @@ Enthaltene Bausteine::
 |Baustein |Schnittstellen
 
 |ToneMate
-|Keine
+|Universitäts-System, Microsoft Identity Platform
 |===
 
-Wichtige Schnittstellen::
-Es existieren keine externen Schnittstellen.
-
-ifdef::arc42help[]
-
-endif::arc42help[]
-
-==== ToneMate
-
-[mermaid]
-....
-architecture-beta
-    group app[ToneMate]
-    service presentation[Praesentation] in app
-    service levels[Levels] in app
-    service settings[Einstellungen] in app
-
-    service file_ext[Dateisystem]
-
-    junction file_ext_junc
-
-    settings:R -- L:file_ext_junc
-    levels:L -- R:file_ext_junc
-    file_ext_junc:B -- T:file_ext
-
-    settings:T -- B:presentation
-    levels:T -- B:presentation
-
-    service calender_int[Interner Kalender] in app
-    service calender_ext[Nativer Kalender]
-    calender_int:B -- T:calender_ext
-    calender_int:T -- B:presentation
-....
-
-[plantuml]
-....
-@startuml
-!include <C4/C4_Container>
-!include <C4/C4_Deployment>
-
-' Define the ToneMate boundary with internal services
-System_Boundary(s1, "ToneMate") {
-  Container(presentation, "Praesentation", "Service", "Presentation layer")
-  Container(levels, "Levels", "Service", "Levels service")
-  Container(settings, "Einstellungen", "Service", "Settings service")
-  Container(calender_int, "Interner Kalender", "Service", "Internal calendar")
-}
-
-' Define external services
-Container(file_ext, "Dateisystem", "Service", "File system")
-Container(calender_ext, "Nativer Kalender", "Service", "Native calendar")
-
-' Define relationships reflecting the mermaid edge directions
-Rel(settings, file_ext, "R → L", "Port mapping")
-Rel(levels, file_ext, "L → R", "Port mapping")
-
-Rel(settings, presentation, "T → B", "Interaction")
-Rel(levels, presentation, "T → B", "Interaction")
-
-Rel(calender_int, calender_ext, "B → T", "Sync")
-Rel(calender_int, presentation, "T → B", "Trigger")
-
-@enduml
-....
-
-ifdef::arc42help[]
-
-endif::arc42help[]
-
-_<Zweck/Verantwortung>_
-
-_<Schnittstelle(n)>_
-
-_<(Optional) Qualitäts-/Leistungsmerkmale>_
-
-_<(Optional) Ablageort/Datei(en)>_
-
-_<(Optional) Erfüllte Anforderungen>_
-
-_<(optional) Offene Punkte/Probleme/Risiken>_
-
-
-==== <Name Schnittstelle 1>
-
-...
-
-==== <Name Schnittstelle m>
+// Wichtige Schnittstellen::
 
 === Ebene 2
 
@@ -134,13 +71,41 @@ ifdef::arc42help[]
 
 endif::arc42help[]
 
-==== Whitebox _<Baustein 1>_
+==== Whitebox ToneMate
 
 ifdef::arc42help[]
 
 endif::arc42help[]
 
-_<Whitebox-Template>_
+[plantuml]
+....
+@startuml
+!include <C4/C4_Container>
+
+System_Boundary(phone, "Smartphone") {
+    Container_Boundary(toneMate, "ToneMate") {
+        Container(training, "Training")
+        Container(werkzeuge, "Werkzeuge")
+        Container(kalender, "Kalender")
+        Container(accountManager, "Account Manager")
+        Container(api, "API Layer")
+
+        Rel_D(training, accountManager, "benutzt")
+        Rel_D(werkzeuge, accountManager, "benutzt")
+        Rel_D(kalender, accountManager, "benutzt")
+        Rel_D(accountManager, api, "benutzt")
+    }
+    Container_Ext(fileSystem, "File System")
+    Container_Ext(kalenderExt, "Nativer Kalender")
+
+    Rel_L(kalender, kalenderExt, "speichert in")
+    Rel_L(kalender, fileSystem, "speichert in")
+    Rel_L(werkzeuge, fileSystem, "greift zu")
+}
+System_Ext(oauth, "Microsoft Identity Platform")
+System_Ext(uni, "Universitäts-System")
+@enduml
+....
 
 ==== Whitebox _<Baustein 2>_
 
