@@ -13,25 +13,10 @@ ifdef::arc42help[]
 
 endif::arc42help[]
 
-// [mermaid]
-// ....
-// architecture-beta
-//     service app[ToneMate]
-//     service calender_ext[Nativer Kalender]
-//     service file_ext[Dateisystem]
-
-//     junction external
-
-//     app:B -- T:external
-//     external:L -- R:calender_ext
-//     external:R -- L:file_ext
-// ....
-
 [plantuml]
 ....
 @startuml
 !include <C4/C4_Context>
-!include <C4/C4_Container>
 
 Person(student, "Student")
 Person_Ext(personal, "Hochschul Personal")
@@ -65,6 +50,7 @@ Enthaltene Bausteine::
 
 // Wichtige Schnittstellen::
 
+
 === Ebene 2
 
 ifdef::arc42help[]
@@ -84,34 +70,111 @@ endif::arc42help[]
 
 System_Boundary(phone, "Smartphone") {
     Container_Boundary(toneMate, "ToneMate") {
-        Container(training, "Training")
         Container(werkzeuge, "Werkzeuge")
         Container(kalender, "Kalender")
+        Container(training, "Training")
         Container(accountManager, "Account Manager")
         Container(api, "API Layer")
 
-        Rel_D(training, accountManager, "benutzt")
-        Rel_D(werkzeuge, accountManager, "benutzt")
-        Rel_D(kalender, accountManager, "benutzt")
-        Rel_D(accountManager, api, "benutzt")
+        Rel(training, accountManager, "benutzt")
+        Rel(werkzeuge, accountManager, "benutzt")
+        Rel(kalender, accountManager, "benutzt")
+        Rel(accountManager, api, "benutzt")
     }
-    Container_Ext(fileSystem, "File System")
+    Container_Ext(dateiSystem, "Dateisystem")
     Container_Ext(kalenderExt, "Nativer Kalender")
 
-    Rel_L(kalender, kalenderExt, "speichert in")
-    Rel_L(kalender, fileSystem, "speichert in")
-    Rel_L(werkzeuge, fileSystem, "greift zu")
+    Rel(kalender, kalenderExt, "speichert in")
+    Rel(kalender, dateiSystem, "speichert in")
+    Rel(werkzeuge, dateiSystem, "speichert in")
+    Rel(training, dateiSystem, "speichert in")
 }
 System_Ext(oauth, "Microsoft Identity Platform")
 System_Ext(uni, "Universitäts-System")
+
+Rel(api, uni, "benutzt", "REST")
+Rel_L(uni, oauth, "benutzt")
+Rel(api, oauth, "nutzt login von")
+
 @enduml
 ....
 
-==== Whitebox _<Baustein 2>_
+Begründung::
 
-_<Whitebox-Template>_
 
-...
+Enthaltene Bausteine::
+
+[%autowidth]
+|===
+|Baustein |Schnittstellen
+
+|Training
+|
+
+|Werkzeuge
+|
+
+|Kalender
+|
+
+|Account Manager
+|
+
+|API Layer
+|
+|===
+
+// Wichtige Schnittstellen::
+
+
+==== Whitebox Training
+
+ifdef::arc42help[]
+
+endif::arc42help[]
+
+[plantuml]
+....
+@startuml
+!include <C4/C4_Component>
+
+Container_Boundary(toneMate, "ToneMate") {
+    Container_Boundary(training, "Training") {
+        Component(relativerPitch, "Relativer Pitch")
+        Component(akkordBestimmung, "Akkord Bestimmung")
+        Component(intervalBestimmung, "Interval Bestimmung")
+        Component(speicherManager, "Speicher Manager")
+
+        Rel(relativerPitch, speicherManager, "benutzt")
+        Rel(akkordBestimmung, speicherManager, "benutzt")
+        Rel(intervalBestimmung, speicherManager, "benutzt")
+    }
+    Container(api, "API Layer")
+
+    Rel(speicherManager, api, "benutzt")
+}
+Container_Ext(dateiSystem, "Dateisystem")
+
+Rel(speicherManager, dateiSystem, "speichert in")
+
+@enduml
+....
+
+Begründung::
+
+
+Enthaltene Bausteine::
+
+[%autowidth]
+|===
+|Baustein |Schnittstellen
+
+|Training
+|
+|===
+
+// Wichtige Schnittstellen::
+
 
 ==== Whitebox _<Baustein m>_
 
