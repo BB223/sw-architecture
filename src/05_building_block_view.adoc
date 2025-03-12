@@ -127,6 +127,12 @@ Enthaltene Bausteine::
 // Wichtige Schnittstellen::
 
 
+=== Ebene 3
+
+ifdef::arc42help[]
+
+endif::arc42help[]
+
 ==== Whitebox Training
 
 ifdef::arc42help[]
@@ -175,24 +181,6 @@ Enthaltene Bausteine::
 
 // Wichtige Schnittstellen::
 
-
-==== Whitebox _<Baustein m>_
-
-_<Whitebox-Template>_
-
-=== Ebene 3
-
-ifdef::arc42help[]
-
-endif::arc42help[]
-
-==== Whitebox <_Baustein x.1_>
-
-ifdef::arc42help[]
-
-endif::arc42help[]
-
-_<Whitebox-Template>_
 
 ==== Whitebox <_Baustein x.2_>
 
