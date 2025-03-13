@@ -18,7 +18,7 @@ jobs:
         with:
           ruby-version: '3.3'
           bundler-cache: true
-      - run: sudo apt-get install plantuml
+      - run: sudo apt-get install plantuml librsvg2-bin
       - run: npm install -g @mermaid-js/mermaid-cli
       - run: make build
       - name: Upload a Build Artifact
