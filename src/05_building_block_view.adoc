@@ -240,7 +240,7 @@ endif::arc42help[]
 
 Container_Boundary(toneMate, "ToneMate") {
     Container_Boundary(kalender, "Kalender") {
-        Component_Boundary(termin, "Termin"){
+        Container_Boundary(termin, "Termin") {
             Component(kommentar, "Kommentar")
         }
         Component(speicherManager, "Speicher Manager")
