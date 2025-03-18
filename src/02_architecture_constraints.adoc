@@ -1,8 +1,2 @@
-ifndef::imagesdir[:imagesdir: ../images]
-
-[[section-architecture-constraints]]
 == Randbedingungen
-
-ifdef::arc42help[]
-
-endif::arc42help[]
+batman
