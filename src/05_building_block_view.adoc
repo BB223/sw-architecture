@@ -42,10 +42,16 @@ Enthaltene Bausteine::
 
 [%autowidth]
 |===
-|Baustein |Schnittstellen
+|Baustein |Beschreibung
 
 |ToneMate
-|Universitäts-System, Microsoft Identity Platform
+|Die App um die es in der Architektur geht.
+
+|Microsoft Identity Platform
+|OAuth Provider
+
+|Universitäts-System
+|Das Zentrale Verwaltungssystem der Universitäts
 |===
 
 // Wichtige Schnittstellen::
@@ -100,28 +106,28 @@ Rel(api, oauth, "nutzt login von")
 ....
 
 Begründung::
-
+Die App ist in drei Kernfunktionen unterteilt. Die Werkzeuge beinhalten allgemein Hilfsmittel für Musiker. Das Training ist die Leistungserfassung der Universität.
 
 Enthaltene Bausteine::
 
 [%autowidth]
 |===
-|Baustein |Schnittstellen
+|Baustein |Beschreibung
 
 |Training
-|
+|Das Training dient zur Leistungserfassung der Universität
 
 |Werkzeuge
-|
+|Werkzeuge beinhalten Hilfsmittel für Musiker
 
 |Kalender
-|
+|Kalender
 
 |Account Manager
-|
+|Logik Komponente für die Handhabung des Login Zustandes.
 
 |API Layer
-|
+|Mithilfe von OpenAPI Generator werden die Stubs des Universitäts-Systems bereitgestellt.
 |===
 
 // Wichtige Schnittstellen::
@@ -173,7 +179,7 @@ Enthaltene Bausteine::
 
 [%autowidth]
 |===
-|Baustein |Schnittstellen
+|Baustein |Beschreibung
 
 |Relativer Pitch
 |
