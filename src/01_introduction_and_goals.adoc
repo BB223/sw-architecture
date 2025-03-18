@@ -28,7 +28,12 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 |Offline Nutzung
 |Die App ist vollumfänglich Offline nutzbar. +
  Eine Verbindung zum Internet ist an keiner Stelle von nöten.
-|Hoch 
+|Hoch
+
+|TM-XX
+|Anbindung an Uni-System
+|Für Synchronisationszwecke werden Trainingsdaten an das Zentrale Unisystem über den aktuellen Account geschickt, sobald eine Internetverbindung besteht.
+|Hoch
 
 |TM-03
 |Navigation
@@ -102,7 +107,7 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 
 |TM-13
 |Kalender: Integration
-|Der Kalender von ToneMate soll den Nativen Kalender des Smartphones (oder optionaler Kalender Apps) bestmöglich integriert haben, sodass sich Termine synchronisieren.
+|Der Kalender von ToneMate soll den Nativen Kalender des Smartphones (oder optionaler Kalender Apps) bestmöglich integriert haben, sodass sich Termine synchronisieren. Dabei sollen sich allerding nur Termine und Thema synchronisieren. Kommentare der einzelnen Termine sollen ToneMate spezifisch sein, um den Nativen kalender nicht zu überladen und zum nachlesen nicht erneut der native Kalender geöffnet werden muss.
 |Hoch
 
 |TM-14
@@ -173,9 +178,21 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 === Stakeholder
 
 |===
-|Name |Rolle |Kontakt
+|Name |Rolle |Erwartungen
 
-|Ben Burmeister
-|Business Kontakt
-|tbd 
+|Albert Aachen
+|Student und zukünftiger nutzer von ToneMate
+|App ist einfach zu nutzen und er braucht keine technischen Kenntnisse sie zu bedienen. Alles läuft möglichst reibungslos, also wenige nervige PopUps oder nervige Fehler. Max möchte die App überall nutzen können, egal ob Internet oder nicht.
+
+|Barbara Bochum
+|Dozentin im Fakultätsbereich Musik
+|Möchte nachverfolgen, ob ihre Studenten die Anforderungen an die Prüfungen, also die Trainingssektionen, erfolgreich abgeschlossen haben. Zudem möchte sie Statistiken über das freie Training erhalten. Außerdem möchte sie einen eigenen Ordner in der Partitursektion ihrer Studenten haben in dem sie Partituren für die Vorlesungen oder seperaten Einzelunterricht hochladen kann.
+
+|Christian Chemnitz
+|Präsident der Universität
+|Stellt die App in Auftrag. Möchte, dass sie Open Source ist, weil er cooler dude ist. Außerdem möchte er, dass der Code sehr gut strukturiert ist, damit neue Entwickler, in Zukunft, mögliche Änderungen oder Erweiterungen nach maximal einer Woche Einarbeitung durchführen können. Er erwartet, dass die App sicher ist und das niemand die Daten der Studenten ohne weiteres stehlen kann.
+
+|Dennis Dresden
+|Planmäßiger Entwickler von ToneMate
+|Dennis ist ein TechBro und erwartet die Verwendung neuer, zukunftsorientierten Technologien und Herangehensweisen. Außerdem weiß Dennis, dass er manchmal etwas schwer von Begriff ist und hofft, dass die Anforderungen etc. bestmöglich und verständlich in der Architektur beschrieben sind, damit keine Missverständnisse geschehen.
 |===
