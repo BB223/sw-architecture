@@ -1,8 +1,73 @@
-ifndef::imagesdir[:imagesdir: ../images]
-
-[[section-architecture-constraints]]
 == Randbedingungen
 
-ifdef::arc42help[]
+[%autowidth]
+|===
+|ID |Technische Einschränkung |Erläuterung
 
-endif::arc42help[]
+|TE-{counter:TE}
+|Microsoft Authentication
+|Aufgrund der Verwendung des Microsoft Ökosystems der Universität ist ToneMate angehalten sich bezüglich Login entsprechend anzupassen. 
+
+|TE-{counter:TE}
+|OpenSource
+|Laut Anforderungen von Stakeholder Christian Chemnitz soll ToneMate OpenSource sein. Dementsprechend keine proprietäre oder kostenpflichtige Bibliotheken und die Einhaltung von Lizenzen. 
+
+|TE-{counter:TE}
+|React Native
+|Nach Anforderungen der "Universitätsbestimmungen für technologische Fachspezifikationen der Fakultätsaufsichten" muss ToneMate in React Native geschrieben werden.
+
+|TE-{counter:TE}
+|Geräteunterstützung
+|Muss auf allen Geräten, welche in der "Offiziell-Marktanalytisch entstandene Geräteansammlung" aufgelistet sind funktionieren.
+
+|TE-{counter:TE}
+|Offline Nutzung
+|ToneMate muss stätig offline nutzbar sein. Wenn das mobile Endgerät wieder mit dem Internet verbunden ist werden die entsprechenden Daten automatisch mit dem Universitätssystem synchronisiert.
+|===
+
+[%autowidth]
+|===
+|ID |Politische Einschränkungen |Erläuterung
+
+|PE-{counter:PE}
+|Datenschutzgrundverordnung
+|ToneMate muss alle in der DSGVO/GDPR/BDSG relevanten, festgehaltenen Anforderungen erfüllen.
+
+|PE-{counter:PE}
+|Barrierefreiheit
+|ToneMate muss seinen Inhalt Barrierefreigestallten. Dies umschließt Dinge wie Screenreader, Kontrastmodi und alternative Eingabemethoden.
+|===
+
+[%autowidth]
+|===
+|ID |Organisatorische Einschränkungen |Erläuterung
+
+|OE-{counter:OE}
+|Budget
+|Das Budget von ToneMate beschränkt sich auf 3000€. Wartungskosten sind nicht involviert.
+
+|OE-{counter:OE}
+|Wartung
+|Die Wartung übernimmt das "Lanfristig technologisch Orientierte Lebenserhaltungsteam" der Universität. Aus Folge dessen sind gute Dokumentationen und und eine gelungene Wissensübergabe von nöten.
+
+|OE-{counter:OE}
+|Benutzerfreundlichkeit
+|Wichtig ist, dass die App für die entsprechende Zielgruppe (Studenten und Dozenten) möglichst benutzerfreundlich und einfach bedienbar ist.
+
+|OE-{counter:OE}
+|Entwicklungszeitraum
+|Es ist ein Entwicklungszeitraum von etwa zwei Monaten angedacht. Dieser Zeitramen umfasst Nutzeranalysen, Entwicklung, Feedback-Phasen und Puffer.
+|===
+
+[%autowidth]
+|===
+|ID |Konventionelle Einschränkung |Erläuterung
+
+|KE-{counter:KE}
+|Camel Case
+|Aufgrund der Naming Conventions der Universitätssysteme ist ToneMate angehalten CamelCase zu verwenden.
+
+|KE-{counter:KE}
+|Asciidoc
+|Aufgrund der Anforderungen der UFF muss ToneMate Asciidoc zur Dokumentation seines Codes verwenden.
+|===
