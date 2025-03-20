@@ -1,2 +1,56 @@
 == Randbedingungen
-batman
+
+|===
+|Technische Einschränkung |Erläuterung
+
+|Microsoft Authentication
+|Aufgrund der Verwendung des Microsoft Ökosystems der Universität ist ToneMate angehalten sich bezüglich Login entsprechend anzupassen. 
+
+|OpenSource
+|Laut Anforderungen von Stakeholder Christian Chemnitz soll ToneMate OpenSource sein. Dementsprechend keine proprietäre oder kostenpflichtige Bibliotheken und die Einhaltung von Lizenzen. 
+
+|React Native
+|Nach Anforderungen der "Universitätsbestimmungen für technologische Fachspezifikationen der Fakultätsaufsichten" muss ToneMate in React Native geschrieben werden.
+
+|Geräteunterstützung
+|Muss auf allen Geräten, welche in der "Offiziell-Marktanalytisch entstandene Geräteansammlung" aufgelistet sind funktionieren.
+
+|Offline Nutzung
+|ToneMate muss stätig offline nutzbar sein. Wenn das mobile Endgerät wieder mit dem Internet verbunden ist werden die entsprechenden Daten automatisch mit dem Universitätssystem synchronisiert.
+|===
+
+|===
+|Politische Einschränkungen |Erläuterung
+
+|Datenschutzgrundverordnung
+|ToneMate muss alle in der DSGVO/GDPR/BDSG relevanten, festgehaltenen Anforderungen erfüllen.
+
+|Barrierefreiheit
+|ToneMate muss seinen Inhalt Barrierefreigestallten. Dies umschließt Dinge wie Screenreader, Kontrastmodi und alternative Eingabemethoden.
+|===
+
+|===
+|Organisatorische Einschränkungen |Erläuterung
+
+|Budget
+|Das Budget von ToneMate beschränkt sich auf 3000€. Wartungskosten sind nicht involviert.
+
+|Wartung
+|Die Wartung übernimmt das "Lanfristig technologisch Orientierte Lebenserhaltungsteam" der Universität. Aus Folge dessen sind gute Dokumentationenund und eine gelungene Wissensübergabe von nöten.
+
+|Benutzerfreundlichkeit
+|Wichtig ist, dass die App für die entsprechende Zielgruppe (Studenten und Dozenten) möglichst benutzerfreundlich und einfach bedienbar ist.
+
+|Entwicklungszeitraum
+|Es ist ein Entwicklungszeitraum von etwa zwei Monaten angedacht. Dieser Zeitramen umfasst Nutzeranalysen, Entwicklung, Feedback-Phasen und Puffer.
+|===
+
+|===
+|Konventionelle Einschränkung |Erläuterung
+
+|Camel Case
+|Aufgrund der Naming Conventions der Universitätssysteme ist ToneMate angehalten CamelCase zu verwenden.
+
+|Asciidoc
+|Aufgrund der Anforderungen der UFF muss ToneMate Asciidoc zur Dokumentation seines Codes verwenden.
+|===
