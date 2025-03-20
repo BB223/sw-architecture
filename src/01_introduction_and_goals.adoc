@@ -195,4 +195,8 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 |Dennis Dresden
 |Planmäßiger Entwickler von ToneMate
 |Dennis ist ein TechBro und erwartet die Verwendung neuer, zukunftsorientierten Technologien und Herangehensweisen. Außerdem weiß Dennis, dass er manchmal etwas schwer von Begriff ist und hofft, dass die Anforderungen etc. bestmöglich und verständlich in der Architektur beschrieben sind, damit keine Missverständnisse geschehen.
+
+|Emely Emden
+|Mitglied des "Lanfristig technologisch Orientierte Lebenserhaltungsteam" der Universität
+|Emely und das Team erwarten eine möglichst einfach Wartbare Software. Zudem hoffen sie auf einfache Implementations Änderungen sollten diese vom Team nach initialem Implementations Abschluss nötig sein.
 |===
