@@ -36,7 +36,7 @@
 |Das Budget von ToneMate beschränkt sich auf 3000€. Wartungskosten sind nicht involviert.
 
 |Wartung
-|Die Wartung übernimmt das "Lanfristig technologisch Orientierte Lebenserhaltungsteam" der Universität. Aus Folge dessen sind gute Dokumentationenund und eine gelungene Wissensübergabe von nöten.
+|Die Wartung übernimmt das "Lanfristig technologisch Orientierte Lebenserhaltungsteam" der Universität. Aus Folge dessen sind gute Dokumentationen und und eine gelungene Wissensübergabe von nöten.
 
 |Benutzerfreundlichkeit
 |Wichtig ist, dass die App für die entsprechende Zielgruppe (Studenten und Dozenten) möglichst benutzerfreundlich und einfach bedienbar ist.
