@@ -7,15 +7,44 @@ ifdef::arc42help[]
 
 endif::arc42help[]
 
-=== _<Bezeichnung Laufzeitszenario 1>_
+=== Benutzer Login
 
-*  <hier Laufzeitdiagramm oder Ablaufbeschreibung einfügen>
-*  <hier Besonderheiten bei dem Zusammenspiel der Bausteine in diesem Szenario erläutern>
+[plantuml]
+....
+@startuml
+autonumber
+participant ToneMate [
+    =ToneMate
+]
+participant MicrosoftAuth [
+    =Microsoft
+    ----
+    ""/authorize""
+]
+participant MicrosoftToken [
+    =Microsoft
+    ----
+    ""/token""
+]
+participant Uni [
+    =Universität
+]
 
-=== _<Bezeichnung Laufzeitszenario 2>_
+ToneMate -> MicrosoftAuth: Login mit dem Universitäts Microsoft Account
+ToneMate <-- MicrosoftAuth: Gibt Berechtigungscode zurück
 
-...
+ToneMate -> MicrosoftToken: Fragt Outh bearer token mit Zugabe von dem Berechtigungscode, Client-ID und Client-Secret an
+ToneMate <-- MicrosoftToken: Gibt Oauth bearer token zurück
 
-=== _<Bezeichnung Laufzeitszenario n>_
+ToneMate -> Uni: Fragt Ressourcen mit dem bearer token an
+Uni -> Uni: Validiert bearer token
+ToneMate <-- Uni: Gitb Ressourcen zurück
+@enduml
+....
+// *  <hier Besonderheiten bei dem Zusammenspiel der Bausteine in diesem Szenario erläutern>
 
-...
+// === _<Bezeichnung Laufzeitszenario 2>_
+
+
+// === _<Bezeichnung Laufzeitszenario n>_
+
