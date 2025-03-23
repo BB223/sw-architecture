@@ -127,7 +127,7 @@ Enthaltene Bausteine::
 |Logik Komponente für die Handhabung des Login Zustandes.
 
 |API Layer
-|Mithilfe von OpenAPI Generator werden die Stubs des Universitäts-Systems bereitgestellt.
+|Mithilfe vom OpenAPI Generator werden die Stubs des Universitäts-Systems bereitgestellt.
 |===
 
 // Wichtige Schnittstellen::
@@ -173,7 +173,7 @@ Rel(speicherManager, dateiSystem, "speichert in")
 ....
 
 Begründung::
-
+Das Training wird in drei Trainingstypen unterteilt. Die Trainingstypen beinhalten die verschiedenen Arten wie mit ToneMate sein Gehör trainiert werden kann. Der Speicher Manager ist dabei die Logik Componente zum Verwalten des Fortschrittes im Dateisystem, sowie auch die Synchronisierung mit Dem Universitäts-Systems.
 
 Enthaltene Bausteine::
 
@@ -182,7 +182,16 @@ Enthaltene Bausteine::
 |Baustein |Beschreibung
 
 |Relativer Pitch
-|
+|Training zum erhören von Noten.
+
+|Akkord Bestimmung
+|Training zum erhören von Akkorden.
+
+|Interval Bestimmung
+|Trainung zum erhören von Intervalen.
+
+|Speicher Manager
+|Verwaltet die Daten der Trainingstypen.
 |===
 
 // Wichtige Schnittstellen::
@@ -218,16 +227,25 @@ Rel(speicherManager, dateiSystem, "speichert in")
 ....
 
 Begründung::
-
+ToneMate beinhaltet Werkzeuge die Musiker beim übern von Intrumenten und Liedern helfen sollen.
 
 Enthaltene Bausteine::
 
 [%autowidth]
 |===
-|Baustein |Schnittstellen
+|Baustein |Beschreibung
 
 |Metronom
-|
+|Das Metronom lässt sich frei in der Geschwindikeit und der Taktart einstellen.
+
+|Stimmgerät
+|Das Stimmgerät zeigt die gespielte Note an. Des Weiteren zeigt es an ob die Note genau getroffen wurde oder ein welche Richtung die Note korrigiert werden muss.
+
+|Noten
+|Dies ist ein Sammelort, in dem Notenblätter von den Studenten abgelegt werden können. Die Dozenten haben auch die Möglichkeit ihren Studierenden Noten hochzuladen. Diese werden in einem dedizierent schreibgesperten Verzeichnis angezeigt.
+
+|Speicher Manager
+|Verwaltet die Daten der Noten.
 |===
 
 // Wichtige Schnittstellen::
@@ -264,16 +282,19 @@ Rel(speicherManager, kalenderExt, "speichert in")
 ....
 
 Begründung::
-
+Der Kalender speichert Termin, die die Studierenden frei anlegen können. Zu den Terminen können auch Kommentare gespeichert werden. Diese werden nur im ToneMate Kalender angezeigt um den nativen Kalender nicht mit langen Texten zu füllen.
 
 Enthaltene Bausteine::
 
 [%autowidth]
 |===
-|Baustein |Schnittstellen
+|Baustein |Beschreibung
 
-|Kalender
-|
+|Termin
+|Ein Termin, der mit dem nativen Kalender des Smartphones synchronisiert wird.
+
+|Kommentar
+|Freie Texte die zu einem Termin gespeichert werden können, diese Kommentare werden *nicht* mit dem nativen Kalender synchronisiert und sind nur in ToneMate zu lesen.
 |===
 
 // Wichtige Schnittstellen::
