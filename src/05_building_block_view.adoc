@@ -37,6 +37,8 @@ Enthaltene Bausteine::
 @startuml
 !include <C4/C4_Context>
 
+caption Gesamtsystem
+
 Person(student, "Student")
 Person_Ext(personal, "Hochschul Personal")
 
@@ -98,6 +100,8 @@ Enthaltene Bausteine::
 ....
 @startuml
 !include <C4/C4_Container>
+
+caption ToneMate
 
 System_Boundary(phone, "Smartphone") {
     Container_Boundary(toneMate, "ToneMate") {
@@ -172,6 +176,8 @@ Enthaltene Bausteine::
 @startuml
 !include <C4/C4_Component>
 
+caption Training
+
 Container_Boundary(toneMate, "ToneMate") {
     Container_Boundary(training, "Training") {
         Component(relativerPitch, "Relativer Pitch")
@@ -230,6 +236,8 @@ Enthaltene Bausteine::
 @startuml
 !include <C4/C4_Component>
 
+caption Werkzeuge
+
 Container_Boundary(toneMate, "ToneMate") {
     Container_Boundary(werkzeuge, "Werkzeuge") {
         Component(metronom, "Metronom")
@@ -277,6 +285,8 @@ Enthaltene Bausteine::
 ....
 @startuml
 !include <C4/C4_Component>
+
+caption Kalender
 
 Container_Boundary(toneMate, "ToneMate") {
     Container_Boundary(kalender, "Kalender") {
