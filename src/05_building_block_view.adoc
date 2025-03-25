@@ -13,6 +13,25 @@ ifdef::arc42help[]
 
 endif::arc42help[]
 
+Begründung::
+ToneMate als Lern-App verwendet eine Anbindung an das Universitäts-System um den Fortschritt zu speichen. Das Personal der Universität kann ebenfalls auf den Fortschritt der Studenten zugreifen. Damit die Studenten, die über Microsoft bereitgestellten Universitäts-Accounts nutzten können, wird Microsoft als OAuth Provider eingesetzt.
+
+Enthaltene Bausteine::
+
+[%autowidth]
+|===
+|Baustein |Beschreibung
+
+|ToneMate
+|Die App um die es in der Architektur geht.
+
+|Microsoft Identity Platform
+|OAuth Provider
+
+|Universitäts-System
+|Das Zentrale Verwaltungssystem der Universitäts
+|===
+
 [plantuml]
 ....
 @startuml
@@ -35,25 +54,6 @@ Rel_L(personal, uni, "benutzt")
 @enduml
 ....
 
-Begründung::
-ToneMate als Lern-App verwendet eine Anbindung an das Universitäts-System um den Fortschritt zu speichen. Das Personal der Universität kann ebenfalls auf den Fortschritt der Studenten zugreifen. Damit die Studenten, die über Microsoft bereitgestellten Universitäts-Accounts nutzten können, wird Microsoft als OAuth Provider eingesetzt.
-
-Enthaltene Bausteine::
-
-[%autowidth]
-|===
-|Baustein |Beschreibung
-
-|ToneMate
-|Die App um die es in der Architektur geht.
-
-|Microsoft Identity Platform
-|OAuth Provider
-
-|Universitäts-System
-|Das Zentrale Verwaltungssystem der Universitäts
-|===
-
 // Wichtige Schnittstellen::
 
 
@@ -68,6 +68,31 @@ endif::arc42help[]
 ifdef::arc42help[]
 
 endif::arc42help[]
+
+Begründung::
+Die App ist in drei Kernfunktionen unterteilt. Die Werkzeuge beinhalten allgemein Hilfsmittel für Musiker. Das Training ist die Leistungserfassung der Universität. Der Kalender dient zum planen von Lernzielen.
+
+Enthaltene Bausteine::
+
+[%autowidth]
+|===
+|Baustein |Beschreibung
+
+|Training
+|Das Training dient zur Leistungserfassung der Universität
+
+|Werkzeuge
+|Werkzeuge beinhalten Hilfsmittel für Musiker
+
+|Kalender
+|Kalender
+
+|Account Manager
+|Logik Komponente für die Handhabung des Login Zustandes.
+
+|API Layer
+|Mithilfe vom OpenAPI Generator werden die Stubs des Universitäts-Systems bereitgestellt.
+|===
 
 [plantuml]
 ....
@@ -105,31 +130,6 @@ Rel(api, oauth, "nutzt login von")
 @enduml
 ....
 
-Begründung::
-Die App ist in drei Kernfunktionen unterteilt. Die Werkzeuge beinhalten allgemein Hilfsmittel für Musiker. Das Training ist die Leistungserfassung der Universität. Der Kalender dient zum planen von Lernzielen.
-
-Enthaltene Bausteine::
-
-[%autowidth]
-|===
-|Baustein |Beschreibung
-
-|Training
-|Das Training dient zur Leistungserfassung der Universität
-
-|Werkzeuge
-|Werkzeuge beinhalten Hilfsmittel für Musiker
-
-|Kalender
-|Kalender
-
-|Account Manager
-|Logik Komponente für die Handhabung des Login Zustandes.
-
-|API Layer
-|Mithilfe vom OpenAPI Generator werden die Stubs des Universitäts-Systems bereitgestellt.
-|===
-
 // Wichtige Schnittstellen::
 
 
@@ -144,6 +144,28 @@ endif::arc42help[]
 ifdef::arc42help[]
 
 endif::arc42help[]
+
+Begründung::
+Das Training wird in drei Trainingstypen unterteilt. Die Trainingstypen beinhalten die verschiedenen Arten wie mit ToneMate sein Gehör trainiert werden kann. Der Speicher Manager ist dabei die Logik Componente zum Verwalten des Fortschrittes im Dateisystem, sowie auch die Synchronisierung mit dem Universitäts-Systems.
+
+Enthaltene Bausteine::
+
+[%autowidth]
+|===
+|Baustein |Beschreibung
+
+|Relativer Pitch
+|Training zum erhören von Noten.
+
+|Akkord Bestimmung
+|Training zum erhören von Akkorden.
+
+|Interval Bestimmung
+|Trainung zum erhören von Intervalen.
+
+|Speicher Manager
+|Verwaltet die Daten der Trainingstypen.
+|===
 
 [plantuml]
 ....
@@ -172,28 +194,6 @@ Rel(speicherManager, dateiSystem, "speichert in")
 @enduml
 ....
 
-Begründung::
-Das Training wird in drei Trainingstypen unterteilt. Die Trainingstypen beinhalten die verschiedenen Arten wie mit ToneMate sein Gehör trainiert werden kann. Der Speicher Manager ist dabei die Logik Componente zum Verwalten des Fortschrittes im Dateisystem, sowie auch die Synchronisierung mit dem Universitäts-Systems.
-
-Enthaltene Bausteine::
-
-[%autowidth]
-|===
-|Baustein |Beschreibung
-
-|Relativer Pitch
-|Training zum erhören von Noten.
-
-|Akkord Bestimmung
-|Training zum erhören von Akkorden.
-
-|Interval Bestimmung
-|Trainung zum erhören von Intervalen.
-
-|Speicher Manager
-|Verwaltet die Daten der Trainingstypen.
-|===
-
 // Wichtige Schnittstellen::
 
 
@@ -202,6 +202,28 @@ Enthaltene Bausteine::
 ifdef::arc42help[]
 
 endif::arc42help[]
+
+Begründung::
+ToneMate beinhaltet Werkzeuge die Musiker beim Über von Intrumenten und Liedern helfen sollen.
+
+Enthaltene Bausteine::
+
+[%autowidth]
+|===
+|Baustein |Beschreibung
+
+|Metronom
+|Das Metronom lässt sich frei in der Geschwindikeit und der Taktart einstellen. Zudem können Metronom Einstellungen für gespeicherte Noten abgerufen werden.
+
+|Stimmgerät
+|Das Stimmgerät zeigt die gespielte Note an. Des Weiteren zeigt es an ob die Note genau getroffen wurde oder ein welche Richtung die Note korrigiert werden muss.
+
+|Noten
+|Dies ist ein Sammelort, in dem Notenblätter von den Studenten abgelegt werden können. Die Dozenten haben auch die Möglichkeit ihren Studierenden Noten hochzuladen. Diese werden in einem dedizierent schreibgesperten Verzeichnis angezeigt.
+
+|Speicher Manager
+|Verwaltet die Daten der Noten.
+|===
 
 [plantuml]
 ....
@@ -226,28 +248,6 @@ Rel(speicherManager, dateiSystem, "speichert in")
 @enduml
 ....
 
-Begründung::
-ToneMate beinhaltet Werkzeuge die Musiker beim Über von Intrumenten und Liedern helfen sollen.
-
-Enthaltene Bausteine::
-
-[%autowidth]
-|===
-|Baustein |Beschreibung
-
-|Metronom
-|Das Metronom lässt sich frei in der Geschwindikeit und der Taktart einstellen. Zudem können Metronom Einstellungen für gespeicherte Noten abgerufen werden.
-
-|Stimmgerät
-|Das Stimmgerät zeigt die gespielte Note an. Des Weiteren zeigt es an ob die Note genau getroffen wurde oder ein welche Richtung die Note korrigiert werden muss.
-
-|Noten
-|Dies ist ein Sammelort, in dem Notenblätter von den Studenten abgelegt werden können. Die Dozenten haben auch die Möglichkeit ihren Studierenden Noten hochzuladen. Diese werden in einem dedizierent schreibgesperten Verzeichnis angezeigt.
-
-|Speicher Manager
-|Verwaltet die Daten der Noten.
-|===
-
 // Wichtige Schnittstellen::
 
 
@@ -256,6 +256,22 @@ Enthaltene Bausteine::
 ifdef::arc42help[]
 
 endif::arc42help[]
+
+Begründung::
+Der Kalender speichert Termine, die die Studierenden frei anlegen können. Zu den Terminen können auch Kommentare gespeichert werden. Diese werden nur im ToneMate Kalender angezeigt, um den nativen Kalender nicht mit langen Texten zu füllen.
+
+Enthaltene Bausteine::
+
+[%autowidth]
+|===
+|Baustein |Beschreibung
+
+|Termin
+|Ein Termin, der mit dem nativen Kalender des Smartphones synchronisiert wird.
+
+|Kommentar
+|Freie Texte die zu einem Termin gespeichert werden können, diese Kommentare werden *nicht* mit dem nativen Kalender synchronisiert und sind nur in ToneMate zu lesen.
+|===
 
 [plantuml]
 ....
@@ -280,21 +296,5 @@ Rel(speicherManager, kalenderExt, "speichert in")
 
 @enduml
 ....
-
-Begründung::
-Der Kalender speichert Termine, die die Studierenden frei anlegen können. Zu den Terminen können auch Kommentare gespeichert werden. Diese werden nur im ToneMate Kalender angezeigt, um den nativen Kalender nicht mit langen Texten zu füllen.
-
-Enthaltene Bausteine::
-
-[%autowidth]
-|===
-|Baustein |Beschreibung
-
-|Termin
-|Ein Termin, der mit dem nativen Kalender des Smartphones synchronisiert wird.
-
-|Kommentar
-|Freie Texte die zu einem Termin gespeichert werden können, diese Kommentare werden *nicht* mit dem nativen Kalender synchronisiert und sind nur in ToneMate zu lesen.
-|===
 
 // Wichtige Schnittstellen::
