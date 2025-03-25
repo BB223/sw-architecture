@@ -36,7 +36,7 @@ Rel_L(personal, uni, "benutzt")
 ....
 
 Begründung::
-ToneMate als Lern-App verwendet eine Anbindung an das Universitäts-System um den Vortschritt zu speichen. Das Personal der Universität kann ebenfalls auf den Vortschritt der Studenten zugreifen. Damit sich die Studenten über die über Microsoft bereitgestellten Universitäts-Accounts nutzten zu können, wird Microsoft als OAuth Provider eingesetzt.
+ToneMate als Lern-App verwendet eine Anbindung an das Universitäts-System um den Fortschritt zu speichen. Das Personal der Universität kann ebenfalls auf den Fortschritt der Studenten zugreifen. Damit die Studenten, die über Microsoft bereitgestellten Universitäts-Accounts nutzten können, wird Microsoft als OAuth Provider eingesetzt.
 
 Enthaltene Bausteine::
 
@@ -106,7 +106,7 @@ Rel(api, oauth, "nutzt login von")
 ....
 
 Begründung::
-Die App ist in drei Kernfunktionen unterteilt. Die Werkzeuge beinhalten allgemein Hilfsmittel für Musiker. Das Training ist die Leistungserfassung der Universität.
+Die App ist in drei Kernfunktionen unterteilt. Die Werkzeuge beinhalten allgemein Hilfsmittel für Musiker. Das Training ist die Leistungserfassung der Universität. Der Kalender dient zum planen von Lernzielen.
 
 Enthaltene Bausteine::
 
@@ -173,7 +173,7 @@ Rel(speicherManager, dateiSystem, "speichert in")
 ....
 
 Begründung::
-Das Training wird in drei Trainingstypen unterteilt. Die Trainingstypen beinhalten die verschiedenen Arten wie mit ToneMate sein Gehör trainiert werden kann. Der Speicher Manager ist dabei die Logik Componente zum Verwalten des Fortschrittes im Dateisystem, sowie auch die Synchronisierung mit Dem Universitäts-Systems.
+Das Training wird in drei Trainingstypen unterteilt. Die Trainingstypen beinhalten die verschiedenen Arten wie mit ToneMate sein Gehör trainiert werden kann. Der Speicher Manager ist dabei die Logik Componente zum Verwalten des Fortschrittes im Dateisystem, sowie auch die Synchronisierung mit dem Universitäts-Systems.
 
 Enthaltene Bausteine::
 
@@ -227,7 +227,7 @@ Rel(speicherManager, dateiSystem, "speichert in")
 ....
 
 Begründung::
-ToneMate beinhaltet Werkzeuge die Musiker beim übern von Intrumenten und Liedern helfen sollen.
+ToneMate beinhaltet Werkzeuge die Musiker beim Über von Intrumenten und Liedern helfen sollen.
 
 Enthaltene Bausteine::
 
@@ -236,7 +236,7 @@ Enthaltene Bausteine::
 |Baustein |Beschreibung
 
 |Metronom
-|Das Metronom lässt sich frei in der Geschwindikeit und der Taktart einstellen.
+|Das Metronom lässt sich frei in der Geschwindikeit und der Taktart einstellen. Zudem können Metronom Einstellungen für gespeicherte Noten abgerufen werden.
 
 |Stimmgerät
 |Das Stimmgerät zeigt die gespielte Note an. Des Weiteren zeigt es an ob die Note genau getroffen wurde oder ein welche Richtung die Note korrigiert werden muss.
@@ -282,7 +282,7 @@ Rel(speicherManager, kalenderExt, "speichert in")
 ....
 
 Begründung::
-Der Kalender speichert Termin, die die Studierenden frei anlegen können. Zu den Terminen können auch Kommentare gespeichert werden. Diese werden nur im ToneMate Kalender angezeigt um den nativen Kalender nicht mit langen Texten zu füllen.
+Der Kalender speichert Termine, die die Studierenden frei anlegen können. Zu den Terminen können auch Kommentare gespeichert werden. Diese werden nur im ToneMate Kalender angezeigt, um den nativen Kalender nicht mit langen Texten zu füllen.
 
 Enthaltene Bausteine::
 
