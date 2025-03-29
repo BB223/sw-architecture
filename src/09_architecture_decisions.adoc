@@ -3,6 +3,21 @@ ifndef::imagesdir[:imagesdir: ../images]
 [[section-design-decisions]]
 == Architekturentscheidungen
 
+=== ADR-{counter:ADR}: Speicher Manager
+:hardbreaks-option:
+
+*Kontext*
+In ToneMate werden Level-Daten, Noten und Kalender-Daten auf den Endgerät und/oder im Universitäts-System gespeichert. Die Daten ist zu 100% unabhängig voneinander und haben unterschiedliche Strukturen. Demnach besteht die Frage wie mit den Daten umgeganen werden soll.
+
+*Entscheidung*
+Es wird ein eingeständiger Speicher Manager pro Funktionsbereich benutzt.
+
+*Status*
+Akzeptiert
+
+*Konsequenz*
+Durch diese Entscheidung können verschiedene Datenstrukturen unabhänging voneinander Verwendet werden. Jeder Speicher Manager hat die Hoheit über seine Daten und greift nicht auf die Daten eines anderen Speicher Managers zu. Diese Entscheidung könnte zu doppelten Code in den Speicher Manager führen. Nach einem ersten MVP ist diese Entscheidung erneut zu evaluieren. Mögliche Ergebnisse einer Evaluierung sind, es wird ein einzelner Speicher Manager für diese gesamte App benutzt oder gemeinsames Verhalten wird in einem Speicher Manager zusammengefasst und spezifische Speicher Manager bauer darauf auf.
+
 ifdef::arc42help[]
 
 endif::arc42help[]
