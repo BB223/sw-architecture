@@ -16,11 +16,17 @@
 bundle config set --local path '.bundle'
 bundle install
 ```
-
-The build script in `./bin` creates docx and pdf output inside `./build`
+To generate PDF and DOCX run
 
 ```bash
-./bin/build.sh arc42-template.adoc
+make build
+```
+To generate only one output run
+
+```bash
+make pdf
+# or
+make docx
 ```
 
 <details>
