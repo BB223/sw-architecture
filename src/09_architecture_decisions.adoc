@@ -15,7 +15,7 @@ Es wird ein eingeständiger Speicher Manager pro Funktionsbereich benutzt.
 Akzeptiert
 
 *Konsequenz* +
-Durch diese Entscheidung können verschiedene Datenstrukturen unabhänging voneinander Verwendet werden. Jeder Speicher Manager hat die Hoheit über seine Daten und greift nicht auf die Daten eines anderen Speicher Managers zu. Diese Entscheidung könnte zu doppelten Code in den Speicher Manager führen. Nach einem ersten MVP ist diese Entscheidung erneut zu evaluieren. Mögliche Ergebnisse einer Evaluierung sind, es wird ein einzelner Speicher Manager für diese gesamte App benutzt oder gemeinsames Verhalten wird in einem Speicher Manager zusammengefasst und spezifische Speicher Manager bauer darauf auf.
+Durch diese Entscheidung können verschiedene Datenstrukturen unabhänging voneinander verwendet werden. Jeder Speicher Manager hat die Hoheit über seine Daten und greift nicht auf die Daten eines anderen Speicher Managers zu. Diese Entscheidung könnte zu doppelten Code in den Speicher Manager führen. Nach einem ersten MVP ist diese Entscheidung erneut zu evaluieren. Mögliche Ergebnisse einer Evaluierung sind, es wird ein einzelner Speicher Manager für diese gesamte App benutzt oder gemeinsames Verhalten wird in einem Speicher Manager zusammengefasst und spezifische Speicher Manager bauer darauf auf.
 
 ifdef::arc42help[]
 
