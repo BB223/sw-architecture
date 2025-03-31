@@ -4,6 +4,9 @@ include::src/config.adoc[]
 :revdate: Januar 2023
 :revremark: (basiert auf AsciiDoc Version)
 :toc-title: Inhaltsverzeichnis
+:mermaid-puppeteer-config: ./puppeteer.config.json
+:mermaid-format: svg
+:plantuml-format: svg
 
 //additional style for arc42 help callouts
 ifdef::backend-html5[]

@@ -13,50 +13,51 @@ ifdef::arc42help[]
 
 endif::arc42help[]
 
-_**<Übersichtsdiagramm>**_
+Begründung::
+ToneMate als Lern-App verwendet eine Anbindung an das Universitäts-System um den Fortschritt zu speichen. Das Personal der Universität kann ebenfalls auf den Fortschritt der Studenten zugreifen. Damit die Studenten, die über Microsoft bereitgestellten Universitäts-Accounts nutzten können, wird Microsoft als OAuth Provider eingesetzt.
 
-Begründung:: _<Erläuternder Text>_
+Enthaltene Bausteine::
 
-Enthaltene Bausteine:: _<Beschreibung der enthaltenen Bausteine (Blackboxen)>_
+[%autowidth]
+|===
+|Baustein |Beschreibung
 
-Wichtige Schnittstellen:: _<Beschreibung wichtiger Schnittstellen>_
+|ToneMate
+|Die App um die es in der Architektur geht.
 
-ifdef::arc42help[]
+|Microsoft Identity Platform
+|OAuth Provider
 
-endif::arc42help[]
+|Universitäts-System
+|Das Zentrale Verwaltungssystem der Universitäts
+|===
 
-==== <Name Blackbox 1>
+[plantuml]
+....
+@startuml
+!include <C4/C4_Context>
 
-ifdef::arc42help[]
+caption Gesamtsystem
 
-endif::arc42help[]
+Person(student, "Student")
+Person_Ext(personal, "Hochschul Personal")
 
-_<Zweck/Verantwortung>_
+System(toneMate, "ToneMate", $type="React Native")
+System_Ext(oauth, "Microsoft Identity Platform")
+System_Ext(uni, "Universitäts-System")
 
-_<Schnittstelle(n)>_
+Rel_D(toneMate, uni, "benutzt", "REST")
+Rel_L(uni, oauth, "benutzt")
+Rel_D(toneMate, oauth, "nutzt login von")
 
-_<(Optional) Qualitäts-/Leistungsmerkmale>_
+Rel_R(student, toneMate, "benutzt")
+Rel_L(personal, uni, "benutzt")
 
-_<(Optional) Ablageort/Datei(en)>_
+@enduml
+....
 
-_<(Optional) Erfüllte Anforderungen>_
+// Wichtige Schnittstellen::
 
-_<(optional) Offene Punkte/Probleme/Risiken>_
-
-==== <Name Blackbox 2>
-
-_<Blackbox-Template>_
-
-==== <Name Blackbox n>
-
-_<Blackbox-Template>_
-
-
-==== <Name Schnittstelle 1>
-
-...
-
-==== <Name Schnittstelle m>
 
 === Ebene 2
 
@@ -64,23 +65,82 @@ ifdef::arc42help[]
 
 endif::arc42help[]
 
-==== Whitebox _<Baustein 1>_
+==== Whitebox ToneMate
 
 ifdef::arc42help[]
 
 endif::arc42help[]
 
-_<Whitebox-Template>_
+Begründung::
+Die App ist in drei Kernfunktionen unterteilt. Die Werkzeuge beinhalten allgemein Hilfsmittel für Musiker. Das Training ist die Leistungserfassung der Universität. Der Kalender dient zum planen von Lernzielen. Desweiteren können Einstellungen für die gesamte App eingestellt werden.
 
-==== Whitebox _<Baustein 2>_
+Enthaltene Bausteine::
 
-_<Whitebox-Template>_
+[%autowidth]
+|===
+|Baustein |Beschreibung
 
-...
+|Training
+|Das Training dient zur Leistungserfassung der Universität
 
-==== Whitebox _<Baustein m>_
+|Werkzeuge
+|Werkzeuge beinhalten Hilfsmittel für Musiker
 
-_<Whitebox-Template>_
+|Kalender
+|Kalender
+
+|Einstellungen
+|In den Einstellungen gibt es die Möglichkeit die Anzeigesprache, das Farbschema und das Instrument für die Tonausgabe des Trainings einzustellen. Desweiteren gibt es ein Knopf mit dem eine Synchronisierung des Universitäts-System gestartet werden kann.
+
+|Account Manager
+|Logik Komponente für die Handhabung des Login Zustandes.
+
+|API Layer
+|Mithilfe vom OpenAPI Generator werden die Stubs des Universitäts-Systems bereitgestellt.
+|===
+
+[plantuml]
+....
+@startuml
+!include <C4/C4_Container>
+
+caption ToneMate
+
+System_Boundary(phone, "Smartphone") {
+    Container_Boundary(toneMate, "ToneMate") {
+        Container(werkzeuge, "Werkzeuge")
+        Container(kalender, "Kalender")
+        Container(training, "Training")
+        Container(einstellungen, "Einstellungen")
+        Container(accountManager, "Account Manager")
+        Container(api, "API Layer")
+
+        Rel(training, accountManager, "benutzt")
+        Rel(werkzeuge, accountManager, "benutzt")
+        Rel(kalender, accountManager, "benutzt")
+        Rel(accountManager, api, "benutzt")
+    }
+    Container_Ext(dateiSystem, "Dateisystem")
+    Container_Ext(kalenderExt, "Nativer Kalender")
+
+    Rel(kalender, kalenderExt, "speichert in")
+    Rel(kalender, dateiSystem, "speichert in")
+    Rel(werkzeuge, dateiSystem, "speichert in")
+    Rel(training, dateiSystem, "speichert in")
+    Rel(einstellungen, dateiSystem, "speichert in")
+}
+System_Ext(oauth, "Microsoft Identity Platform")
+System_Ext(uni, "Universitäts-System")
+
+Rel(api, uni, "benutzt", "REST")
+Rel_L(uni, oauth, "benutzt")
+Rel(api, oauth, "nutzt login von")
+
+@enduml
+....
+
+// Wichtige Schnittstellen::
+
 
 === Ebene 3
 
@@ -88,18 +148,209 @@ ifdef::arc42help[]
 
 endif::arc42help[]
 
-==== Whitebox <_Baustein x.1_>
+==== Whitebox Training
 
 ifdef::arc42help[]
 
 endif::arc42help[]
 
-_<Whitebox-Template>_
+Begründung::
+Das Training wird in drei Trainingstypen unterteilt. Die Trainingstypen beinhalten die verschiedenen Arten wie mit ToneMate sein Gehör trainiert werden kann. Der Speicher Manager ist dabei die Logik Componente zum Verwalten des Fortschrittes im Dateisystem, sowie auch die Synchronisierung mit dem Universitäts-Systems.
 
-==== Whitebox <_Baustein x.2_>
+Enthaltene Bausteine::
 
-_<Whitebox-Template>_
+[%autowidth]
+|===
+|Baustein |Beschreibung
 
-==== Whitebox <_Baustein y.1_>
+|Relativer Pitch
+|Training zum erhören von Noten.
 
-_<Whitebox-Template>_
+|Akkord Bestimmung
+|Training zum erhören von Akkorden.
+
+|Interval Bestimmung
+|Trainung zum erhören von Intervalen.
+
+|Speicher Manager
+|Verwaltet die Daten der Trainingstypen.
+|===
+
+[plantuml]
+....
+@startuml
+!include <C4/C4_Component>
+
+caption Training
+
+Container_Boundary(toneMate, "ToneMate") {
+    Container_Boundary(training, "Training") {
+        Component(relativerPitch, "Relativer Pitch")
+        Component(akkordBestimmung, "Akkord Bestimmung")
+        Component(intervalBestimmung, "Interval Bestimmung")
+        Component(speicherManager, "Speicher Manager")
+
+        Rel(relativerPitch, speicherManager, "benutzt")
+        Rel(akkordBestimmung, speicherManager, "benutzt")
+        Rel(intervalBestimmung, speicherManager, "benutzt")
+    }
+    Container(api, "API Layer")
+
+    Rel(speicherManager, api, "benutzt")
+}
+Container_Ext(dateiSystem, "Dateisystem")
+
+Rel(speicherManager, dateiSystem, "speichert in")
+
+@enduml
+....
+
+// Wichtige Schnittstellen::
+
+
+==== Whitebox Werkzeuge
+
+ifdef::arc42help[]
+
+endif::arc42help[]
+
+Begründung::
+ToneMate beinhaltet Werkzeuge die Musiker beim Über von Intrumenten und Liedern helfen sollen.
+
+Enthaltene Bausteine::
+
+[%autowidth]
+|===
+|Baustein |Beschreibung
+
+|Metronom
+|Das Metronom lässt sich frei in der Geschwindikeit und der Taktart einstellen. Zudem können Metronom Einstellungen für gespeicherte Noten abgerufen werden.
+
+|Stimmgerät
+|Das Stimmgerät zeigt die gespielte Note an. Des Weiteren zeigt es an ob die Note genau getroffen wurde oder ein welche Richtung die Note korrigiert werden muss.
+
+|Noten
+|Dies ist ein Sammelort, in dem Notenblätter von den Studenten abgelegt werden können. Die Dozenten haben auch die Möglichkeit ihren Studierenden Noten hochzuladen. Diese werden in einem dedizierent schreibgesperten Verzeichnis angezeigt.
+
+|Speicher Manager
+|Verwaltet die Daten der Noten.
+|===
+
+[plantuml]
+....
+@startuml
+!include <C4/C4_Component>
+
+caption Werkzeuge
+
+Container_Boundary(toneMate, "ToneMate") {
+    Container_Boundary(werkzeuge, "Werkzeuge") {
+        Component(metronom, "Metronom")
+        Component(stimmgeraet, "Stimmgerät")
+        Component(noten, "Noten")
+        Component(speicherManager, "Speicher Manager")
+
+        Rel(noten, speicherManager, "benutzt")
+        Rel(metronom, noten, "greift zu")
+    }
+}
+Container_Ext(dateiSystem, "Dateisystem")
+
+Rel(speicherManager, dateiSystem, "speichert in")
+
+@enduml
+....
+
+// Wichtige Schnittstellen::
+
+
+==== Whitebox Kalender
+
+ifdef::arc42help[]
+
+endif::arc42help[]
+
+Begründung::
+Der Kalender speichert Termine, die die Studierenden frei anlegen können. Zu den Terminen können auch Kommentare gespeichert werden. Diese werden nur im ToneMate Kalender angezeigt, um den nativen Kalender nicht mit langen Texten zu füllen.
+
+Enthaltene Bausteine::
+
+[%autowidth]
+|===
+|Baustein |Beschreibung
+
+|Termin
+|Ein Termin, der mit dem nativen Kalender des Smartphones synchronisiert wird.
+
+|Kommentar
+|Freie Texte die zu einem Termin gespeichert werden können, diese Kommentare werden *nicht* mit dem nativen Kalender synchronisiert und sind nur in ToneMate zu lesen.
+|===
+
+[plantuml]
+....
+@startuml
+!include <C4/C4_Component>
+
+caption Kalender
+
+Container_Boundary(toneMate, "ToneMate") {
+    Container_Boundary(kalender, "Kalender") {
+        Container_Boundary(termin, "Termin") {
+            Component(kommentar, "Kommentar")
+        }
+        Component(speicherManager, "Speicher Manager")
+
+        Rel(termin, speicherManager, "benutzt")
+    }
+}
+Container_Ext(dateiSystem, "Dateisystem")
+Container_Ext(kalenderExt, "Nativer Kalender")
+
+Rel(speicherManager, dateiSystem, "speichert in")
+Rel(speicherManager, kalenderExt, "speichert in")
+
+@enduml
+....
+
+// Wichtige Schnittstellen::
+
+
+==== Whitebox Einstellungen
+
+ifdef::arc42help[]
+
+endif::arc42help[]
+
+Begründung::
+Die Einstellungen dienen als globaler Speicher für Sprache, Farbschema und Instrument
+
+Enthaltene Bausteine::
+
+[%autowidth]
+|===
+|Baustein |Beschreibung
+
+|Speicher Manager
+|Speichert die Einstellungen in das lokale Filesystem.
+|===
+
+[plantuml]
+....
+@startuml
+!include <C4/C4_Component>
+
+caption Einstellungen
+
+Container_Boundary(toneMate, "ToneMate") {
+    Container_Boundary(einstellungen, "Einstellungen") {
+        Component(speicherManager, "Speicher Manager")
+    }
+}
+Container_Ext(dateiSystem, "Dateisystem")
+
+Rel(speicherManager, dateiSystem, "speichert in")
+
+@enduml
+....
+
+// Wichtige Schnittstellen::
