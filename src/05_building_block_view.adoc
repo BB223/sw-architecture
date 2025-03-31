@@ -127,6 +127,7 @@ System_Boundary(phone, "Smartphone") {
     Rel(kalender, dateiSystem, "speichert in")
     Rel(werkzeuge, dateiSystem, "speichert in")
     Rel(training, dateiSystem, "speichert in")
+    Rel(einstellungen, dateiSystem, "speichert in")
 }
 System_Ext(oauth, "Microsoft Identity Platform")
 System_Ext(uni, "Universitäts-System")
