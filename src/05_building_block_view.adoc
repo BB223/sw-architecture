@@ -72,7 +72,7 @@ ifdef::arc42help[]
 endif::arc42help[]
 
 Begründung::
-Die App ist in drei Kernfunktionen unterteilt. Die Werkzeuge beinhalten allgemein Hilfsmittel für Musiker. Das Training ist die Leistungserfassung der Universität. Der Kalender dient zum planen von Lernzielen.
+Die App ist in drei Kernfunktionen unterteilt. Die Werkzeuge beinhalten allgemein Hilfsmittel für Musiker. Das Training ist die Leistungserfassung der Universität. Der Kalender dient zum planen von Lernzielen. Desweiteren können Einstellungen für die gesamte App eingestellt werden.
 
 Enthaltene Bausteine::
 
@@ -88,6 +88,9 @@ Enthaltene Bausteine::
 
 |Kalender
 |Kalender
+
+|Einstellungen
+|In den Einstellungen gibt es die Möglichkeit die Anzeigesprache, das Farbschema und das Instrument für die Tonausgabe des Trainings einzustellen. Desweiteren gibt es ein Knopf mit dem eine Synchronisierung des Universitäts-System gestartet werden kann.
 
 |Account Manager
 |Logik Komponente für die Handhabung des Login Zustandes.
@@ -108,6 +111,7 @@ System_Boundary(phone, "Smartphone") {
         Container(werkzeuge, "Werkzeuge")
         Container(kalender, "Kalender")
         Container(training, "Training")
+        Container(einstellungen, "Einstellungen")
         Container(accountManager, "Account Manager")
         Container(api, "API Layer")
 
@@ -303,6 +307,47 @@ Container_Ext(kalenderExt, "Nativer Kalender")
 
 Rel(speicherManager, dateiSystem, "speichert in")
 Rel(speicherManager, kalenderExt, "speichert in")
+
+@enduml
+....
+
+// Wichtige Schnittstellen::
+
+
+==== Whitebox Einstellungen
+
+ifdef::arc42help[]
+
+endif::arc42help[]
+
+Begründung::
+Die Einstellungen dienen als globaler Speicher für Sprache, Farbschema und Instrument
+
+Enthaltene Bausteine::
+
+[%autowidth]
+|===
+|Baustein |Beschreibung
+
+|Speicher Manager
+|Speichert die Einstellungen in das lokale Filesystem.
+|===
+
+[plantuml]
+....
+@startuml
+!include <C4/C4_Component>
+
+caption Einstellungen
+
+Container_Boundary(toneMate, "ToneMate") {
+    Container_Boundary(einstellungen, "Einstellungen") {
+        Component(speicherManager, "Speicher Manager")
+    }
+}
+Container_Ext(dateiSystem, "Dateisystem")
+
+Rel(speicherManager, dateiSystem, "speichert in")
 
 @enduml
 ....
