@@ -40,13 +40,74 @@ ToneMate <-- MicrosoftToken: Gibt Oauth bearer token zurück
 
 ToneMate -> Uni: Fragt Ressourcen mit dem bearer token an
 Uni -> Uni: Validiert bearer token
-ToneMate <-- Uni: Gitb Ressourcen zurück
+ToneMate <-- Uni: Gibt Ressourcen zurück
 @enduml
 ....
 // *  <hier Besonderheiten bei dem Zusammenspiel der Bausteine in diesem Szenario erläutern>
 
-// === _<Bezeichnung Laufzeitszenario 2>_
 
+=== Synchronisierung Level Fortschritt
+
+Die folgende Grafik zeigt die Synchronisierung des Level Fortschritts beim öffnen von ToneMate oder beim benutzen der Synchronisierungsfunktion in den Einstellungen.
+
+[plantuml]
+....
+@startuml
+autonumber
+participant ToneMate [
+    =ToneMate
+]
+
+participant Uni [
+    =Universität
+]
+
+ToneMate -> Uni: Fragt die Level-Daten ab
+ToneMate <-- Uni: Gibt die Level-Daten zurück
+
+ToneMate -> ToneMate: Verleicht den Level Fortschritt mit den lokalen Daten
+
+alt Universitätsdaten sind weiter fortgeschritten
+
+    ToneMate -> ToneMate: Überschreibt lokale Daten mit den neuen Daten
+
+else lokale Daten sind weiter fortgeschritten
+
+    ToneMate -> Uni: Sendet lokale Daten
+
+end
+
+@enduml
+....
+
+Die folgende Grafik zeigt die Synchronisierung des Level Fortschritts beim abschließen eines Levels
+
+[plantuml]
+....
+@startuml
+autonumber
+participant ToneMate [
+    =ToneMate
+]
+
+participant Uni [
+    =Universität
+]
+
+ToneMate -> ToneMate: Speichert die Daten lokal
+
+alt Universitäts-System erreichbar
+
+    ToneMate -> Uni: Sendet lokale Daten
+
+else Verbindungstimeout oder Status Code 5xx
+
+    ToneMate -> ToneMate: Deaktiviert für 5 min synchronisation 
+    
+end
+
+@enduml
+....
 
 // === _<Bezeichnung Laufzeitszenario n>_
 
