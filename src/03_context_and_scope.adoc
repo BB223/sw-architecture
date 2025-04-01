@@ -3,28 +3,81 @@ ifndef::imagesdir[:imagesdir: ../images]
 [[section-context-and-scope]]
 == Kontextabgrenzung
 
-ifdef::arc42help[]
+[plantuml]
+....
+@startuml
+!include <C4/C4_Context>
 
-endif::arc42help[]
+caption Gesamtsystem
+
+Person(student, "Student")
+Person_Ext(personal, "Hochschul Personal")
+
+System(toneMate, "ToneMate", $type="React Native")
+System_Ext(oauth, "Microsoft Identity Platform")
+System_Ext(uni, "Universitäts-System")
+
+Rel_D(toneMate, uni, "benutzt", "REST")
+Rel_L(uni, oauth, "benutzt")
+Rel_D(toneMate, oauth, "nutzt login von")
+
+Rel_R(student, toneMate, "benutzt")
+Rel_L(personal, uni, "benutzt")
+
+@enduml
+....
 
 === Fachlicher Kontext
 
-ifdef::arc42help[]
+[%autowidth]
+|===
+|Kommunikationspartner |Eingabe zu ToneMate |Ausgabe von ToneMate
 
-endif::arc42help[]
+|Student
+|Fortschritte in Trainingssektion +
+ Abspeichern von Partituren +
+ Eintragen von Kalenderterminen mit potentiellen Kommentaren +
+ Gezieltes Verändern der App über die Einstellungen +
+ Manuelle Synchronisation der Lokalen Daten mit den Daten Im Universitätssystem
+|Möglich zu erziehlender Forschritt in der Trainingssektion über das trainieren mit der App +
+ Speicherung und dementsprechend mögliche on-demand Abrufung von gespeicherten Partituren +
+ Pushbenachrichitungen zu gesetzten Terminen
 
-**<Diagramm und/oder Tabelle>**
+|Microsoft Authentication
+|
+|
 
-**<optional: Erläuterung der externen fachlichen Schnittstellen>**
+|Universitäts-System
+|Updaten der gespeicherten Partituren welche von Dozenten hochgeladen werden
+|Trainingsfortschritt von Studenten zur Einsicht der Dozenten
+|===
 
 === Technischer Kontext
 
-ifdef::arc42help[]
+[plantuml]
+....
+@startuml
+!include <C4/C4_Context>
 
-endif::arc42help[]
+caption TechnischerKontext
 
-**<Diagramm oder Tabelle>**
+Person(student, "Student")
 
-**<optional: Erläuterung der externen technischen Schnittstellen>**
+System(toneMate, "ToneMate", $type="React Native")
+System_Ext(oauth, "Microsoft Identity Platform")
+System_Ext(uni, "Universitäts-System")
 
-**<Mapping fachliche auf technische Schnittstellen>**
+Rel_D(toneMate, uni, "Internet / REST / Uni-API")
+Rel_L(uni, oauth, "Internet / REST / MSAL-API")
+Rel_D(toneMate, oauth, "Internet / REST / MSAL-API")
+
+Rel_R(student, toneMate, "benutzt")
+
+@enduml
+....
+
+|===
+|Kommunikationskanal |Eingabe zu ToneMate |Ausgabe von ToneMate
+|
+|
+|===
