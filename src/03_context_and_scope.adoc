@@ -78,6 +78,16 @@ Rel_R(student, toneMate, "benutzt")
 
 |===
 |Kommunikationskanal |Eingabe zu ToneMate |Ausgabe von ToneMate
+
+|Student
+|
+|
+
+|Microsoft Authentication
+|
+|
+
+|Universitäts-System
 |
 |
 |===
