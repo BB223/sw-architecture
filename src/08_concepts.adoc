@@ -7,9 +7,9 @@ ifdef::arc42help[]
 
 endif::arc42help[]
 
-=== _<Konzept 1>_
+=== Entwicklungs Konzepte
 
-_<Erklärung>_
+Das Versionskontrollsystem für die Entwicklung ist _git_. Zur Kollaboration wird GitHub verwendet. Das Repository der App wird unter einer Organisation der Universität öffentlich erstellt. Die Client Bibliothek, die durch den OpenAPI Generator generiert wird, wird in einem seperaten Repository gehalten. Daber handelt es sich um eine gemocktes Universitäts-System, wodurch die App getestet werden kann. Die produktionsreife Client Bibliothek wird in ein dirttes Repository privat gehalten. Durch die Aufteilung der Repositories lässt sich mit einer Abhängigkeit in ToneMate zwischen Mock Universität und Produktions Universität umschalten.
 
 === _<Konzept 2>_
 
