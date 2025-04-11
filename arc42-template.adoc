@@ -1,4 +1,4 @@
-include::src/config.adoc[]
+include::./config.adoc[]
 
 :revnumber: 8.2 DE
 :revdate: Januar 2023
@@ -7,6 +7,18 @@ include::src/config.adoc[]
 :mermaid-puppeteer-config: ./puppeteer.config.json
 :mermaid-format: svg
 :plantuml-format: svg
+:imagesdir: ./images
+:sectnums:
+:toc: macro
+:toclevels: 3
+
+:author: Autor
+:email: email
+:revdate: letztes änderungsdatum
+:revnumber: dateiversion
+:status: Status (Draft/Approved/...)
+:protectionCategory: Offen
+
 
 //additional style for arc42 help callouts
 ifdef::backend-html5[]
@@ -23,53 +35,32 @@ ifdef::backend-html5[]
 ++++
 endif::backend-html5[]
 
-// numbering from here on
-:numbered:
+include::chapter/00_imprint.adoc[]
 
-<<<<
-// 1. Anforderungen und Ziele
-include::src/01_introduction_and_goals.adoc[]
+include::chapter/00_change_history.adoc[]
 
-<<<<
-// 2. Randbedingungen
-include::src/02_architecture_constraints.adoc[]
+toc::[]
 
-<<<<
-// 3. Kontextabgrenzung
-include::src/03_context_and_scope.adoc[]
+include::chapter/01_introduction_and_goals.adoc[]
 
-<<<<
-// 4. Lösungsstrategie
-include::src/04_solution_strategy.adoc[]
+include::chapter/02_architecture_constraints.adoc[]
 
-<<<<
-// 5. Bausteinsicht
-include::src/05_building_block_view.adoc[]
+include::chapter/03_context_and_scope.adoc[]
 
-<<<<
-// 6. Laufzeitsicht
-include::src/06_runtime_view.adoc[]
+include::chapter/04_solution_strategy.adoc[]
 
-<<<<
-// 7. Verteilungssicht
-include::src/07_deployment_view.adoc[]
+include::chapter/05_building_block_view.adoc[]
 
-<<<<
-// 8. Querschnittliche Konzepte
-include::src/08_concepts.adoc[]
+include::chapter/06_runtime_view.adoc[]
 
-<<<<
-// 9. Entscheidungen
-include::src/09_architecture_decisions.adoc[]
+include::chapter/07_deployment_view.adoc[]
 
-<<<<
-// 10. Qualitätsanforderungen
-include::src/10_quality_requirements.adoc[]
+include::chapter/08_concepts.adoc[]
 
-<<<<
-// 11. Risiken
-include::src/11_technical_risks.adoc[]
+include::chapter/09_architecture_decisions.adoc[]
 
-<<<<
-// 12. Glossar
-include::src/12_glossary.adoc[]
+include::chapter/10_quality_requirements.adoc[]
+
+include::chapter/11_technical_risks.adoc[]
+
+include::chapter/12_glossary.adoc[]

@@ -1,0 +1,12 @@
+== Glossar
+
+[cols="e,2e" options="header"]
+|===
+|Begriff |Definition
+
+|MSAL
+|MSAL (Microsoft Authentication Library) ist eine Bibliothek von Microsoft, mit der Anwendungen Benutzer sicher authentifizieren und Zugriffstoken für den Zugriff auf geschützte Ressourcen wie Microsoft Graph oder eigene APIs abrufen können. Sie unterstützt moderne Authentifizierungsstandards wie OAuth 2.0 und OpenID Connect. MSAL übernimmt dabei Aufgaben wie: Benutzeranmeldung, Token-Caching und -Erneuerung, Unterstützung frschiedene Plattformen, Single Sign-On (SSO)
+
+|
+|
+|===

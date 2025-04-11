@@ -1,6 +1,3 @@
-ifndef::imagesdir[:imagesdir: ../images]
-
-[[section-design-decisions]]
 == Architekturentscheidungen
 
 === ADR-{counter:ADR}: Speicher Manager

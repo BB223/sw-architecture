@@ -1,0 +1,50 @@
+== Qualitätsanforderungen
+
+Zusätzlich zu den bereichts relevantesten Qualitätszielen, welche in <<Qualitätsziele>> erwähnt wurden, kommen folgend entsprechende Anforderungen an diese Ziele. Zusätzlich gibt es auch darüber hinaus Anforderungen, welche zwar nicht expliziet unter die besagten Qualitätsziele fallen, aber denoch von bedeutung sind. 
+
+=== Qualitätsbaum
+
+|===
+
+|Kategorie |Qualitätsziel |Beschreibung |Szenario
+
+|Benutzerfreundlichkeit
+|Bedienbarkeit
+|
+|
+
+|Benutzerfreundlichkeit
+|Behindertengerecht
+|
+|
+
+|Wart- & Erweiterbarkeit
+|Codestruktur
+|
+|
+
+|Wart- & Erweiterbarkeit
+|Code Conventions
+|
+|
+
+|Wart- & Erweiterbarkeit
+|Dokumentation
+|
+|
+
+|Zuverlässigkeit
+|Tests
+|
+|
+
+|Zuverlässigkeit
+|Error Handling
+|
+|
+
+|===
+
+=== Qualitätsszenarien
+
+

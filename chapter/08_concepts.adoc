@@ -1,0 +1,16 @@
+== Querschnittliche-Konzepte
+
+ifdef::arc42help[]
+
+endif::arc42help[]
+
+=== Entwicklungs-Konzepte
+
+Das Versionskontrollsystem für die Entwicklung ist _git_. Zur Kollaboration wird GitHub verwendet. +
+Das Repository der App wird unter einer Organisation der Universität öffentlich erstellt. Die Client Bibliothek, die durch den OpenAPI Generator generiert wird, wird in einem seperaten Repository gehalten. Daber handelt es sich um eine gemocktes Universitäts-System, wodurch die App getestet werden kann. Die produktionsreife Client Bibliothek wird in ein drittes Repository privat gehalten. Durch die Aufteilung der Repositories lässt sich mit einer Abhängigkeit in ToneMate zwischen Mock Universität und Produktions Universität umschalten.
+
+=== Sicherheits-Konzepte
+
+Um die Funktionsfähigkeit von ToneMate sicherzustellen und auch den Erwartungen der Sakeholder gerecht zu werden, werden Unit- und Integrationtests geschrieben, um eine Testabdeckung von mindestens 80% zu erreichen. Des Weiteren müssen alle Tests erfolgreich sein, bevor die Software, oder weitere in zukunft entwickelte Features, in eine Produktionsumgebung geht. +
+
+Zum Login wird MSAL verwendet (siehe <<Benutzer-Login>>), da das Universitätssystem bereits darauf basiert und es Accounts für die Studenten und Dozenten bereits gibt. Zudem ist es eine sehr gute Authentifikationsplatform und bietet dem System viel Sicherheit mit möglichst wenig Implementationsaufwand.

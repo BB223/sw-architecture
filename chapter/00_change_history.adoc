@@ -1,0 +1,11 @@
+[preface]
+== Change History
+[cols="3,4,6,18"]
+|===
+
+|1.0
+|
+|Ben Zelleröhr / Moritz Bosch
+|Initiales Dokument
+
+|===

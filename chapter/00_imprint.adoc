@@ -1,0 +1,38 @@
+[preface]
+== Imprint
+[%autowidth.stretch]
+|===
+3+| *Publisher* +
+    Uniname +
+    Abteilung +
+    Straße und Nummer +
+    PLZ und Ort +
+    Germany
+
+3+| *Customer* +
+    Kunde
+    
+| *Filename* +
+  {docname}{outfilesuffix}
+| *Title* +
+  {doctitle}
+| *Protection category* +
+  {protectionCategory}
+
+| *Version* +
+  {revnumber}
+| *Date* +
+  {revdate}
+| *Status* +
+  {status}
+
+| *Author* +
+  {author}
+| *Released by* +
+  {author}
+| *E-Mail* +
+  {email}
+
+3+| *Short Description* +
+    Dieses Dokument beschreibt die Architektur der App ToneMate.
+|===

@@ -1,6 +1,3 @@
-ifndef::imagesdir[:imagesdir: ../images]
-
-[[section-solution-strategy]]
 == Lösungsstrategie
 
 |===
@@ -9,10 +6,10 @@ ifndef::imagesdir[:imagesdir: ../images]
 
 |Local First Approach
 |Synchronisationsverfahren, damit sowohl die Daten auf dem mobilen Gerät, als auch die Daten im Universitätssystem stetig und bestmöglich auf dem aktuellsten Stand sind. 
-|
+|TE-5, 
 
 |Gute Wartbarkeit 
 |ToneMate soll Wartbar sein, sodass neue Entwickler sich innerhalb von möglichst kurzer Zeit im System eingearbeitet haben, um möglichst neue Features oder Anforderungen zu implementieren.
-|
+|QZ-2, Erwartungen der Stakeholder Dennis Dresden und Christian Chemnitz
 
 |===

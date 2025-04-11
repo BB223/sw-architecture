@@ -1,6 +1,3 @@
-ifndef::imagesdir[:imagesdir: ../images]
-
-[[section-runtime-view]]
 == Laufzeitsicht
 
 ifdef::arc42help[]

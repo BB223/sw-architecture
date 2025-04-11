@@ -1,0 +1,14 @@
+== Risiken und technische Schulden
+
+bla bla
+
+|===
+
+|Priorität |Risiko / Technische Schuld |Beschreibung |Mögliche Maßnahmen
+
+|1
+|
+|
+|
+
+|===
