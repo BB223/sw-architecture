@@ -9,12 +9,12 @@ Zusätzlich zu den bereichts relevantesten Qualitätszielen, welche in <<Qualit�
 
 |Kategorie |Qualitätsziel |Beschreibung |Szenario
 
-.3+^.^|Benutzerfreundlichkeit
+.3+^.^|Benutzer- freundlichkeit
 |Bedienbarkeit
 |Zum einfachen bedienen von ToneMate sollen die wichtigsten Seiten der App, wie auch schon in <<Qualitätsziele>> beschrieben, in maximal drei Klicks erreichbar sein. Zusätzlich soll die Position von Features innerhalb der App logisch und intuitiv gestalltet sein, damit ein schnelles Zurechtfinden gewährleistet werden kann. 
 .2+^.^|QS-1
 
-|Behindertengerecht
+|Behinderten- gerecht
 |Um rechtlichen Anfoderungen, unter anderen in <<Randbedingungen>> zu finden, gerecht zu werden müssen Behinderungsgerechte Maßnahmen getroffen werden. Darunter fallen beispielsweise: Farbenblindheiten oder Körperliche behinderungen welche u.A. die Bedienfähigkeit von ToneMate einschränken können.
 
 |Soundqualität
@@ -32,7 +32,7 @@ Zusätzlich zu den bereichts relevantesten Qualitätszielen, welche in <<Qualit�
 .2+^.^|Zuverlässigkeit
 |Tests
 |Damit ToneMate stets gut funktioniert und Fehlverhalten möglichst vermieden werden kann, sollen Tests geschrieben werden, um eine Testabdeckung von mind. 80% zu erziehlen und ein korrektes Appverhalten zusichern zu können.  
-|QS-4
+.2+^.^|QS-4
 
 |Error Handling
 |Im Falle von Fehlern während der Laufzeit von ToneMate sollen diese bestmöglich behandelt und eleminiert werden.
