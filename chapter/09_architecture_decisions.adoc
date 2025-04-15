@@ -3,7 +3,7 @@
 === ADR-{counter:ADR}: Speicher Manager
 
 *Kontext* +
-In ToneMate werden Level-Daten, Noten und Kalender-Daten auf den Endgerät und/oder im Universitäts-System gespeichert. Die Daten ist zu 100% unabhängig voneinander und haben unterschiedliche Strukturen. Demnach besteht die Frage wie mit den Daten umgeganen werden soll.
+In ToneMate werden Level-Daten, Partituren und Kalender-Daten auf dem Endgerät und/oder im Universitäts-System gespeichert. Die Daten ist zu 100% unabhängig voneinander und haben unterschiedliche Strukturen. Demnach besteht die Frage wie mit den Daten umgeganen werden soll.
 
 *Entscheidung* +
 Es wird ein eingeständiger Speicher Manager pro Funktionsbereich benutzt.
@@ -17,19 +17,15 @@ Durch diese Entscheidung können verschiedene Datenstrukturen unabhänging vonei
 === ADR-{counter:ADR}: Local-First Speicher
 
 *Kontext* +
-Durch die Möglichkeit ToneMate auch offline verwenden zu können, kann es vorkommen, dass die Daten im Universitäts-System und auf den Endgeräten der Studenten nicht mehr übereinstimmen.
+Durch die Möglichkeit ToneMate auch offline verwenden zu können, kann es vorkommen, dass die Daten im Universitätssystem und auf den Endgeräten der Studenten nicht mehr übereinstimmen.
 
 *Entscheidung* +
-Bei den Level-Daten, lässt sich der Fortschritt mit dem erreichten Level messen. Es werdne die Daten, dennen ein höheres Level erreicht wurde als Richtig anerkannt. Die falschen Daten werden mit den richtigen Daten vollständig überschrieben. +
-Die Partituren der Dozenten können von den Studenten nicht bearbeiten, demnach werden immer die Daten vom Universitäts-System als richtig anerkannt. +
-Alle anderen Daten werden nur lokal gespeichert und nicht mit dem Universitäts-System synchroniesiert.
+Bei den Level-Daten, lässt sich der Fortschritt mit dem erreichten Level messen. Es werden die Daten, in denen ein höheres Level erreicht wurde, als Richtig anerkannt. Die falschen Daten werden mit den richtigen Daten vollständig überschrieben. +
+Die Partituren der Dozenten können von den Studenten nicht bearbeitet werden. Demnach werden immer die Daten vom Universitätssystem als Richtig anerkannt. +
+Alle anderen Daten werden nur lokal gespeichert und nicht mit dem Universitätssystem synchroniesiert.
 
 *Status* +
 Akzeptiert
 
 *Konsequenz* +
-Den Studenten werden nicht die Möglichkeit gegeben selber zu entschieden welchen Fortschrittsstand benutzt werden soll. Durch das vollständige Überschreiben der Daten kann keine Datenkurruption entstehen. Es muss keine Logik zum lösen von Datenkonflikten implementiert werden.
-
-ifdef::arc42help[]
-
-endif::arc42help[]
+Den Studenten wird nicht die Möglichkeit gegeben selber zu entschieden welcher Fortschrittsstand benutzt werden soll. Durch das vollständige Überschreiben der Daten kann keine Datenkurruption entstehen. Es muss keine Logik zum lösen von Datenkonflikte implementiert werden.

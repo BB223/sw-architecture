@@ -6,9 +6,34 @@ bla bla
 
 |Priorität |Risiko / Technische Schuld |Beschreibung |Mögliche Maßnahmen
 
-|1
-|
-|
-|
+|{counter:Prio}
+|Budgetfehlplanung
+|Durch fehlende finanzielle Mittel kann ToneMate nicht vollständig entwickelt, gewartet, erweitert oder gehostet werden.
+|Sponsorensuche, kostenpflichtig für nicht-Universitätsnutzer machen.
+
+|{counter:Prio}
+|Verletzung der DSGVO und/oder anderen politischen Vorgaben
+|Verletzung der DSGVO und/oder anderen politischen Vorgaben
+|Anpassung von ToneMate und dessen Datenverarbeitung, Verantwortung des entstandenen Schadens.
+
+|{counter:Prio}
+|Abhängigkeit von externen Diensten
+|Die Nutzung von externen Diensten, wie Microsoft, birgt zusätzliche Risiken bezüglich Kosten und Verfügbarkeit. 
+|Regelmäßige Überprüfung der ServiceLevel-Agreements (SLAs), Evaluierung von Alternativen und Implementierung von Fallback-Mechanismen, um die Systemstabilität zu sichern.
+
+|{counter:Prio}
+|Nicht existierende Gerätegrößenunterstützung
+|Gewisse Gerätegrößen der Studenten / Nutzer von ToneMate werden nicht gut unterstützt, also eine nicht erwartete Darstellung des Appdesigns.
+|Zusätzliche Unterstützung bestimmter Gerätegrößen, Ignoranz gegenüber nicht unterstützten Geräten.
+
+|{counter:Prio}
+|Nicht existierende Softwareunterstützung
+|Gewisse Software der Studenten / Nutzer von ToneMate werden nicht gut unterstützt.
+|Zusätzliche Unterstützung bestimmter Software, Ignoranz gegenüber nicht unterstützter Software.
+
+|{counter:Prio}
+|Smartphone verlässt unerwartet seinen Nutzer
+|Bei Verlust / kaputt gehen / Diebstahl des Smartphones gehen die meisten Daten verloren, da sie zum Großteil nur Lokal gespeichert werden.
+|Synchronisation des Levelfortschritts über das Universitätssystem möglich. Ansonsten eher verschulden des Nutzers und keine weiteren effektiven Maßnahmen möglich.
 
 |===

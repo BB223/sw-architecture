@@ -1,0 +1,15 @@
+@startuml
+!include <C4/C4_Component>
+
+caption Einstellungen
+
+Container_Boundary(toneMate, "ToneMate") {
+    Container_Boundary(einstellungen, "Einstellungen") {
+        Component(speicherManager, "Speicher Manager")
+    }
+}
+Container_Ext(dateiSystem, "Dateisystem")
+
+Rel(speicherManager, dateiSystem, "speichert in")
+
+@enduml

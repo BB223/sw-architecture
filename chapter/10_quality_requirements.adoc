@@ -8,43 +8,51 @@ Zusätzlich zu den bereichts relevantesten Qualitätszielen, welche in <<Qualit�
 
 |Kategorie |Qualitätsziel |Beschreibung |Szenario
 
-|Benutzerfreundlichkeit
+.3+^.^|Benutzerfreundlichkeit
 |Bedienbarkeit
-|
-|
+|Zum einfachen bedienen von ToneMate sollen die wichtigsten Seiten der App, wie auch schon in <<Qualitätsziele>> beschrieben, in maximal drei Klicks erreichbar sein. Zusätzlich soll die Position von Features innerhalb der App logisch und intuitiv gestalltet sein, damit ein schnelles Zurechtfinden gewährleistet werden kann. 
+.2+^.^|QS-1
 
-|Benutzerfreundlichkeit
 |Behindertengerecht
-|
-|
+|Um rechtlichen Anfoderungen, unter anderen in <<Randbedingungen>> zu finden, gerecht zu werden müssen Behinderungsgerechte Maßnahmen getroffen werden. Darunter fallen beispielsweise: Farbenblindheiten oder Körperliche behinderungen welche u.A. die Bedienfähigkeit von ToneMate einschränken können.
 
-|Wart- & Erweiterbarkeit
-|Codestruktur
-|
-|
+|Soundqualität
+|Damit Nutzer Effizient und unbeschwert mit ToneMate üben können sollte die Soundqualität entsprechend guter Qualität sein.
+|QS-2
 
-|Wart- & Erweiterbarkeit
+.2+^.^|Wart- & Erweiterbarkeit
 |Code Conventions
-|
-|
+|Um Codestruktur, Naming, ... einheitlich zu halten und es auch dadurch einfacher für neue Entwickler zu machen sich in den Code rein zu arbeiten, soll eine klare Code Konvention vorgegeben werden. Siehe <<Entwicklungs-Konzepte>>.
+.2+^.^|QS-3
 
-|Wart- & Erweiterbarkeit
 |Dokumentation
-|
-|
+|Um Codefunktionalitäten nachvollziehen zu können und es auch dadurch einfacher für neue Entwickler zu machen sich in den Code rein zu arbeiten, soll eine gut umfassende Dokumentation von ToneMate geschrieben und stetig aktualisiert werden.
 
-|Zuverlässigkeit
+.2+^.^|Zuverlässigkeit
 |Tests
-|
-|
+|Damit ToneMate stets gut funktioniert und Fehlverhalten möglichst vermieden werden kann, sollen Tests geschrieben werden, um eine Testabdeckung von mind. 80% zu erziehlen und ein korrektes Appverhalten zusichern zu können.  
+|QS-4
 
-|Zuverlässigkeit
 |Error Handling
-|
-|
+|Im Falle von Fehlern während der Laufzeit von ToneMate sollen diese bestmöglich behandelt und eleminiert werden.
 
 |===
 
 === Qualitätsszenarien
 
+|===
+|ID |Beschreibung
 
+|QS-{counter:QS}
+|Damit sich ein neuer, potentiell behinderter, Nutzer in ToneMate zurechtfindet bedarf es weniger als 10min. Aufwand. 
+
+|QS-{counter:QS}
+|Damit der Nutzer ein angenehmes und positives Nutzererlebnis hat, ist ToneMate's Sound von angemessener Qualität.
+
+|QS-{counter:QS}
+|Damit ein neuer Entwickler sich leicht und schnell in dem Code einarbeiten kann, gibt es eine gute und aktuelle Dokumentation von ToneMate, als auch eine umfassende Konvention merere Aspekte der Entwicklung.
+
+|QS-{counter:QS}
+|Damit Nutzer von ToneMate ein gutes Nutzererlebnis haben, wird durch Tests und Error Handling sichergestellt, dass bestmögich keine oder verarbeitbare Fehler auftreten. 
+
+|===

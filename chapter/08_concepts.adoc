@@ -1,16 +1,25 @@
 == Querschnittliche-Konzepte
 
-ifdef::arc42help[]
-
-endif::arc42help[]
-
 === Entwicklungs-Konzepte
 
 Das Versionskontrollsystem für die Entwicklung ist _git_. Zur Kollaboration wird GitHub verwendet. +
-Das Repository der App wird unter einer Organisation der Universität öffentlich erstellt. Die Client Bibliothek, die durch den OpenAPI Generator generiert wird, wird in einem seperaten Repository gehalten. Daber handelt es sich um eine gemocktes Universitäts-System, wodurch die App getestet werden kann. Die produktionsreife Client Bibliothek wird in ein drittes Repository privat gehalten. Durch die Aufteilung der Repositories lässt sich mit einer Abhängigkeit in ToneMate zwischen Mock Universität und Produktions Universität umschalten.
+Das Repository der App wird unter einer Organisation der Universität öffentlich erstellt. Die Client Bibliothek, die durch den OpenAPI Generator generiert wird, wird in einem seperaten Repository gehalten. Daber handelt es sich um eine gemocktes Universitäts-System, wodurch die App getestet werden kann. Die produktionsreife Client Bibliothek wird in ein drittes Repository privat gehalten. Durch die Aufteilung der Repositories lässt sich mit einer Abhängigkeit in ToneMate zwischen Mock Universität und Produktions Universität umschalten. +
+
+Als Code Convention wird die Phylosophie von Clean Code angewandt, um eine einheitliche und strukturierte Arbeitsumgebung zu schaffen, damit sich zukünkftige Entwickler besser in das System einarbeiten können. Zusätzlich wird sich an dem https://google.github.io/styleguide/tsguide.html[Google TSGuide] für Syntax styling und der https://docs.expo.dev/[Expo Dokumentation] für React Native Implementationen orientiert.  
 
 === Sicherheits-Konzepte
 
 Um die Funktionsfähigkeit von ToneMate sicherzustellen und auch den Erwartungen der Sakeholder gerecht zu werden, werden Unit- und Integrationtests geschrieben, um eine Testabdeckung von mindestens 80% zu erreichen. Des Weiteren müssen alle Tests erfolgreich sein, bevor die Software, oder weitere in zukunft entwickelte Features, in eine Produktionsumgebung geht. +
 
-Zum Login wird MSAL verwendet (siehe <<Benutzer-Login>>), da das Universitätssystem bereits darauf basiert und es Accounts für die Studenten und Dozenten bereits gibt. Zudem ist es eine sehr gute Authentifikationsplatform und bietet dem System viel Sicherheit mit möglichst wenig Implementationsaufwand.
+Zum Login wird MSAL verwendet (siehe <<Benutzer Login>> <<Funktionale Anforderungen>>), da das Universitätssystem bereits darauf basiert und es Accounts für die Studenten und Dozenten bereits gibt. Zudem ist es eine sehr gute Authentifikationsplatform und bietet dem System viel Sicherheit mit möglichst wenig Implementationsaufwand. +
+
+ToneMate besitzt keine unterschiedlichen Nutzerrollen. Es gibt keinen Admin o.Ä., nur "normale" Nutzer.
+
+=== Benutzerfreundlichkeits-Konzepte
+
+Um eine gute Benutzerfreundlichkeit zu gewährleisten sollten mehrere Dinge erfüllt werden. +
+Zum einen sollten die meisten und wichtigsten Seiten von ToneMate inerhalb von maximal drei Klicks erreichbar sein. Des Weiteren sollte sich der Nutzer schnell und unkompliziert in der Anwendung zurechtfinden, was eine gute Struktur und Positionierung der Einzelnen Features vorraussetzt. Des weiteren sollte ToneMate für die meisten eingeschränkten Personen nutzbar sein. Zusätzlich sollte ToneMate, als Gehör-Trainingsapp für Musiker, eine gute Soundqualität besitzen, um eine effektive Lernathmosphäre zu bilden.
+
+=== Internationalisierungs-Konzepte
+
+ToneMate wird in erster Linie nur die deutsche Sprache unterstützen. Weitere Sprachen sind nicht geplant, aber auch noch nicht vollständig ausgeschlossen. 

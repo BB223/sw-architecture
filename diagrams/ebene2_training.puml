@@ -1,0 +1,26 @@
+@startuml
+!include <C4/C4_Component>
+
+caption Training
+
+Container_Boundary(toneMate, "ToneMate") {
+    Container_Boundary(training, "Training") {
+        Component(relativerPitch, "Relativer Pitch")
+        Component(intervalBestimmung, "Interval Bestimmung")
+        Component(akkordBestimmung, "Akkord Bestimmung")
+        Component(freiesTraining, "Freies Training")
+        Component(speicherManager, "Speicher Manager")
+
+        Rel(relativerPitch, speicherManager, "benutzt")
+        Rel(akkordBestimmung, speicherManager, "benutzt")
+        Rel(intervalBestimmung, speicherManager, "benutzt")
+    }
+    Container(api, "API Layer")
+
+    Rel(speicherManager, api, "benutzt")
+}
+Container_Ext(dateiSystem, "Dateisystem")
+
+Rel(speicherManager, dateiSystem, "speichert in")
+
+@enduml

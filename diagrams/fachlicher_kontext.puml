@@ -8,7 +8,7 @@ Person_Ext(personal, "Hochschul Personal")
 
 System(toneMate, "ToneMate", $type="React Native")
 System_Ext(oauth, "Microsoft Identity Platform")
-System_Ext(uni, "Universitäts-System")
+System_Ext(uni, "Universitätssystem")
 
 Rel_D(toneMate, uni, "benutzt", "REST")
 Rel_L(uni, oauth, "benutzt")

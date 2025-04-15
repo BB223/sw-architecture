@@ -148,6 +148,16 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 |Einstellungen: Farbschema
 |Aus einer Liste an Farbschema kann das zu verwendende Schema gewählt werden, welche sich sofort über die gesamte App auswirken und möglichst ansprechend aussehen.
 |Niedrig
+
+|TM-{counter:TM}
+|Softwareunterstützung
+|Android Version 8+, IOS Version 14+
+|Hoch
+
+|TM-{counter:TM}
+|Geräteunterstützung
+|Unterstützung der meisten Gerätegrößen.
+|Hoch
 |===
 
 === Qualitätsziele

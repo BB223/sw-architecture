@@ -1,0 +1,22 @@
+@startuml
+!include <C4/C4_Component>
+
+caption Kalender
+
+Container_Boundary(toneMate, "ToneMate") {
+    Container_Boundary(kalender, "Kalender") {
+        Container_Boundary(termin, "Termin") {
+            Component(kommentar, "Kommentar")
+        }
+        Component(speicherManager, "Speicher Manager")
+
+        Rel(termin, speicherManager, "benutzt")
+    }
+}
+Container_Ext(dateiSystem, "Dateisystem")
+Container_Ext(kalenderExt, "Nativer Kalender")
+
+Rel(speicherManager, dateiSystem, "speichert in")
+Rel(speicherManager, kalenderExt, "speichert in")
+
+@enduml

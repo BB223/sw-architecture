@@ -1,11 +1,12 @@
 [preface]
-== Change History
+== Änderungs-Historie
 [cols="3,4,6,18"]
 |===
+|Version |Datum |Bearbeiter |Änderungen
 
 |1.0
-|
-|Ben Zelleröhr / Moritz Bosch
+|15.04.2025
+|Ben Zelleröhr, Moritz Bosch
 |Initiales Dokument
 
 |===

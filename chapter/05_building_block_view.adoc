@@ -1,75 +1,36 @@
 == Bausteinsicht
+Das Whitebox Gesamtsystem wird durch folgende Abbildung dargestellt.
 
-ifdef::arc42help[]
 
-endif::arc42help[]
 
-=== Whitebox Gesamtsystem
+// Begründung::
+// ToneMate als Lern-App verwendet eine Anbindung an das Universitätssystem, um u.A. den Trainingsfortschritt zu speichen. Das Personal der Universität kann ebenfalls auf den Fortschritt der Studenten zugreifen. Damit die Studenten, die über Microsoft bereitgestellten Universitäts-Accounts nutzten können, wird Microsoft als OAuth Provider eingesetzt.
 
-ifdef::arc42help[]
+// Enthaltene Bausteine::
 
-endif::arc42help[]
+// [%autowidth]
+// |===
+// |Baustein |Beschreibung
 
-Begründung::
-ToneMate als Lern-App verwendet eine Anbindung an das Universitäts-System um den Fortschritt zu speichen. Das Personal der Universität kann ebenfalls auf den Fortschritt der Studenten zugreifen. Damit die Studenten, die über Microsoft bereitgestellten Universitäts-Accounts nutzten können, wird Microsoft als OAuth Provider eingesetzt.
+// |ToneMate
+// |Die App um die es in der Architektur geht.
 
-Enthaltene Bausteine::
+// |Microsoft Identity Platform
+// |OAuth Provider
 
-[%autowidth]
-|===
-|Baustein |Beschreibung
+// |Universitätssystem
+// |Das Zentrale Verwaltungssystem der Universität
+// |===
 
-|ToneMate
-|Die App um die es in der Architektur geht.
-
-|Microsoft Identity Platform
-|OAuth Provider
-
-|Universitäts-System
-|Das Zentrale Verwaltungssystem der Universitäts
-|===
-
-[plantuml]
-....
-@startuml
-!include <C4/C4_Context>
-
-caption Gesamtsystem
-
-Person(student, "Student")
-Person_Ext(personal, "Hochschul Personal")
-
-System(toneMate, "ToneMate", $type="React Native")
-System_Ext(oauth, "Microsoft Identity Platform")
-System_Ext(uni, "Universitäts-System")
-
-Rel_D(toneMate, uni, "benutzt", "REST")
-Rel_L(uni, oauth, "benutzt")
-Rel_D(toneMate, oauth, "nutzt login von")
-
-Rel_R(student, toneMate, "benutzt")
-Rel_L(personal, uni, "benutzt")
-
-@enduml
-....
+// plantuml::diagrams/fachlicher_kontext.puml[]
 
 // Wichtige Schnittstellen::
 
 
-=== Ebene 2
-
-ifdef::arc42help[]
-
-endif::arc42help[]
-
-==== Whitebox ToneMate
-
-ifdef::arc42help[]
-
-endif::arc42help[]
+=== Whitebox Gesamtsystem
 
 Begründung::
-Die App ist in drei Kernfunktionen unterteilt. Die Werkzeuge beinhalten allgemein Hilfsmittel für Musiker. Das Training ist die Leistungserfassung der Universität. Der Kalender dient zum planen von Lernzielen. Desweiteren können Einstellungen für die gesamte App eingestellt werden.
+Die Funktionalen Anforderungen von ToneMate wurden in bestmöglich abgetrennten Komponenten aufgeteilt. Zusätzlich gibt es Komponenten für das Verwalten der Informationen mit dem externen Universitätssystem.  
 
 Enthaltene Bausteine::
 
@@ -78,81 +39,37 @@ Enthaltene Bausteine::
 |Baustein |Beschreibung
 
 |Training
-|Das Training dient zur Leistungserfassung der Universität
+|Das Training dient zur Leistungserfassung der Universität und der Studenten, als auch zum freien üben.
 
 |Werkzeuge
-|Werkzeuge beinhalten Hilfsmittel für Musiker
+|Werkzeuge beinhalten Hilfsmittel zum üben für Musiker.
 
 |Kalender
-|Kalender
+|Kalender zur Planung von Terminen.
 
 |Einstellungen
-|In den Einstellungen gibt es die Möglichkeit die Anzeigesprache, das Farbschema und das Instrument für die Tonausgabe des Trainings einzustellen. Desweiteren gibt es ein Knopf mit dem eine Synchronisierung des Universitäts-System gestartet werden kann.
+|Änderung des Aussehens und Verhalten von ToneMate.  
+
+// In den Einstellungen gibt es die Möglichkeit die Anzeigesprache, das Farbschema und das Instrument für die Tonausgabe des Trainings einzustellen. Desweiteren gibt es ein Knopf mit dem eine Synchronisierung des Universitäts-System gestartet werden kann.
 
 |Account Manager
-|Logik Komponente für die Handhabung des Login Zustandes.
+|Logik Komponente für die Handhabung des Login-Zustands.
 
 |API Layer
-|Mithilfe vom OpenAPI Generator werden die Stubs des Universitäts-Systems bereitgestellt.
+|Schnittstelle zum Universitätssystem. Mithilfe vom OpenAPI Generator werden die Stubs bereitgestellt.
 |===
 
-[plantuml]
-....
-@startuml
-!include <C4/C4_Container>
-
-caption ToneMate
-
-System_Boundary(phone, "Smartphone") {
-    Container_Boundary(toneMate, "ToneMate") {
-        Container(werkzeuge, "Werkzeuge")
-        Container(kalender, "Kalender")
-        Container(training, "Training")
-        Container(einstellungen, "Einstellungen")
-        Container(accountManager, "Account Manager")
-        Container(api, "API Layer")
-
-        Rel(training, accountManager, "benutzt")
-        Rel(werkzeuge, accountManager, "benutzt")
-        Rel(kalender, accountManager, "benutzt")
-        Rel(accountManager, api, "benutzt")
-    }
-    Container_Ext(dateiSystem, "Dateisystem")
-    Container_Ext(kalenderExt, "Nativer Kalender")
-
-    Rel(kalender, kalenderExt, "speichert in")
-    Rel(kalender, dateiSystem, "speichert in")
-    Rel(werkzeuge, dateiSystem, "speichert in")
-    Rel(training, dateiSystem, "speichert in")
-    Rel(einstellungen, dateiSystem, "speichert in")
-}
-System_Ext(oauth, "Microsoft Identity Platform")
-System_Ext(uni, "Universitäts-System")
-
-Rel(api, uni, "benutzt", "REST")
-Rel_L(uni, oauth, "benutzt")
-Rel(api, oauth, "nutzt login von")
-
-@enduml
-....
+plantuml::diagrams/ebene1_toneMate.puml[]
 
 // Wichtige Schnittstellen::
 
 
-=== Ebene 3
-
-ifdef::arc42help[]
-
-endif::arc42help[]
+=== Ebene 2
 
 ==== Whitebox Training
 
-ifdef::arc42help[]
-
-endif::arc42help[]
-
 Begründung::
-Das Training wird in drei Trainingstypen unterteilt. Die Trainingstypen beinhalten die verschiedenen Arten wie mit ToneMate sein Gehör trainiert werden kann. Der Speicher Manager ist dabei die Logik Componente zum Verwalten des Fortschrittes im Dateisystem, sowie auch die Synchronisierung mit dem Universitäts-Systems.
+Das Training wird in drei Trainingstypen unterteilt. Die Trainingstypen beinhalten die verschiedenen Arten wie mit ToneMate sein Gehör trainiert werden kann. Der Speicher Manager ist dabei die Logik Komponente zum Verwalten des Fortschritts im Dateisystem, sowie auch die Synchronisierung mit dem Universitätssystem.
 
 Enthaltene Bausteine::
 
@@ -161,58 +78,29 @@ Enthaltene Bausteine::
 |Baustein |Beschreibung
 
 |Relativer Pitch
-|Training zum erhören von Noten.
-
-|Akkord Bestimmung
-|Training zum erhören von Akkorden.
+|Training zum identifizieren einer gespielten Note basierend auf einem zuvor erklingendem Ton.
 
 |Interval Bestimmung
-|Trainung zum erhören von Intervalen.
+|Trainung zum identifizieren von musikalischen Intervalen.
+
+|Akkord Bestimmung
+|Training zum identifizieren von Akkordtypen.
+
+|Freies Training
+|Möglichkeit des freien Trainings (ohne Levelfunktionalität) der drei Trainingstypen.
 
 |Speicher Manager
-|Verwaltet die Daten der Trainingstypen.
+|Verwaltet die Daten der Trainingstypen für das lokale Datei- und Universitätssystem.
 |===
 
-[plantuml]
-....
-@startuml
-!include <C4/C4_Component>
-
-caption Training
-
-Container_Boundary(toneMate, "ToneMate") {
-    Container_Boundary(training, "Training") {
-        Component(relativerPitch, "Relativer Pitch")
-        Component(akkordBestimmung, "Akkord Bestimmung")
-        Component(intervalBestimmung, "Interval Bestimmung")
-        Component(speicherManager, "Speicher Manager")
-
-        Rel(relativerPitch, speicherManager, "benutzt")
-        Rel(akkordBestimmung, speicherManager, "benutzt")
-        Rel(intervalBestimmung, speicherManager, "benutzt")
-    }
-    Container(api, "API Layer")
-
-    Rel(speicherManager, api, "benutzt")
-}
-Container_Ext(dateiSystem, "Dateisystem")
-
-Rel(speicherManager, dateiSystem, "speichert in")
-
-@enduml
-....
+plantuml::diagrams/ebene2_training.puml[]
 
 // Wichtige Schnittstellen::
 
-
 ==== Whitebox Werkzeuge
 
-ifdef::arc42help[]
-
-endif::arc42help[]
-
 Begründung::
-ToneMate beinhaltet Werkzeuge die Musiker beim Über von Intrumenten und Liedern helfen sollen.
+ToneMate beinhaltet Werkzeuge welche Musiker, beim Üben von Intrumenten und Liedern, helfen sollen.
 
 Enthaltene Bausteine::
 
@@ -221,51 +109,24 @@ Enthaltene Bausteine::
 |Baustein |Beschreibung
 
 |Metronom
-|Das Metronom lässt sich frei in der Geschwindikeit und der Taktart einstellen. Zudem können Metronom Einstellungen für gespeicherte Noten abgerufen werden.
+|Das Metronom lässt sich frei in der Geschwindikeit und der Taktart einstellen. Zudem können Metronom-Einstellungen von gespeicherte Partituren abgerufen werden.
 
 |Stimmgerät
-|Das Stimmgerät zeigt die gespielte Note an. Des Weiteren zeigt es an ob die Note genau getroffen wurde oder ein welche Richtung die Note korrigiert werden muss.
+|Das Stimmgerät zeigt die nächst gelegende Note der gespielten Cent an. Des Weiteren zeigt es an ob die Note genau getroffen wurde oder in welche Richtung die Note korrigiert werden muss.
 
-|Noten
-|Dies ist ein Sammelort, in dem Notenblätter von den Studenten abgelegt werden können. Die Dozenten haben auch die Möglichkeit ihren Studierenden Noten hochzuladen. Diese werden in einem dedizierent schreibgesperten Verzeichnis angezeigt.
+|Partituren
+|Dies ist ein Sammelort, in dem Partituren von den Studenten abgelegt werden können. Die Dozenten haben auch die Möglichkeit ihren Studierenden Partituren hochzuladen. Diese werden in einem dedizierent schreibgeschützten Verzeichnis angezeigt.
 
 |Speicher Manager
-|Verwaltet die Daten der Noten.
+|Verwaltet die Daten der Partituren für das lokale Datei- und Universitätssystem.
 |===
 
-[plantuml]
-....
-@startuml
-!include <C4/C4_Component>
-
-caption Werkzeuge
-
-Container_Boundary(toneMate, "ToneMate") {
-    Container_Boundary(werkzeuge, "Werkzeuge") {
-        Component(metronom, "Metronom")
-        Component(stimmgeraet, "Stimmgerät")
-        Component(noten, "Noten")
-        Component(speicherManager, "Speicher Manager")
-
-        Rel(noten, speicherManager, "benutzt")
-        Rel(metronom, noten, "greift zu")
-    }
-}
-Container_Ext(dateiSystem, "Dateisystem")
-
-Rel(speicherManager, dateiSystem, "speichert in")
-
-@enduml
-....
+plantuml::diagrams/ebene2_werkzeuge.puml[]
 
 // Wichtige Schnittstellen::
 
 
 ==== Whitebox Kalender
-
-ifdef::arc42help[]
-
-endif::arc42help[]
 
 Begründung::
 Der Kalender speichert Termine, die die Studierenden frei anlegen können. Zu den Terminen können auch Kommentare gespeichert werden. Diese werden nur im ToneMate Kalender angezeigt, um den nativen Kalender nicht mit langen Texten zu füllen.
@@ -283,43 +144,15 @@ Enthaltene Bausteine::
 |Freie Texte die zu einem Termin gespeichert werden können, diese Kommentare werden *nicht* mit dem nativen Kalender synchronisiert und sind nur in ToneMate zu lesen.
 |===
 
-[plantuml]
-....
-@startuml
-!include <C4/C4_Component>
-
-caption Kalender
-
-Container_Boundary(toneMate, "ToneMate") {
-    Container_Boundary(kalender, "Kalender") {
-        Container_Boundary(termin, "Termin") {
-            Component(kommentar, "Kommentar")
-        }
-        Component(speicherManager, "Speicher Manager")
-
-        Rel(termin, speicherManager, "benutzt")
-    }
-}
-Container_Ext(dateiSystem, "Dateisystem")
-Container_Ext(kalenderExt, "Nativer Kalender")
-
-Rel(speicherManager, dateiSystem, "speichert in")
-Rel(speicherManager, kalenderExt, "speichert in")
-
-@enduml
-....
+plantuml::diagrams/ebene2_termine.puml[]
 
 // Wichtige Schnittstellen::
 
 
 ==== Whitebox Einstellungen
 
-ifdef::arc42help[]
-
-endif::arc42help[]
-
 Begründung::
-Die Einstellungen dienen als globaler Speicher für Sprache, Farbschema und Instrument
+Die Einstellungen dienen als globaler Speicher für Sprache, Farbschema und Instrument. Zudem gibt es eine Funktion zum manuellen Synchronisieren der Datein mit dem Universitätssystem. Sämtlich vorgenommene Einstellungen werden in der Gesamten Applikation angewand.
 
 Enthaltene Bausteine::
 
@@ -328,26 +161,9 @@ Enthaltene Bausteine::
 |Baustein |Beschreibung
 
 |Speicher Manager
-|Speichert die Einstellungen in das lokale Filesystem.
+|Speichert die Einstellungen in das lokale Dateisystem.
 |===
 
-[plantuml]
-....
-@startuml
-!include <C4/C4_Component>
-
-caption Einstellungen
-
-Container_Boundary(toneMate, "ToneMate") {
-    Container_Boundary(einstellungen, "Einstellungen") {
-        Component(speicherManager, "Speicher Manager")
-    }
-}
-Container_Ext(dateiSystem, "Dateisystem")
-
-Rel(speicherManager, dateiSystem, "speichert in")
-
-@enduml
-....
+plantuml::diagrams/ebene2_einstellungen.puml[]
 
 // Wichtige Schnittstellen::

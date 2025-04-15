@@ -1,0 +1,21 @@
+@startuml
+!include <C4/C4_Component>
+
+caption Werkzeuge
+
+Container_Boundary(toneMate, "ToneMate") {
+    Container_Boundary(werkzeuge, "Werkzeuge") {
+        Component(metronom, "Metronom")
+        Component(stimmgeraet, "Stimmgerät")
+        Component(noten, "Partituren")
+        Component(speicherManager, "Speicher Manager")
+
+        Rel(noten, speicherManager, "benutzt")
+        Rel(metronom, noten, "greift zu")
+    }
+}
+Container_Ext(dateiSystem, "Dateisystem")
+
+Rel(speicherManager, dateiSystem, "speichert in")
+
+@enduml

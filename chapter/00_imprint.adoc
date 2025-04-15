@@ -1,38 +1,38 @@
 [preface]
-== Imprint
+== Impressum
 [%autowidth.stretch]
 |===
-3+| *Publisher* +
-    Uniname +
-    Abteilung +
-    Straße und Nummer +
-    PLZ und Ort +
+3+| *Veröffentlichung* +
+    Karl-Heinz-Universität zu Münster +
+    Fakultät für Musik +
+    Karl Heinz Straße 69 +
+    00000 Bielefeld +
     Germany
 
-3+| *Customer* +
-    Kunde
+3+| *Kunde* +
+    Universität
     
-| *Filename* +
-  {docname}{outfilesuffix}
-| *Title* +
-  {doctitle}
-| *Protection category* +
+| *Dateiname* +
+  ToneMate_Architektur_1.0
+| *Titel* +
+  ToneMate Architektur
+| *Sicherheitsstufe* +
   {protectionCategory}
 
 | *Version* +
   {revnumber}
-| *Date* +
+| *Datum* +
   {revdate}
 | *Status* +
   {status}
 
-| *Author* +
+| *Autor* +
   {author}
-| *Released by* +
+| *Veröffentlicht von* +
   {author}
 | *E-Mail* +
   {email}
 
-3+| *Short Description* +
+3+| *Kurzbeschreibung* +
     Dieses Dokument beschreibt die Architektur der App ToneMate.
 |===

@@ -1,0 +1,36 @@
+@startuml
+!include <C4/C4_Container>
+
+caption ToneMate
+
+System_Boundary(phone, "Smartphone") {
+    Container_Boundary(toneMate, "ToneMate") {
+        Container(werkzeuge, "Werkzeuge")
+        Container(kalender, "Kalender")
+        Container(training, "Training")
+        Container(einstellungen, "Einstellungen")
+        Container(accountManager, "Account Manager")
+        Container(api, "API Layer")
+
+        Rel(training, accountManager, "benutzt")
+        Rel(werkzeuge, accountManager, "benutzt")
+        Rel(kalender, accountManager, "benutzt")
+        Rel(accountManager, api, "benutzt")
+    }
+    Container_Ext(dateiSystem, "Dateisystem")
+    Container_Ext(kalenderExt, "Nativer Kalender")
+
+    Rel(kalender, kalenderExt, "speichert in")
+    Rel(kalender, dateiSystem, "speichert in")
+    Rel(werkzeuge, dateiSystem, "speichert in")
+    Rel(training, dateiSystem, "speichert in")
+    Rel(einstellungen, dateiSystem, "speichert in")
+}
+System_Ext(oauth, "Microsoft Identity Platform")
+System_Ext(uni, "Universitäts-System")
+
+Rel(api, uni, "benutzt", "REST")
+Rel_L(uni, oauth, "benutzt")
+Rel(api, oauth, "nutzt login von")
+
+@enduml

@@ -1,7 +1,5 @@
 include::./config.adoc[]
 
-:revnumber: 8.2 DE
-:revdate: Januar 2023
 :revremark: (basiert auf AsciiDoc Version)
 :toc-title: Inhaltsverzeichnis
 :mermaid-puppeteer-config: ./puppeteer.config.json
@@ -12,11 +10,13 @@ include::./config.adoc[]
 :toc: macro
 :toclevels: 3
 
-:author: Autor
-:email: email
-:revdate: letztes änderungsdatum
-:revnumber: dateiversion
-:status: Status (Draft/Approved/...)
+:author: Ben Zelleröhr, +
+ Moritz Bosch
+:email: ben.zelleroehr@stud-provadis-hochschule.de, +
+ moritz.bosch@stud-provadis-hochschule.de
+:revdate: 15.04.2025
+:revnumber: 1.0
+:status: Akzeptiert
 :protectionCategory: Offen
 
 

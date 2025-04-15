@@ -1,6 +1,7 @@
 == Kontextabgrenzung
 
 === Fachlicher Kontext
+Die folgende Tabelle und Abbildung zeigen die Ein- und Ausgaben von ToneMate und den direkten Kommunikationspartnern.
 
 [%autowidth]
 |===
@@ -18,7 +19,7 @@ a|* Möglich zu erziehlender Forschritt in der Trainingssektion über das traini
  * Pushbenachrichitungen zu gesetzten Terminen
 
 |Microsoft Authentication
-a| * Berechtigungscode und Oauth Bearer Token für Login. 
+a| * Berechtigungscode und OAuth Bearer Token für Login. 
 a| * Login Daten für Login
 
 |Universitäts-System
@@ -26,10 +27,10 @@ a|* Updaten der gespeicherten Partituren welche von Dozenten hochgeladen werden
 a|* Trainingsfortschritt von Studenten zur Einsicht der Dozenten
 |===
 
-plantuml::diagrams/fachlicher_kontext.puml[format=svg, title="test"]
+plantuml::diagrams/fachlicher_kontext.puml[]
 
 === Technischer Kontext
-Der technische Kontext in der folgenden Abbildung zeit die einzelnen Kommunikationspartner und dessen zur Kommunikation verwendeten Protokolle mit ToneMate.
+Der technische Kontext in der folgenden Tabelle und Abbildung zeigen die einzelnen Kommunikationspartner und dessen, zur Kommunikation verwendeten, Protokolle mit ToneMate.
 
 |===
 |Kommunikationskanal |Beschreibung |Protokolle / Technologien
@@ -47,4 +48,4 @@ Der technische Kontext in der folgenden Abbildung zeit die einzelnen Kommunikati
 |HTTPS, REST
 |===
 
-// plantuml::../diagrams/technischer_kontext.puml[]
+plantuml::diagrams/technischer_kontext.puml[]

@@ -1,0 +1,16 @@
+@startuml
+autonumber
+participant ToneMate [
+    =ToneMate
+]
+
+participant Uni [
+    =Universität
+]
+
+ToneMate -> Uni: Anfrage der Partituren
+ToneMate <-- Uni: Senden aller Partituren
+
+ToneMate <- ToneMate: Aktualisierung der Partituren
+
+@enduml

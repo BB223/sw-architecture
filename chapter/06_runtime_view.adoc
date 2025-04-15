@@ -1,112 +1,23 @@
 == Laufzeitsicht
 
-ifdef::arc42help[]
-
-endif::arc42help[]
-
 === Benutzer Login
 
-Die folgende Grafik zeigt die Kommunikation mit Microsoft als Identity Provider. Durch die Randbedingung xref:#section-architecture-constraints[TE-01] wird definiert, dass Microsoft als Authentication zu verwenden ist. Die Grafik soll zur schnellen Übersicht dienen, ein ausführliche Beschreibung ist in der https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow#protocol-details[Microsoft Dokumentation] zu finden.
+Die folgende Grafik zeigt die Kommunikation mit Microsoft als Identity Provider. Durch die Randbedingung xref:#section-architecture-constraints[TE-01] wird definiert, dass Microsoft als Authentication zu verwenden ist. Die Grafik soll zur schnellen Übersicht dienen, eine ausführliche Beschreibung ist in der https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow#protocol-details[Microsoft Dokumentation] zu finden.
 
-[plantuml]
-....
-@startuml
-autonumber
-participant ToneMate [
-    =ToneMate
-]
-participant MicrosoftAuth [
-    =Microsoft
-    ----
-    ""/authorize""
-]
-participant MicrosoftToken [
-    =Microsoft
-    ----
-    ""/token""
-]
-participant Uni [
-    =Universität
-]
-
-ToneMate -> MicrosoftAuth: Login mit dem Universitäts Microsoft Account
-ToneMate <-- MicrosoftAuth: Gibt Berechtigungscode zurück
-
-ToneMate -> MicrosoftToken: Fragt Outh bearer token mit Zugabe von dem Berechtigungscode, Client-ID und Client-Secret an
-ToneMate <-- MicrosoftToken: Gibt Oauth bearer token zurück
-
-ToneMate -> Uni: Fragt Ressourcen mit dem bearer token an
-Uni -> Uni: Validiert bearer token
-ToneMate <-- Uni: Gibt Ressourcen zurück
-@enduml
-....
-// *  <hier Besonderheiten bei dem Zusammenspiel der Bausteine in diesem Szenario erläutern>
-
+plantuml::diagrams/laufzeit_login.puml[]
 
 === Synchronisierung Level Fortschritt
 
 Die folgende Grafik zeigt die Synchronisierung des Level Fortschritts beim öffnen von ToneMate oder beim benutzen der Synchronisierungsfunktion in den Einstellungen.
 
-[plantuml]
-....
-@startuml
-autonumber
-participant ToneMate [
-    =ToneMate
-]
-
-participant Uni [
-    =Universität
-]
-
-ToneMate -> Uni: Fragt die Level-Daten ab
-ToneMate <-- Uni: Gibt die Level-Daten zurück
-
-ToneMate -> ToneMate: Verleicht den Level Fortschritt mit den lokalen Daten
-
-autonumber stop
-alt Universitätsdaten sind weiter fortgeschritten
-
-    ToneMate -> ToneMate: Überschreibt lokale Daten mit den neuen Daten
-
-else lokale Daten sind weiter fortgeschritten
-
-    ToneMate -> Uni: Sendet lokale Daten
-
-end
-
-@enduml
-....
+plantuml::diagrams/laufzeit_levelStart.puml[]
 
 Die folgende Grafik zeigt die Synchronisierung des Level Fortschritts beim abschließen eines Levels
 
-[plantuml]
-....
-@startuml
-autonumber
-participant ToneMate [
-    =ToneMate
-]
+plantuml::diagrams/laufzeit_levelWeiter.puml[]
 
-participant Uni [
-    =Universität
-]
+=== Synchronisierung Partituren
 
-ToneMate -> ToneMate: Speichert die Daten lokal
+Die folgende Grafik zeigt die Synchronisierung der Partituren aus dem Universitätssystem, welche von den Dozenten hochgeladen werden können.
 
-autonumber stop
-alt Universitäts-System erreichbar
-
-    ToneMate -> Uni: Sendet lokale Daten
-
-else Verbindungstimeout oder Status Code 5xx
-
-    ToneMate -> ToneMate: Deaktiviert für 5 min synchronisation 
-    
-end
-
-@enduml
-....
-
-// === _<Bezeichnung Laufzeitszenario n>_
-
+plantuml::diagrams/laufzeit_partituren.puml[]

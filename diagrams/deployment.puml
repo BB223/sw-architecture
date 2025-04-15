@@ -1,0 +1,35 @@
+@startuml
+!include <C4/C4_Component>
+
+LAYOUT_WITH_LEGEND()
+
+caption Gesamtsystemübersicht – ToneMate Deployment & Nutzung
+
+' Personen
+Person(student, "Student", "Verwendet die App auf dem Smartphone")
+Person(entw, "Entwickler", "Pflegt und veröffentlicht die Anwendung")
+
+' Hosting Plattformen
+Container_Boundary(stores, "App-Hosting-Plattformen") {
+  Component(appStore, "App Store", "Distributionsplattform für iOS")
+  Component(playStore, "Google Play", "Distributionsplattform für Android")
+}
+
+' GitHub-Projekte
+Container_Boundary(github, "GitHub") {
+  Component(repo1, "ToneMate", "Hauptrepository")
+  Component(repo2, "Produktions API Layer", "Interne Schnittstelle", $techn = "privat")
+  Component(repo3, "Mock API Layer", "Test-Schnittstelle")
+}
+
+' Weitere Systeme
+System(handy, "Smartphone", "Endgerät des Studierenden")
+
+' Beziehungen (klar gerichtet)
+Rel(entw, github, "entwickelt & verwaltet Code")
+Rel(repo1, repo2, "greift auf interne APIs zu")
+Rel(repo1, stores, "veröffentlicht App")
+Rel(handy, stores, "installiert App")
+Rel(student, handy, "verwendet ToneMate")
+
+@enduml
