@@ -44,7 +44,7 @@
 
 |OE-{counter:OE}
 |Budget
-|Das Budget von ToneMate beschränkt sich auf 3000€. Wartungskosten sind nicht involviert.
+|Das Budget von ToneMate beschränkt sich auf 10.000€. Wartungskosten sind nicht involviert.
 
 |OE-{counter:OE}
 |Wartung

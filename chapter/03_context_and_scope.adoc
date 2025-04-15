@@ -1,29 +1,5 @@
 == Kontextabgrenzung
 
-[plantuml]
-....
-@startuml
-!include <C4/C4_Context>
-
-caption Gesamtsystem
-
-Person(student, "Student")
-Person_Ext(personal, "Hochschul Personal")
-
-System(toneMate, "ToneMate", $type="React Native")
-System_Ext(oauth, "Microsoft Identity Platform")
-System_Ext(uni, "Universitäts-System")
-
-Rel_D(toneMate, uni, "benutzt", "REST")
-Rel_L(uni, oauth, "benutzt")
-Rel_D(toneMate, oauth, "nutzt login von")
-
-Rel_R(student, toneMate, "benutzt")
-Rel_L(personal, uni, "benutzt")
-
-@enduml
-....
-
 === Fachlicher Kontext
 
 [%autowidth]
@@ -31,23 +7,26 @@ Rel_L(personal, uni, "benutzt")
 |Kommunikationspartner |Eingabe zu ToneMate |Ausgabe von ToneMate
 
 |Student
-|Fortschritte in Trainingssektion +
- Abspeichern von Partituren +
- Eintragen von Kalenderterminen mit potentiellen Kommentaren +
- Gezieltes Verändern der App über die Einstellungen +
+a|* Fortschritte in Trainingssektion 
+ * Abspeichern von Partituren 
+ * Eintragen von Kalenderterminen mit potentiellen Kommentaren 
+ * Gezieltes Verändern der App über die Einstellungen 
  Manuelle Synchronisation der Lokalen Daten mit den Daten Im Universitätssystem
-|Möglich zu erziehlender Forschritt in der Trainingssektion über das trainieren mit der App +
- Speicherung und dementsprechend mögliche on-demand Abrufung von gespeicherten Partituren +
- Pushbenachrichitungen zu gesetzten Terminen
+ * Login Daten für Login
+a|* Möglich zu erziehlender Forschritt in der Trainingssektion über das trainieren mit der App 
+ * Speicherung und dementsprechend mögliche on-demand Abrufung von gespeicherten Partituren 
+ * Pushbenachrichitungen zu gesetzten Terminen
 
 |Microsoft Authentication
-|
-|
+a| * Berechtigungscode und Oauth Bearer Token für Login. 
+a| * Login Daten für Login
 
 |Universitäts-System
-|Updaten der gespeicherten Partituren welche von Dozenten hochgeladen werden
-|Trainingsfortschritt von Studenten zur Einsicht der Dozenten
+a|* Updaten der gespeicherten Partituren welche von Dozenten hochgeladen werden
+a|* Trainingsfortschritt von Studenten zur Einsicht der Dozenten
 |===
+
+plantuml::../diagrams/fachlicher_kontext.puml["test", svg]
 
 === Technischer Kontext
 
