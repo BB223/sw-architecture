@@ -26,31 +26,10 @@ a|* Updaten der gespeicherten Partituren welche von Dozenten hochgeladen werden
 a|* Trainingsfortschritt von Studenten zur Einsicht der Dozenten
 |===
 
-plantuml::../diagrams/fachlicher_kontext.puml[]
+plantuml::diagrams/fachlicher_kontext.puml[format=svg, title="test"]
 
 === Technischer Kontext
-
-[plantuml]
-....
-@startuml
-!include <C4/C4_Context>
-
-caption TechnischerKontext
-
-Person(student, "Student")
-
-System(toneMate, "ToneMate", $type="React Native")
-System_Ext(oauth, "Microsoft Identity Platform")
-System_Ext(uni, "Universitäts-System")
-
-Rel_D(toneMate, uni, "Internet / REST / Uni-API")
-Rel_L(uni, oauth, "Internet / REST / MSAL-API")
-Rel_D(toneMate, oauth, "Internet / REST / MSAL-API")
-
-Rel_R(student, toneMate, "benutzt")
-
-@enduml
-....
+Der technische Kontext in der folgenden Abbildung zeit die einzelnen Kommunikationspartner und dessen zur Kommunikation verwendeten Protokolle mit ToneMate.
 
 |===
 |Kommunikationskanal |Beschreibung |Protokolle / Technologien
@@ -63,7 +42,9 @@ Rel_R(student, toneMate, "benutzt")
 |Externe Schnittstelle zur Durchführung der eigentlichen Authentifizierung und Autorisierung. Übergabe von Nutzercredentials, Erhalt von Tokens.
 |HTTPS, REST
 
-|Universitäts-System
-|
+|Universitätssystem
+|Externes System für Informationsaustausch und -abgleich. 
 |HTTPS, REST
 |===
+
+// plantuml::../diagrams/technischer_kontext.puml[]
