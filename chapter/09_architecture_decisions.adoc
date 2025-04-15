@@ -29,3 +29,5 @@ Akzeptiert
 
 .Konsequenz
 Den Studenten wird nicht die Möglichkeit gegeben selber zu entschieden welcher Fortschrittsstand benutzt werden soll. Durch das vollständige Überschreiben der Daten kann keine Datenkurruption entstehen. Es muss keine Logik zum lösen von Datenkonflikte implementiert werden.
+
+<<<<

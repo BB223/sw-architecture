@@ -23,3 +23,5 @@ Zum einen sollten die meisten und wichtigsten Seiten von ToneMate inerhalb von m
 === Internationalisierungs-Konzepte
 
 ToneMate wird in erster Linie nur die deutsche Sprache unterstützen. Weitere Sprachen sind nicht geplant, aber auch noch nicht vollständig ausgeschlossen. 
+
+<<<<

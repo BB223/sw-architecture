@@ -65,10 +65,8 @@ include::chapter/07_deployment_view.adoc[]
 <<<<
 
 include::chapter/08_concepts.adoc[]
-<<<<
 
 include::chapter/09_architecture_decisions.adoc[]
-<<<<
 
 include::chapter/10_quality_requirements.adoc[]
 <<<<
