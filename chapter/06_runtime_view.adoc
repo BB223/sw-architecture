@@ -2,7 +2,7 @@
 
 === Benutzer Login
 
-Die folgende Grafik zeigt die Kommunikation mit Microsoft als Identity Provider. Durch die Randbedingung xref:#section-architecture-constraints[TE-01] wird definiert, dass Microsoft als Authentication zu verwenden ist. Die Grafik soll zur schnellen Übersicht dienen, eine ausführliche Beschreibung ist in der https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow#protocol-details[Microsoft Dokumentation] zu finden.
+Die folgende Grafik zeigt die Kommunikation mit Microsoft als Identity Provider. Durch die Randbedingung TM-01 (siehe <<Funktionale Anforderungen>>) wird definiert, dass Microsoft als Authentication zu verwenden ist. Die Grafik soll zur schnellen Übersicht dienen, eine ausführliche Beschreibung ist in der https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-auth-code-flow#protocol-details[Microsoft Dokumentation] zu finden.
 
 plantuml::diagrams/laufzeit_login.puml[]
 

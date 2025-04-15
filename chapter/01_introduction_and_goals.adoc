@@ -15,7 +15,7 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 
 === Funktionale Anforderungen
 
-[%autowidth]
+[cols="10%,20%,60%,10%"]
 |===
 |ID |Anforderung |Beschreibung |Priorität
 
@@ -162,7 +162,7 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 
 === Qualitätsziele
 
-[%autowidth]
+[cols="10%,20%,60%,10%"]
 |===
 |ID |Qualitätsziel |Beschreibung |Priorität
 
@@ -187,6 +187,7 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 
 === Stakeholder
 
+[cols="20%,30%,50%"]
 |===
 |Name |Rolle |Erwartungen
 

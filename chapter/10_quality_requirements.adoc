@@ -4,6 +4,7 @@ Zusätzlich zu den bereichts relevantesten Qualitätszielen, welche in <<Qualit�
 
 === Qualitätsbaum
 
+[cols="20%,20%,50%,10%"]
 |===
 
 |Kategorie |Qualitätsziel |Beschreibung |Szenario
@@ -40,6 +41,7 @@ Zusätzlich zu den bereichts relevantesten Qualitätszielen, welche in <<Qualit�
 
 === Qualitätsszenarien
 
+[cols="10%,90%"]
 |===
 |ID |Beschreibung
 

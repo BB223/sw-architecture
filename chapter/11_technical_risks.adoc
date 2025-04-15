@@ -1,7 +1,7 @@
 == Risiken und technische Schulden
 
-bla bla
 
+[cols="10%,30%,30%,30%"]
 |===
 
 |Priorität |Risiko / Technische Schuld |Beschreibung |Mögliche Maßnahmen

@@ -1,6 +1,6 @@
 == Randbedingungen
 
-[%autowidth]
+[cols="10%,20%,70%"]
 |===
 |ID |Technische Einschränkung |Erläuterung
 
@@ -25,7 +25,7 @@
 |ToneMate muss stätig offline nutzbar sein. Wenn das mobile Endgerät wieder mit dem Internet verbunden ist werden die entsprechenden Daten automatisch mit dem Universitätssystem synchronisiert.
 |===
 
-[%autowidth]
+[cols="10%,20%,70%"]
 |===
 |ID |Politische Einschränkungen |Erläuterung
 
@@ -38,7 +38,7 @@
 |ToneMate muss seinen Inhalt Barrierefreigestallten. Dies umschließt Dinge wie Screenreader, Kontrastmodi und alternative Eingabemethoden.
 |===
 
-[%autowidth]
+[cols="10%,20%,70%"]
 |===
 |ID |Organisatorische Einschränkungen |Erläuterung
 
@@ -59,7 +59,7 @@
 |Es ist ein Entwicklungszeitraum von etwa zwei Monaten angedacht. Dieser Zeitramen umfasst Nutzeranalysen, Entwicklung, Feedback-Phasen und Puffer.
 |===
 
-[%autowidth]
+[cols="10%,20%,70%"]
 |===
 |ID |Konventionelle Einschränkung |Erläuterung
 
