@@ -5,10 +5,10 @@
 |Ziel/Anforderung |Architekturelle Herangehensweise |Details
 
 |Offline Nutzung
-a|Synchronisationsverfahren, damit sowohl die Daten auf dem mobilen Gerät, als auch die Daten im Universitätssystem bestmöglich auf dem aktuellsten Stand sind:
-* sämtliche Daten werden Lokal auf dem Endgerät gespeichert
+a|Synchronisationsverfahren, damit sowohl die Daten auf dem mobilen Gerät, als auch die Daten im Universitätssystem bestmöglich auf dem aktuellsten Stand sind: +
+* sämtliche Daten werden lokal auf dem Endgerät gespeichert
 * beim öffnen der Applikation wird, insofern Internet vorhanden ist, eine Synchronisation mit dem Universitätssystem vorgenommen, andernfalls beim drücken eines Buttons in der Applikation
-* synchronisiert werden Trainingsfortschritt und Partituren des Dozeten
+* synchronisiert werden Trainingsfortschritt und Partituren des Dozenten
 * beim Trainingsfortschritt wird die aktuellste Information genommen, um die veraltete zu überschrieben
 * beim synchronisieren der Partituren wird immer die Information aus dem Universitätssystem bevorzugt
 |TM-2 (siehe <<Funktionale Anforderungen>>)

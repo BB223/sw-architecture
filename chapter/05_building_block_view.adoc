@@ -1,31 +1,4 @@
 == Bausteinsicht
-Das Whitebox Gesamtsystem wird durch folgende Abbildung dargestellt.
-
-
-
-// Begründung::
-// ToneMate als Lern-App verwendet eine Anbindung an das Universitätssystem, um u.A. den Trainingsfortschritt zu speichen. Das Personal der Universität kann ebenfalls auf den Fortschritt der Studenten zugreifen. Damit die Studenten, die über Microsoft bereitgestellten Universitäts-Accounts nutzten können, wird Microsoft als OAuth Provider eingesetzt.
-
-// Enthaltene Bausteine::
-
-// [%autowidth]
-// |===
-// |Baustein |Beschreibung
-
-// |ToneMate
-// |Die App um die es in der Architektur geht.
-
-// |Microsoft Identity Platform
-// |OAuth Provider
-
-// |Universitätssystem
-// |Das Zentrale Verwaltungssystem der Universität
-// |===
-
-// plantuml::diagrams/fachlicher_kontext.puml[]
-
-// Wichtige Schnittstellen::
-
 
 === Whitebox Gesamtsystem
 
@@ -53,7 +26,7 @@ Enthaltene Bausteine::
 // In den Einstellungen gibt es die Möglichkeit die Anzeigesprache, das Farbschema und das Instrument für die Tonausgabe des Trainings einzustellen. Desweiteren gibt es ein Knopf mit dem eine Synchronisierung des Universitäts-System gestartet werden kann.
 
 |Account Manager
-|Logik Komponente für die Handhabung des Login-Zustands.
+|Logik-Komponente für die Handhabung des Login-Zustands.
 
 |API Layer
 |Schnittstelle zum Universitätssystem. Mithilfe vom OpenAPI Generator werden die Stubs bereitgestellt.
@@ -69,7 +42,7 @@ plantuml::diagrams/ebene1_toneMate.puml[]
 ==== Whitebox Training
 
 Begründung::
-Das Training wird in drei Trainingstypen unterteilt. Die Trainingstypen beinhalten die verschiedenen Arten wie mit ToneMate sein Gehör trainiert werden kann. Der Speicher Manager ist dabei die Logik Komponente zum Verwalten des Fortschritts im Dateisystem, sowie auch die Synchronisierung mit dem Universitätssystem.
+Das Training wird in drei Trainingstypen unterteilt. Die Trainingstypen beinhalten die verschiedenen Arten wie mit ToneMate sein Gehör trainiert werden kann. Der Speicher Manager ist dabei die Logik-Komponente zum Verwalten des Fortschritts im Dateisystem, sowie auch die Synchronisierung mit dem Universitätssystem.
 
 Enthaltene Bausteine::
 
@@ -87,7 +60,7 @@ Enthaltene Bausteine::
 |Training zum identifizieren von Akkordtypen.
 
 |Level-Training
-|Möglichkeit des Level-Trainings über die drei Trainingstypen. Dabei werden mit fortschreitendem Level, mehr "Fragen" und Antwortmöglichkeiten freigegeben. Dadurch ist der Nutzer anfangs nicht Überfordert und hat einen vorgeschriebenen Lernweg.
+|Möglichkeit des Level-Trainings über die drei Trainingstypen. Dabei werden mit fortschreitendem Level, mehr "Fragen" und Antwortmöglichkeiten freigegeben. Dadurch ist der Nutzer anfangs nicht überfordert und hat einen vorgeschriebenen Lernweg.
 
 |Freies Training
 |Möglichkeit des freien Trainings über die drei Trainingstypen. Im Gegensatz zum Level-Trainings sind stetig alle "Fragen" und Antwortmöglichkeiten freigegeben.
@@ -155,7 +128,7 @@ plantuml::diagrams/ebene2_termine.puml[]
 ==== Whitebox Einstellungen
 
 Begründung::
-Die Einstellungen dienen als globaler Speicher für Sprache, Farbschema und Instrument. Zudem gibt es eine Funktion zum manuellen Synchronisieren der Datein mit dem Universitätssystem. Sämtlich vorgenommene Einstellungen werden in der Gesamten Applikation angewand.
+Die Einstellungen dienen als globaler Speicher für Sprache, Farbschema und Instrument. Zudem gibt es eine Funktion zum manuellen synchronisieren der Datein mit dem Universitätssystem. Sämtlich vorgenommene Einstellungen werden in der gesamten Applikation angewand.
 
 Enthaltene Bausteine::
 

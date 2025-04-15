@@ -12,7 +12,7 @@ Die folgende Grafik zeigt die Synchronisierung des Level Fortschritts beim öffn
 
 plantuml::diagrams/laufzeit_levelStart.puml[]
 
-Die folgende Grafik zeigt die Synchronisierung des Level Fortschritts beim abschließen eines Levels
+Die folgende Grafik zeigt die Synchronisierung des Level Fortschritts beim abschließen eines Levels.
 
 plantuml::diagrams/laufzeit_levelWeiter.puml[]
 

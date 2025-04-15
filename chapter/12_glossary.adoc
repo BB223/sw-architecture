@@ -7,6 +7,21 @@
 |MSAL
 |MSAL (Microsoft Authentication Library) ist eine Bibliothek von Microsoft, mit der Anwendungen Benutzer sicher authentifizieren und Zugriffstoken für den Zugriff auf geschützte Ressourcen wie Microsoft Graph oder eigene APIs abrufen können. Sie unterstützt moderne Authentifizierungsstandards wie OAuth 2.0 und OpenID Connect. MSAL übernimmt dabei Aufgaben wie: Benutzeranmeldung, Token-Caching und -Erneuerung, Unterstützung frschiedene Plattformen, Single Sign-On (SSO)
 
-|
-|
+|BPM
+|Beats per Minutes
+
+|UFF
+|Universitätsbestimmungen für technologische Fachspezifikationen der Fakultätsaufsichten
+
+|Cent
+|Ein Cent ist eine Maßeinheit für Tonhöhenunterschiede in der Musik. Ein Cent ist ein Hundertstel eines gleichstufigen Halbtons, und eine Oktave besteht aus 1200 Cent.
+
+|OMG
+|Offiziell-Marktanalytisch entstandene Geräteansammlung
+
+|LOL
+|Langfristig technologisch-Orientierten Lebenserhaltungsteams
+
+|OAuth
+|OAuth ist der Name zweier verschiedener offener Protokolle, die eine standardisierte, sichere API-Autorisierung für Desktop-, Web- und Mobile-Anwendungen erlauben.
 |===
