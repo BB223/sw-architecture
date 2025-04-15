@@ -6,11 +6,11 @@
 
 |TE-{counter:TE}
 |Microsoft Authentication
-|Aufgrund der Verwendung des Microsoft Ökosystems der Universität ist ToneMate angehalten sich bezüglich Login entsprechend anzupassen. 
+|Aufgrund der Verwendung des Microsoft Ökosystems der Universität ist ToneMate angehalten sich bezüglich Login entsprechend anzupassen.
 
 |TE-{counter:TE}
 |OpenSource
-|Laut Anforderungen von Stakeholder Christian Chemnitz soll ToneMate OpenSource sein. Dementsprechend keine proprietäre oder kostenpflichtige Bibliotheken und die Einhaltung von Lizenzen. 
+|Laut Anforderungen von Stakeholder Christian Chemnitz soll ToneMate OpenSource sein. Dementsprechend keine proprietäre oder kostenpflichtige Bibliotheken und die Einhaltung von Lizenzen.
 
 |TE-{counter:TE}
 |React Native

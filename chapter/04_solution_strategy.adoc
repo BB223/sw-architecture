@@ -10,10 +10,10 @@ a|Synchronisationsverfahren, damit sowohl die Daten auf dem mobilen Gerät, als 
 * beim öffnen der Applikation wird, insofern Internet vorhanden ist, eine Synchronisation mit dem Universitätssystem vorgenommen, andernfalls beim drücken eines Buttons in der Applikation
 * synchronisiert werden Trainingsvortschritt und Partituren des Dozeten
 * beim Trainingsvortschritt wird die aktuellste Information genommen, um die veraltete zu überschrieben
-* beim synchronisieren der Partituren wird immer die Information aus dem Universitätssystem bevorzugt 
+* beim synchronisieren der Partituren wird immer die Information aus dem Universitätssystem bevorzugt
 |TE-5
 
-|Gute Wartbarkeit 
+|Gute Wartbarkeit
 a|* Abkapslung in mehrere kleine logische Komponenten
 * single source of truth
 * Code Konventionen und Dokumentation

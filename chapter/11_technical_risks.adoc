@@ -18,7 +18,7 @@
 
 |{counter:Prio}
 |Abhängigkeit von externen Diensten
-|Die Nutzung von externen Diensten, wie Microsoft, birgt zusätzliche Risiken bezüglich Kosten und Verfügbarkeit. 
+|Die Nutzung von externen Diensten, wie Microsoft, birgt zusätzliche Risiken bezüglich Kosten und Verfügbarkeit.
 |Regelmäßige Überprüfung der ServiceLevel-Agreements (SLAs), Evaluierung von Alternativen und Implementierung von Fallback-Mechanismen, um die Systemstabilität zu sichern.
 
 |{counter:Prio}

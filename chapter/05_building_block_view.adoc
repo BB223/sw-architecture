@@ -30,7 +30,7 @@ Das Whitebox Gesamtsystem wird durch folgende Abbildung dargestellt.
 === Whitebox Gesamtsystem
 
 Begründung::
-Die Funktionalen Anforderungen von ToneMate wurden in bestmöglich abgetrennten Komponenten aufgeteilt. Zusätzlich gibt es Komponenten für das Verwalten der Informationen mit dem externen Universitätssystem.  
+Die Funktionalen Anforderungen von ToneMate wurden in bestmöglich abgetrennten Komponenten aufgeteilt. Zusätzlich gibt es Komponenten für das Verwalten der Informationen mit dem externen Universitätssystem.
 
 Enthaltene Bausteine::
 
@@ -48,7 +48,7 @@ Enthaltene Bausteine::
 |Kalender zur Planung von Terminen.
 
 |Einstellungen
-|Änderung des Aussehens und Verhalten von ToneMate.  
+|Änderung des Aussehens und Verhalten von ToneMate.
 
 // In den Einstellungen gibt es die Möglichkeit die Anzeigesprache, das Farbschema und das Instrument für die Tonausgabe des Trainings einzustellen. Desweiteren gibt es ein Knopf mit dem eine Synchronisierung des Universitäts-System gestartet werden kann.
 

@@ -1,6 +1,6 @@
 == Qualitätsanforderungen
 
-Zusätzlich zu den bereichts relevantesten Qualitätszielen, welche in <<Qualitätsziele>> erwähnt wurden, kommen folgend entsprechende Anforderungen an diese Ziele. Zusätzlich gibt es auch darüber hinaus Anforderungen, welche zwar nicht expliziet unter die besagten Qualitätsziele fallen, aber denoch von bedeutung sind. 
+Zusätzlich zu den bereichts relevantesten Qualitätszielen, welche in <<Qualitätsziele>> erwähnt wurden, kommen folgend entsprechende Anforderungen an diese Ziele. Zusätzlich gibt es auch darüber hinaus Anforderungen, welche zwar nicht expliziet unter die besagten Qualitätsziele fallen, aber denoch von bedeutung sind.
 
 === Qualitätsbaum
 
@@ -11,7 +11,7 @@ Zusätzlich zu den bereichts relevantesten Qualitätszielen, welche in <<Qualit�
 
 .3+^.^|Benutzer- freundlichkeit
 |Bedienbarkeit
-|Zum einfachen bedienen von ToneMate sollen die wichtigsten Seiten der App, wie auch schon in <<Qualitätsziele>> beschrieben, in maximal drei Klicks erreichbar sein. Zusätzlich soll die Position von Features innerhalb der App logisch und intuitiv gestalltet sein, damit ein schnelles Zurechtfinden gewährleistet werden kann. 
+|Zum einfachen bedienen von ToneMate sollen die wichtigsten Seiten der App, wie auch schon in <<Qualitätsziele>> beschrieben, in maximal drei Klicks erreichbar sein. Zusätzlich soll die Position von Features innerhalb der App logisch und intuitiv gestalltet sein, damit ein schnelles Zurechtfinden gewährleistet werden kann.
 .2+^.^|QS-1
 
 |Behinderten- gerecht
@@ -31,7 +31,7 @@ Zusätzlich zu den bereichts relevantesten Qualitätszielen, welche in <<Qualit�
 
 .2+^.^|Zuverlässigkeit
 |Tests
-|Damit ToneMate stets gut funktioniert und Fehlverhalten möglichst vermieden werden kann, sollen Tests geschrieben werden, um eine Testabdeckung von mind. 80% zu erziehlen und ein korrektes Appverhalten zusichern zu können.  
+|Damit ToneMate stets gut funktioniert und Fehlverhalten möglichst vermieden werden kann, sollen Tests geschrieben werden, um eine Testabdeckung von mind. 80% zu erziehlen und ein korrektes Appverhalten zusichern zu können.
 .2+^.^|QS-4
 
 |Error Handling
@@ -46,7 +46,7 @@ Zusätzlich zu den bereichts relevantesten Qualitätszielen, welche in <<Qualit�
 |ID |Beschreibung
 
 |QS-{counter:QS}
-|Damit sich ein neuer, potentiell behinderter, Nutzer in ToneMate zurechtfindet bedarf es weniger als 10min. Aufwand. 
+|Damit sich ein neuer, potentiell behinderter, Nutzer in ToneMate zurechtfindet bedarf es weniger als 10min. Aufwand.
 
 |QS-{counter:QS}
 |Damit der Nutzer ein angenehmes und positives Nutzererlebnis hat, ist ToneMate's Sound von angemessener Qualität.
@@ -55,6 +55,6 @@ Zusätzlich zu den bereichts relevantesten Qualitätszielen, welche in <<Qualit�
 |Damit ein neuer Entwickler sich leicht und schnell in dem Code einarbeiten kann, gibt es eine gute und aktuelle Dokumentation von ToneMate, als auch eine umfassende Konvention merere Aspekte der Entwicklung.
 
 |QS-{counter:QS}
-|Damit Nutzer von ToneMate ein gutes Nutzererlebnis haben, wird durch Tests und Error Handling sichergestellt, dass bestmögich keine oder verarbeitbare Fehler auftreten. 
+|Damit Nutzer von ToneMate ein gutes Nutzererlebnis haben, wird durch Tests und Error Handling sichergestellt, dass bestmögich keine oder verarbeitbare Fehler auftreten.
 
 |===

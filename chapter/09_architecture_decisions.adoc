@@ -2,32 +2,31 @@
 
 === ADR-{counter:ADR}: Speicher Manager
 
-.Kontext
+*Kontext* +
 In ToneMate werden Level-Daten, Partituren und Kalender-Daten auf dem Endgerät und/oder im Universitäts-System gespeichert. Die Daten ist zu 100% unabhängig voneinander und haben unterschiedliche Strukturen. Demnach besteht die Frage wie mit den Daten umgeganen werden soll.
 
-.Entscheidung
+*Entscheidung* +
 Es wird ein eingeständiger Speicher Manager pro Funktionsbereich benutzt.
 
-.Status
+*Status* +
 Akzeptiert
 
-.Konsequenz.
+*Konsequenz* +
 Durch diese Entscheidung können verschiedene Datenstrukturen unabhänging voneinander verwendet werden. Jeder Speicher Manager hat die Hoheit über seine Daten und greift nicht auf die Daten eines anderen Speicher Managers zu. Diese Entscheidung könnte zu doppelten Code in den Speicher Manager führen. Nach einem ersten MVP ist diese Entscheidung erneut zu evaluieren. Mögliche Ergebnisse einer Evaluierung sind, es wird ein einzelner Speicher Manager für diese gesamte App benutzt oder gemeinsames Verhalten wird in einem Speicher Manager zusammengefasst und spezifische Speicher Manager bauer darauf auf.
 
 === ADR-{counter:ADR}: Local-First Speicher
 
-.Kontext
+*Kontext* +
 Durch die Möglichkeit ToneMate auch offline verwenden zu können, kann es vorkommen, dass die Daten im Universitätssystem und auf den Endgeräten der Studenten nicht mehr übereinstimmen.
 
-.Entscheidung.
+*Entscheidung* +
 Bei den Level-Daten, lässt sich der Fortschritt mit dem erreichten Level messen. Es werden die Daten, in denen ein höheres Level erreicht wurde, als Richtig anerkannt. Die falschen Daten werden mit den richtigen Daten vollständig überschrieben. +
 Die Partituren der Dozenten können von den Studenten nicht bearbeitet werden. Demnach werden immer die Daten vom Universitätssystem als Richtig anerkannt. +
 Alle anderen Daten werden nur lokal gespeichert und nicht mit dem Universitätssystem synchroniesiert.
 
-.Status
+*Status* +
 Akzeptiert
 
-.Konsequenz
+*Konsequenz* +
 Den Studenten wird nicht die Möglichkeit gegeben selber zu entschieden welcher Fortschrittsstand benutzt werden soll. Durch das vollständige Überschreiben der Daten kann keine Datenkurruption entstehen. Es muss keine Logik zum lösen von Datenkonflikte implementiert werden.
 
-<<<<

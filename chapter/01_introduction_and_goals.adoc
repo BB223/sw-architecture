@@ -129,7 +129,7 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 |TM-{counter:TM}
 |Einstellungen
 |In den Einstellungen sollen verschiedenste Dinge konfigurierbar sein.
-|Hoch 
+|Hoch
 
 |TM-{counter:TM}
 |Einstellungen: Anpassbares Instrument
@@ -182,7 +182,7 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 |Zuverlässigkeit
 |Die App soll stabil und fehlerfrei funktionieren, sodass Nutzer sicher darauf vertrauen können, dass Trainingsdaten korrekt erfasst werden. +
  Dadurch soll das Risiko minimiert werden, falsche Inhalte zu lernen oder Übungstermine zu verpassen.
-|Hoch 
+|Hoch
 |===
 
 === Stakeholder

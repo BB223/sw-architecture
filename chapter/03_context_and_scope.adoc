@@ -8,18 +8,18 @@ Die folgende Tabelle und Abbildung zeigen die Ein- und Ausgaben von ToneMate und
 |Kommunikationspartner |Eingabe zu ToneMate |Ausgabe von ToneMate
 
 |Student
-a|* Fortschritte in Trainingssektion 
- * Abspeichern von Partituren 
- * Eintragen von Kalenderterminen mit potentiellen Kommentaren 
- * Gezieltes Verändern der App über die Einstellungen 
+a|* Fortschritte in Trainingssektion
+ * Abspeichern von Partituren
+ * Eintragen von Kalenderterminen mit potentiellen Kommentaren
+ * Gezieltes Verändern der App über die Einstellungen
  Manuelle Synchronisation der Lokalen Daten mit den Daten Im Universitätssystem
  * Login Daten für Login
-a|* Möglich zu erziehlender Forschritt in der Trainingssektion über das trainieren mit der App 
- * Speicherung und dementsprechend mögliche on-demand Abrufung von gespeicherten Partituren 
+a|* Möglich zu erziehlender Forschritt in der Trainingssektion über das trainieren mit der App
+ * Speicherung und dementsprechend mögliche on-demand Abrufung von gespeicherten Partituren
  * Pushbenachrichitungen zu gesetzten Terminen
 
 |Microsoft Authentication
-a| * Berechtigungscode und OAuth Bearer Token für Login. 
+a| * Berechtigungscode und OAuth Bearer Token für Login.
 a| * Login Daten für Login
 
 |Universitäts-System
@@ -44,7 +44,7 @@ Der technische Kontext in der folgenden Tabelle und Abbildung zeigen die einzeln
 |HTTPS, REST
 
 |Universitätssystem
-|Externes System für Informationsaustausch und -abgleich. 
+|Externes System für Informationsaustausch und -abgleich.
 |HTTPS, REST
 |===
 
