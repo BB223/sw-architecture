@@ -1,7 +1,7 @@
 @startuml
 !include <C4/C4_Component>
 
-caption Gesamtsystemübersicht – ToneMate Deployment & Nutzung
+caption Deployment & Nutzung
 
 ' Personen
 Person(student, "Student", "Verwendet die App auf dem Smartphone")

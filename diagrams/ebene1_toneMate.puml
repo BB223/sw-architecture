@@ -14,7 +14,6 @@ System_Boundary(phone, "Smartphone") {
 
         Rel(training, accountManager, "benutzt")
         Rel(werkzeuge, accountManager, "benutzt")
-        Rel(kalender, accountManager, "benutzt")
         Rel(accountManager, api, "benutzt")
     }
     Container_Ext(dateiSystem, "Dateisystem")
@@ -27,9 +26,9 @@ System_Boundary(phone, "Smartphone") {
     Rel(einstellungen, dateiSystem, "speichert in")
 }
 System_Ext(oauth, "Microsoft Identity Platform")
-System_Ext(uni, "Universitäts-System")
+System_Ext(uni, "Universitätssystem")
 
-Rel(api, uni, "benutzt", "REST")
+Rel(api, uni, "benutzt")
 Rel_L(uni, oauth, "benutzt")
 Rel(api, oauth, "nutzt login von")
 

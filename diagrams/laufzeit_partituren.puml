@@ -1,4 +1,7 @@
 @startuml
+
+caption Partituren Synchronisation
+
 autonumber
 participant ToneMate [
     =ToneMate

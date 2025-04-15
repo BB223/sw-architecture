@@ -1,20 +1,18 @@
 @startuml
 !include <C4/C4_Context>
 
-caption Gesamtsystem
+caption Fachliches Gesamtsystem
 
 Person(student, "Student")
-Person_Ext(personal, "Hochschul Personal")
 
 System(toneMate, "ToneMate", $type="React Native")
 System_Ext(oauth, "Microsoft Identity Platform")
 System_Ext(uni, "Universitätssystem")
 
-Rel_D(toneMate, uni, "benutzt", "REST")
+Rel_D(toneMate, uni, "benutzt")
 Rel_L(uni, oauth, "benutzt")
 Rel_D(toneMate, oauth, "nutzt login von")
 
 Rel_R(student, toneMate, "benutzt")
-Rel_L(personal, uni, "benutzt")
 
 @enduml

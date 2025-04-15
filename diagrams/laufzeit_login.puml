@@ -1,4 +1,7 @@
 @startuml
+
+caption Login
+
 autonumber
 participant ToneMate [
     =ToneMate
@@ -20,8 +23,8 @@ participant Uni [
 ToneMate -> MicrosoftAuth: Login mit dem Universitäts Microsoft Account
 ToneMate <-- MicrosoftAuth: Gibt Berechtigungscode zurück
 
-ToneMate -> MicrosoftToken: Fragt Outh bearer token mit Zugabe von dem Berechtigungscode, Client-ID und Client-Secret an
-ToneMate <-- MicrosoftToken: Gibt Oauth bearer token zurück
+ToneMate -> MicrosoftToken: Fragt OAuth bearer token mit Zugabe von dem Berechtigungscode, Client-ID und Client-Secret an
+ToneMate <-- MicrosoftToken: Gibt OAuth bearer token zurück
 
 ToneMate -> Uni: Fragt Ressourcen mit dem bearer token an
 Uni -> Uni: Validiert bearer token

@@ -5,20 +5,20 @@
 |Ziel/Anforderung |Architekturelle Herangehensweise |Details
 
 |Offline Nutzung
-a|Synchronisationsverfahren, damit sowohl die Daten auf dem mobilen Gerät, als auch die Daten im Universitätssystem stetig und bestmöglich auf dem aktuellsten Stand sind:
+a|Synchronisationsverfahren, damit sowohl die Daten auf dem mobilen Gerät, als auch die Daten im Universitätssystem bestmöglich auf dem aktuellsten Stand sind:
 * sämtliche Daten werden Lokal auf dem Endgerät gespeichert
 * beim öffnen der Applikation wird, insofern Internet vorhanden ist, eine Synchronisation mit dem Universitätssystem vorgenommen, andernfalls beim drücken eines Buttons in der Applikation
-* synchronisiert werden Trainingsvortschritt und Partituren des Dozeten
-* beim Trainingsvortschritt wird die aktuellste Information genommen, um die veraltete zu überschrieben
+* synchronisiert werden Trainingsfortschritt und Partituren des Dozeten
+* beim Trainingsfortschritt wird die aktuellste Information genommen, um die veraltete zu überschrieben
 * beim synchronisieren der Partituren wird immer die Information aus dem Universitätssystem bevorzugt
-|TE-5
+|TM-2 (siehe <<Funktionale Anforderungen>>)
 
 |Gute Wartbarkeit
 a|* Abkapslung in mehrere kleine logische Komponenten
 * single source of truth
 * Code Konventionen und Dokumentation
 * Softwarearchitektur
-|QZ-2, Erwartungen der Stakeholder Dennis Dresden und Christian Chemnitz
+|QZ-2, Erwartungen der Stakeholder Dennis Dresden und Christian Chemnitz (siehe <<Stakeholder>>)
 
 |Benutzerfreundlichkeit
 a|Verwendung mehrere HCI Methodiken, u.A.:

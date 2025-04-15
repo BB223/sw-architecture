@@ -10,19 +10,15 @@
 
 |TE-{counter:TE}
 |OpenSource
-|Laut Anforderungen von Stakeholder Christian Chemnitz soll ToneMate OpenSource sein. Dementsprechend keine proprietäre oder kostenpflichtige Bibliotheken und die Einhaltung von Lizenzen.
+|Laut Anforderungen von Stakeholder Christian Chemnitz soll ToneMate OpenSource sein. Dementsprechend keine proprietäre oder kostenpflichtige Bibliotheken und die Einhaltung von Lizenzen (siehe <<Stakeholder>>).
 
 |TE-{counter:TE}
 |React Native
-|Nach Anforderungen der "Universitätsbestimmungen für technologische Fachspezifikationen der Fakultätsaufsichten" muss ToneMate in React Native geschrieben werden.
+|Nach Anforderungen der Universitätsbestimmungen für technologische Fachspezifikationen der Fakultätsaufsichten (UFF) muss ToneMate in React Native geschrieben werden.
 
 |TE-{counter:TE}
 |Geräteunterstützung
 |Muss auf allen Geräten, welche in der "Offiziell-Marktanalytisch entstandene Geräteansammlung" aufgelistet sind funktionieren.
-
-|TE-{counter:TE}
-|Offline Nutzung
-|ToneMate muss stätig offline nutzbar sein. Wenn das mobile Endgerät wieder mit dem Internet verbunden ist werden die entsprechenden Daten automatisch mit dem Universitätssystem synchronisiert.
 |===
 
 [cols="10%,20%,70%"]
@@ -35,7 +31,7 @@
 
 |PE-{counter:PE}
 |Barrierefreiheit
-|ToneMate muss seinen Inhalt Barrierefreigestallten. Dies umschließt Dinge wie Screenreader, Kontrastmodi und alternative Eingabemethoden.
+|ToneMate muss seinen Inhalt Barrierefrei gestallten. Dies umschließt Funktionen wie Screenreader, Kontrastmodus und alternative Eingabemethoden.
 |===
 
 [cols="10%,20%,70%"]
@@ -48,24 +44,20 @@
 
 |OE-{counter:OE}
 |Wartung
-|Die Wartung übernimmt das "Lanfristig technologisch Orientierte Lebenserhaltungsteam" der Universität. Aus Folge dessen sind gute Dokumentationen und und eine gelungene Wissensübergabe von nöten.
+|Die Wartung übernimmt das "Lanfristig technologisch-Orientierte Lebenserhaltungsteam" der Universität. Aus Folge dessen sind gute Dokumentationen und und eine gelungene Wissensübergabe von nöten.
 
 |OE-{counter:OE}
 |Benutzerfreundlichkeit
-|Wichtig ist, dass die App für die entsprechende Zielgruppe (Studenten und Dozenten) möglichst benutzerfreundlich und einfach bedienbar ist.
+|Wichtig ist, dass ToneMate für die entsprechende Zielgruppe (Studenten und Dozenten) möglichst benutzerfreundlich und einfach bedienbar ist.
 
 |OE-{counter:OE}
 |Entwicklungszeitraum
-|Es ist ein Entwicklungszeitraum von etwa zwei Monaten angedacht. Dieser Zeitramen umfasst Nutzeranalysen, Entwicklung, Feedback-Phasen und Puffer.
+|Es ist ein Entwicklungszeitraum von etwa zwei Monaten geplant. Dieser Zeitramen umfasst Nutzeranalysen, Entwicklung, Feedback-Phasen und Puffer.
 |===
 
 [cols="10%,20%,70%"]
 |===
 |ID |Konventionelle Einschränkung |Erläuterung
-
-|KE-{counter:KE}
-|Camel Case
-|Aufgrund der Naming Conventions der Universitätssysteme ist ToneMate angehalten CamelCase zu verwenden.
 
 |KE-{counter:KE}
 |Asciidoc

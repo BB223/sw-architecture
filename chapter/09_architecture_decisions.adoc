@@ -3,7 +3,7 @@
 === ADR-{counter:ADR}: Speicher Manager
 
 *Kontext* +
-In ToneMate werden Level-Daten, Partituren und Kalender-Daten auf dem Endgerät und/oder im Universitäts-System gespeichert. Die Daten ist zu 100% unabhängig voneinander und haben unterschiedliche Strukturen. Demnach besteht die Frage wie mit den Daten umgeganen werden soll.
+In ToneMate werden Level-Daten, Partituren und Kalender-Daten auf dem Endgerät und/oder im Universitätssystem gespeichert. Die Daten ist zu 100% unabhängig voneinander und haben unterschiedliche Strukturen. Demnach besteht die Frage wie mit den Daten umgeganen werden soll.
 
 *Entscheidung* +
 Es wird ein eingeständiger Speicher Manager pro Funktionsbereich benutzt.

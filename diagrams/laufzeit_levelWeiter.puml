@@ -1,4 +1,7 @@
 @startuml
+
+caption Level Synchronisation beim Fortschritt
+
 autonumber
 participant ToneMate [
     =ToneMate
@@ -11,14 +14,14 @@ participant Uni [
 ToneMate -> ToneMate: Speichert die Daten lokal
 
 autonumber stop
-alt Universitäts-System erreichbar
+alt Universitätssystem erreichbar
 
     ToneMate -> Uni: Sendet lokale Daten
 
 else Verbindungstimeout oder Status Code 5xx
 
-    ToneMate -> ToneMate: Deaktiviert für 5 min synchronisation 
-    
+    ToneMate -> ToneMate: Deaktiviert für 5 min synchronisation
+
 end
 
 @enduml

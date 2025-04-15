@@ -9,6 +9,7 @@ include::./config.adoc[]
 :sectnums:
 :toc: macro
 :toclevels: 3
+:icons:
 
 :author: Ben Zelleröhr, +
  Moritz Bosch

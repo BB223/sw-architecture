@@ -6,7 +6,7 @@ Die folgende Grafik zeigt die Kommunikation mit Microsoft als Identity Provider.
 
 plantuml::diagrams/laufzeit_login.puml[]
 
-=== Synchronisierung Level Fortschritt
+=== Level Synchronisation
 
 Die folgende Grafik zeigt die Synchronisierung des Level Fortschritts beim öffnen von ToneMate oder beim benutzen der Synchronisierungsfunktion in den Einstellungen.
 

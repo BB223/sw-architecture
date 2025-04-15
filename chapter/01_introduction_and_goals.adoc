@@ -1,21 +1,16 @@
 ==	Einführung und Ziele
 
-Diese Dokumentation beschreibt die Architektur der OpenSource App ToneMate. +
-Ziel der App ist es dem Nutzer verschiedenste, relevante Dienste an einem Ort zur verfügunug zu stellen.
+Diese Dokumentation beschreibt die Architektur der OpenSource App ToneMate. Ziel der App ist es dem Nutzer verschiedenste, relevante Dienste an einem Ort zur Verfügung zu stellen.
 
-Der Aktuelle Markt an solchen Apps besteht meistens aus Anwendungen, welche Kostenpflichtig oder nur von geringer Qualität sind. +
-Zudem sind solche Anwendungen oft mit unnötigen Features bestückt. +
+Der aktuelle Markt solcher Apps besteht meistens aus Anwendungen, welche Kostenpflichtig oder nur von geringer Qualität sind. Zudem sind solche Anwendungen oft mit unnötigen Features bestückt.
 
-Dennoch ist der Markt groß. Es gibt es Anwendungen die sich auf wenige Funktionalitäten beschränken. +
-In dem Fall jedoch hat man ein großes Sammelsorium an Apps auf seinem Smartphone. +
+Dennoch ist der Markt groß. Es gibt Anwendungen die sich auf wenige Funktionalitäten beschränken. In dem Fall jedoch hat man ein großes Sammelsorium an Apps auf seinem Smartphone.
 
-ToneMate will diese beiden Probleme angehen und beheben. +
-Eine kostenlose, OpenSource App ohne Abomodell oder Kostenfallen. +
-Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wichtigsten Funktionalitäten, zusammengefasst sind.
+ToneMate will diese beiden Probleme angehen und beheben. Eine kostenlose, OpenSource App ohne Abomodell oder Kostenfallen. Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wichtigsten Funktionalitäten, zusammengefasst sind.
 
 === Funktionale Anforderungen
 
-[cols="10%,20%,60%,10%"]
+[cols="10%,20%,55%,15%"]
 |===
 |ID |Anforderung |Beschreibung |Priorität
 
@@ -26,13 +21,13 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 
 |TM-{counter:TM}
 |Offline Nutzung
-|Die App ist vollumfänglich Offline nutzbar. +
- Eine Verbindung zum Internet ist an keiner Stelle von nöten.
+|Die App ist größtenteils Offline nutzbar. +
+ Eine Verbindung zum Internet ist nur nötig um sich am Universitätssystem anzumelden und zu synchronisieren.
 |Hoch
 
 |TM-{counter:TM}
-|Anbindung an Uni-System
-|Für Synchronisationszwecke werden Trainingsdaten an das Zentrale Unisystem über den aktuellen Account geschickt, sobald eine Internetverbindung besteht.
+|Anbindung an Universitätssystem
+|Für Synchronisationszwecke werden Trainingsdaten an das zentrale Universitätssystem über den aktuellen Account geschickt, sobald eine Internetverbindung besteht.
 |Hoch
 
 |TM-{counter:TM}
@@ -43,72 +38,62 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 |TM-{counter:TM}
 |Levelorientiertes Gehörtraining
 |Der Fortschritt der verschiedenen Trainings wird in Leveln gespeichert. +
- Level bestehen aus eingeschränkten Antwortmöglichkeiten, basiered auf Level. +
- Zudem basieren sie auf ein interaktives Karteikartensystem. +
- Bspw. erklingt ein Intervall (2 verschiedene Töne gleichzietig) und der Nutzer muss angeben um welches Intervall es sich handelt. +
+ Ein Level bestehen aus eingeschränkten Antwortmöglichkeiten, basiered auf den Fortschritt. +
+ Bspw. erklingt ein Intervall (2 verschiedene Töne gleichzeitig) und der Nutzer muss aus einer Antwortauswahl angeben um welches Intervall es sich handelt. +
  Anschließend bekommt er ein visuelles und akustisches Feedback. +
- Wenn x% des Level richtig beantwortet wurde schaltet man Zugang zu daraufolgene Level frei. +
- Am Ende eines Levels werden zudem Fehlerquote von Levelrelevanten Fragen angezeigt.
+ Wenn 80% des Level richtig beantwortet wurde schaltet man Zugang zum daraufolgendem Level frei. +
+ Am Ende eines Levels werden zudem die Fehlerquote angezeigt.
 |Hoch
 
 |TM-{counter:TM}
 |Freies Training
-|Zusätzlich zu dem Levelorientiertem Gehörtraining soll der Nutzer die Möglichkeit besitzen Frei zu trainieren (Freies Training). +
- Dabei sind Levelspezifische Einschränkungen aufgehoben, also alle Antwortmöglichkeiten und unendlich mögliche Wiederholung (nicht X mal Antworten, dann ist das Level vorbei). +
- Feedback zu gegebenen Antworten bleibt auch hier erhalten.
+|Zusätzlich zu dem Levelorientiertem Gehörtraining soll der Nutzer die Möglichkeit besitzen frei zu trainieren (Freies Training). +
+ Dabei sind Levelspezifische Einschränkungen aufgehoben. +
+ Feedback zu gegebenen Antworten bleibt hier erhalten.
 |Hoch
 
 |TM-{counter:TM}
 |Training: Intervalle
-|Dem Nutzer wird basierend auf Level ein Intervall vorgespielt, welches er beliebig oft wiederholen kann. +
+|Dem Nutzer wird basierend auf dem Level ein Intervall vorgespielt, welches er beliebig oft anhören kann. +
  Der Nutzer muss anschließend sagen, um welches Intervall es sich handelt.  (Bspw. ü4) +
- Dabei kann er nur aus einer Auswahl an Intervallen wählen, welche für dieses Level von relevanz sind.
+ Dabei kann er aus einer Auswahl an Intervallen wählen, welche für dieses Level von relevanz sind.
 |Hoch
 
 |TM-{counter:TM}
-|Training: Dreiklang klassifizierung
-|Dem Nutzer wird basierend auf Level ein Dreiklang vorgespielt, welches er beliebnig oft wiederholen kann. +
- Der Nutzer muss anschließend sagen, um welchen Dreiklangtyp es sich handelt. (Bspw. Dur7) +
- Dabei kann er nur aus einer Auswahl an Dreiklängen wählen, welche für dieses Level von relevanz sind.
+|Training: Akkorde
+|Dem Nutzer wird basierend auf dem Level ein Akkord vorgespielt, welchen er beliebig oft anhören kann. +
+ Der Nutzer muss anschließend sagen, um welchen Akkordtyp es sich handelt. (Bspw. Dur7) +
+ Dabei kann er aus einer Auswahl an Akkorden wählen, welche für dieses Level von relevanz sind.
 |Hoch
 
 |TM-{counter:TM}
 |Training: Relative Pitch
-|Dem Nutzer wird basierend auf Level ein Ton vorgespielt, welchen er beliebig oft wiederholen kann. +
+|Dem Nutzer wird basierend auf dem Level ein Ton vorgespielt, welchen er beliebig oft anhören kann. +
  Der Nutzer muss anschließend sagen, um welchen Ton es sich handelt. (Bspw. g) +
- Dabei kann er nur aus eier Auswahl an Tönen wählen, welche für dieses Level von relevanz sind.
- Zur Ermittlung des Tones wird am Anfang des Levels der Ton C gespielt, an welchem sich der Nutzer orientieren kann. +
-|Hoch
-
-|TM-{counter:TM}
-|Training: Rythmik
-|Dem Nutzer wird\werden basierend auf Level (ein) Takt(e) gezeigt. +
- Der Nutzer muss anschließend auf ein Feld den Rythmus tippen. +
- Zudem wird ein BPM vorgegeben an welchem sich der Nutzer orientieren soll. +
- Diesen kann er sichbeliebig oft vorspielen lassen, wenn gewünscht auch während des antworten. +
- Bei dem BPM gibt es einen angenehmen Toleranzbereich bei der Antort überprüfung.
+ Dabei kann er aus einer Auswahl an Tönen wählen, welche für dieses Level von relevanz sind.
+ Zur Ermittlung des Tons wird am Anfang des Levels der Ton C gespielt, an welchem sich der Nutzer orientieren kann. +
 |Hoch
 
 |TM-{counter:TM}
 |Metronom
-|Es gibt ein Metronom mit den Möglichkeiten BPM, Taktangabe, Notenwert und Lautstärke und Betonung des erklingenden Tones einzustellen.
+|Es gibt ein Metronom mit den Möglichkeiten BPM, Taktangabe, Notenwert, Lautstärke und Betonung des erklingenden Tons einzustellen.
 |Hoch
 
 |TM-{counter:TM}
 |Kalender
-|In einem Kalender sollen persönliche Lernzeiten und Lerziele eintragen werden können. +
- Lernziele sollen sich hierbei nicht ausschließlich auf die Trainings von ToneMate fokussieren, sondern eher ein Freitext. (Somit auch Bspw. Passagen eines Stückes üben)
-|Hoch
+|In einem Kalender sollen persönliche Lernzeiten und Lerziele eingetragen werden können. +
+ Lernziele sollen sich hierbei nicht ausschließlich auf die Trainings von ToneMate fokussieren, sondern eher ein Freitext.
+|Mittel
 
 |TM-{counter:TM}
 |Kalender: Kommentare
 |Im Kalender soll es möglich sein Terminen Kommentare hinzuzufügen.
-|Mittel
+|Niedrig
 
 |TM-{counter:TM}
 |Kalender: Integration
-|Der Kalender von ToneMate soll den Nativen Kalender des Smartphones (oder optionaler Kalender Apps) bestmöglich integriert haben, sodass sich Termine synchronisieren. Dabei sollen sich allerding nur Termine und Thema synchronisieren. Kommentare der einzelnen Termine sollen ToneMate spezifisch sein, um den Nativen kalender nicht zu überladen und zum nachlesen nicht erneut der native Kalender geöffnet werden muss.
-|Hoch
+|Die Termine im Kalender von ToneMate sollen im nativen Kalender des Smartphones synchronisiert werden. Dabei sollen sich allerding nur Termine und Thema synchronisieren. Kommentare der einzelnen Termine sollen ToneMate spezifisch sein, um den nativen Kalender nicht zu überladen.
+|Mittel
 
 |TM-{counter:TM}
 |Stimmgerät
@@ -123,65 +108,53 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 
 |TM-{counter:TM}
 |Partituren-Sammlung: Gruppierung
-|Partituren können in eigen erstellten Gruppen gruppiert und gesammelt werden.
-|Hoch
+|Partituren können in selbst erstellten Gruppen gruppiert und gesammelt werden.
+|Niedrig
 
 |TM-{counter:TM}
 |Einstellungen
-|In den Einstellungen sollen verschiedenste Dinge konfigurierbar sein.
+|In den Einstellungen sollen verschiedenste Optionen konfigurierbar sein, welche ToneMate weit relevant sind.
 |Hoch
 
 |TM-{counter:TM}
 |Einstellungen: Anpassbares Instrument
-|Aus einer Liste an Instrumenten, welche für Trainigs genutzt werden soll gewählt werden können. +
- Das Metronom ist hiermit nicht mit einbegriffen.
+|Das für das Training genutzte Instrument kann aus einer Liste ausgewählt werden.
 |Mittel
 
 |TM-{counter:TM}
 |Einstellungen: Sprache
-|Die Verwendete Sprache von ToneMate soll aus einer Liste an Sprachen ausgewählt werden können. +
+|Die verwendete Sprache von ToneMate soll aus einer Liste an Sprachen ausgewählt werden können. +
  Die Sprache ändert sich sofort in der gesammten App. +
- Die Default Sprache ist Englisch.
+ Die standard Sprache ist Deutsch.
 |Mittel
 
 |TM-{counter:TM}
 |Einstellungen: Farbschema
 |Aus einer Liste an Farbschema kann das zu verwendende Schema gewählt werden, welche sich sofort über die gesamte App auswirken und möglichst ansprechend aussehen.
 |Niedrig
-
-|TM-{counter:TM}
-|Softwareunterstützung
-|Android Version 8+, IOS Version 14+
-|Hoch
-
-|TM-{counter:TM}
-|Geräteunterstützung
-|Unterstützung der meisten Gerätegrößen.
-|Hoch
 |===
 
 === Qualitätsziele
 
-[cols="10%,20%,60%,10%"]
+[cols="10%,20%,55%,15%"]
 |===
 |ID |Qualitätsziel |Beschreibung |Priorität
 
 |QZ-{counter:QZ}
 |Benutzerfreundlichkeit
-|Die App soll intuitiv nutzbar sein und ansprechend aussehen. +
- Der Nutzer soll innerhalb von 3 Klicks zu den wichtigsten Features kommen.
+|ToneMate soll intuitiv nutzbar sein und ansprechend aussehen. +
+ Der Nutzer soll innerhalb von drei Klicks zu den wichtigsten Funktionen kommen.
 |Hoch
 
 |QZ-{counter:QZ}
 |Wartbarkeit & Erweiterbarkeit
-|Die App soll möglichst Modular und Wartbar aufgebaut sein, um neue Features in Zukunft mit minimalem Aufwand hinzufügen zu können. +
- Zudem soll es einfach sein sich im Code zurecht zu finden, da die App OpenSource ist und möglicherweise verschiedenste Personen eigene Modifikationen vornehmen möchten.
+|ToneMate soll möglichst modular und wartbar aufgebaut sein, um neue Funktionen in Zukunft mit minimalem Aufwand hinzufügen zu können. +
+ Zudem soll es einfach sein sich im Code zurecht zu finden, da ToneMate OpenSource ist und möglicherweise verschiedenste Personen eigene Modifikationen vornehmen möchten.
 |Hoch
 
 |QZ-{counter:QZ}
 |Zuverlässigkeit
-|Die App soll stabil und fehlerfrei funktionieren, sodass Nutzer sicher darauf vertrauen können, dass Trainingsdaten korrekt erfasst werden. +
- Dadurch soll das Risiko minimiert werden, falsche Inhalte zu lernen oder Übungstermine zu verpassen.
+|ToneMate soll stabil und fehlerfrei funktionieren, sodass Nutzer darauf vertrauen können, dass u.A. Trainingsdaten korrekt erfasst werden.
 |Hoch
 |===
 
@@ -192,22 +165,22 @@ Eine App in der die wichtigsten Dinge im Musiker Alltag, komprimiert auf ihre wi
 |Name |Rolle |Erwartungen
 
 |Albert Aachen
-|Student und zukünftiger nutzer von ToneMate
-|App ist einfach zu nutzen und er braucht keine technischen Kenntnisse sie zu bedienen. Alles läuft möglichst reibungslos, also wenige nervige PopUps oder nervige Fehler. Max möchte die App überall nutzen können, egal ob Internet oder nicht.
+|Student und zukünftiger Nutzer von ToneMate
+|ToneMate ist einfach zu nutzen und er braucht keine technischen Kenntnisse. Alles läuft möglichst reibungslos, also wenige nervige PopUps oder nervige Fehler. Albert möchte die App überall nutzen können, egal ob mit oder ohne Internet.
 
 |Barbara Bochum
 |Dozentin im Fakultätsbereich Musik
-|Möchte nachverfolgen, ob ihre Studenten die Anforderungen an die Prüfungen, also die Trainingssektionen, erfolgreich abgeschlossen haben. Zudem möchte sie Statistiken über das freie Training erhalten. Außerdem möchte sie einen eigenen Ordner in der Partitursektion ihrer Studenten haben in dem sie Partituren für die Vorlesungen oder seperaten Einzelunterricht hochladen kann.
+|Möchte nachverfolgen, ob ihre Studenten die Anforderungen an die Prüfungen, erfolgreich abgeschlossen haben. Zudem möchte sie Statistiken über das freie Training erhalten. Außerdem möchte sie einen eigenen Ordner in der Partitursektion ihrer Studenten haben in dem sie Partituren für die Vorlesungen oder seperate Einzelunterrichte hochladen kann.
 
 |Christian Chemnitz
-|Präsident der Universität
-|Stellt die App in Auftrag. Möchte, dass sie Open Source ist, weil er cooler dude ist. Außerdem möchte er, dass der Code sehr gut strukturiert ist, damit neue Entwickler, in Zukunft, mögliche Änderungen oder Erweiterungen nach maximal einer Woche Einarbeitung durchführen können. Er erwartet, dass die App sicher ist und das niemand die Daten der Studenten ohne weiteres stehlen kann.
+|Präsident der Karl-Heinz-Universität zu Münster
+|Gibt ToneMate in Auftrag. Er möchte, dass ToneMate OpenSource ist. Außerdem erwartet er, dass der Code sehr gut strukturiert ist, damit zukünftige Entwickler, mögliche Änderungen oder Erweiterungen nach maximal einer Woche Einarbeitung durchführen können. Er erwartet, dass ToneMate sicher ist und das niemand die Daten der Studenten ohne weiteres stehlen kann.
 
 |Dennis Dresden
 |Planmäßiger Entwickler von ToneMate
 |Dennis ist ein TechBro und erwartet die Verwendung neuer, zukunftsorientierten Technologien und Herangehensweisen. Außerdem weiß Dennis, dass er manchmal etwas schwer von Begriff ist und hofft, dass die Anforderungen etc. bestmöglich und verständlich in der Architektur beschrieben sind, damit keine Missverständnisse geschehen.
 
 |Emely Emden
-|Mitglied des "Lanfristig technologisch Orientierte Lebenserhaltungsteam" der Universität
-|Emely und das Team erwarten eine möglichst einfach Wartbare Software. Zudem hoffen sie auf einfache Implementations Änderungen sollten diese vom Team nach initialem Implementations Abschluss nötig sein.
+|Mitglied des "Langfristig technologisch-Orientierten Lebenserhaltungsteams" der Karl-Heinz-Universität zu Münster
+|Emely und das Team erwarten eine möglichst einfach wartbare Software. Zudem hoffen sie auf einfache Implementationsänderungen sollten diese vom Team nach initialem Implementationsabschluss nötig sein.
 |===

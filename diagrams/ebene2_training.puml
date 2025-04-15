@@ -5,12 +5,19 @@ caption Training
 
 Container_Boundary(toneMate, "ToneMate") {
     Container_Boundary(training, "Training") {
+        Component(freiesTraining, "Freies Training")
+        Component(levelTraining, "Level-Training")
         Component(relativerPitch, "Relativer Pitch")
         Component(intervalBestimmung, "Interval Bestimmung")
         Component(akkordBestimmung, "Akkord Bestimmung")
-        Component(freiesTraining, "Freies Training")
         Component(speicherManager, "Speicher Manager")
 
+        Rel(freiesTraining, relativerPitch, "benutzt")
+        Rel(freiesTraining, intervalBestimmung, "benutzt")
+        Rel(freiesTraining, akkordBestimmung, "benutzt")
+        Rel(levelTraining, relativerPitch, "benutzt")
+        Rel(levelTraining, intervalBestimmung, "benutzt")
+        Rel(levelTraining, akkordBestimmung, "benutzt")
         Rel(relativerPitch, speicherManager, "benutzt")
         Rel(akkordBestimmung, speicherManager, "benutzt")
         Rel(intervalBestimmung, speicherManager, "benutzt")

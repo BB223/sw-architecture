@@ -1,13 +1,13 @@
 @startuml
 !include <C4/C4_Context>
 
-caption TechnischerKontext
+caption Technisches Gesamtsystem
 
 Person(student, "Student")
 
 System(toneMate, "ToneMate", $type="React Native")
 System_Ext(oauth, "Microsoft Identity Platform")
-System_Ext(uni, "Universitäts-System")
+System_Ext(uni, "Universitätssystem")
 
 Rel_D(toneMate, uni, "Internet / REST / Uni-API")
 Rel_L(uni, oauth, "Internet / REST / MSAL-API")

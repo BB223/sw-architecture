@@ -1,4 +1,7 @@
 @startuml
+
+caption Level Synchronisation
+
 autonumber
 participant ToneMate [
     =ToneMate
@@ -11,7 +14,7 @@ participant Uni [
 ToneMate -> Uni: Fragt die Level-Daten ab
 ToneMate <-- Uni: Gibt die Level-Daten zurück
 
-ToneMate -> ToneMate: Verleicht den Level Fortschritt mit den lokalen Daten
+ToneMate -> ToneMate: Vergleicht den Level Fortschritt mit den lokalen Daten
 
 autonumber stop
 alt Universitätsdaten sind weiter fortgeschritten

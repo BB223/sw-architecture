@@ -3,7 +3,7 @@
 === Entwicklungs-Konzepte
 
 Das Versionskontrollsystem für die Entwicklung ist _git_. Zur Kollaboration wird GitHub verwendet. +
-Das Repository der App wird unter einer Organisation der Universität öffentlich erstellt. Die Client Bibliothek, die durch den OpenAPI Generator generiert wird, wird in einem seperaten Repository gehalten. Daber handelt es sich um eine gemocktes Universitäts-System, wodurch die App getestet werden kann. Die produktionsreife Client Bibliothek wird in ein drittes Repository privat gehalten. Durch die Aufteilung der Repositories lässt sich mit einer Abhängigkeit in ToneMate zwischen Mock Universität und Produktions Universität umschalten. +
+Das Repository der App wird unter einer Organisation der Universität öffentlich erstellt. Die Client Bibliothek, die durch den OpenAPI Generator generiert wird, wird in einem seperaten Repository gehalten. Daber handelt es sich um eine gemocktes Universitätssystem, wodurch die App getestet werden kann. Die produktionsreife Client Bibliothek wird in ein drittes Repository privat gehalten. Durch die Aufteilung der Repositories lässt sich mit einer Abhängigkeit in ToneMate zwischen Mock Universität und Produktions Universität umschalten. +
 
 Als Code Convention wird die Phylosophie von Clean Code angewandt, um eine einheitliche und strukturierte Arbeitsumgebung zu schaffen, damit sich zukünkftige Entwickler besser in das System einarbeiten können. Zusätzlich wird sich an dem https://google.github.io/styleguide/tsguide.html[Google TSGuide] für Syntax styling und der https://docs.expo.dev/[Expo Dokumentation] für React Native Implementationen orientiert.
 
