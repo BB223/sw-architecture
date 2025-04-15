@@ -26,7 +26,7 @@ a|* Updaten der gespeicherten Partituren welche von Dozenten hochgeladen werden
 a|* Trainingsfortschritt von Studenten zur Einsicht der Dozenten
 |===
 
-plantuml::../diagrams/fachlicher_kontext.puml["test", svg]
+plantuml::../diagrams/fachlicher_kontext.puml[]
 
 === Technischer Kontext
 
@@ -53,17 +53,17 @@ Rel_R(student, toneMate, "benutzt")
 ....
 
 |===
-|Kommunikationskanal |Eingabe zu ToneMate |Ausgabe von ToneMate
+|Kommunikationskanal |Beschreibung |Protokolle / Technologien
 
 |Student
-|
-|
+|Physische Nutzung der mobilen Anwendung auf mobilem Endgerät.
+|Handy App / Physische Nutzung
 
 |Microsoft Authentication
-|
-|
+|Externe Schnittstelle zur Durchführung der eigentlichen Authentifizierung und Autorisierung. Übergabe von Nutzercredentials, Erhalt von Tokens.
+|HTTPS, REST
 
 |Universitäts-System
 |
-|
+|HTTPS, REST
 |===
